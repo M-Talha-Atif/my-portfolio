@@ -12,7 +12,7 @@ export type Project = {
     mobileDesigns?: string[],
     apk?: string,
     apkSize?: number,
-    platforms?: ['web', 'mobile'],
+     platforms?: ('web' | 'mobile')[], 
     results?: string,
     demo?: string,   // Loom or YouTube link
     live?: string,
@@ -37,7 +37,7 @@ export const projects: Project[] = [
             'Multi-language support'
         ],
         tech: ['React.js', 'Node.js', 'MongoDB', 'Redis', 'Tailwind', 'TensorFlow.js', 'Web Speech API', 'Jetpack Compose'],
-        diagrams: ['/images/diagrams/memingo-arch.svg', '/images/diagrams/memingo-flow.svg'],
+        // diagrams: ['/images/diagrams/memingo-arch.svg', '/images/diagrams/memingo-flow.svg'],
         webDesigns: [
             '/memingoProject/webImages/AR_Expereinces.png',
             '/memingoProject/webImages/AR_Game.png',
@@ -110,6 +110,7 @@ export const projects: Project[] = [
             '/leedsProject/webImages/reports.png',
             '/leedsProject/webImages/summary.png',
         ],
+        // diagrams: ['/images/diagrams/memingo-arch.svg', '/images/diagrams/memingo-flow.svg'],
         platforms: ['web'],
         results: 'Reduced financial analysis time by 85%, improved decision accuracy by 40%, and enabled real-time scenario modeling that previously took days. Teams can now evaluate 50+ financial credits simultaneously with instant ROI calculations.',
         demo: 'https://www.loom.com/share/1f4d2cc1caab4a00b2faf112d05a2968',

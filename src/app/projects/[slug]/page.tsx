@@ -8,11 +8,11 @@ import { Monitor, Smartphone, ExternalLink, Github, Download } from 'lucide-reac
 import Link from "next/link"
 
 interface Props {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 }
 
 export default function ProjectPage({ params }: Props) {
-    const { slug } = use(params) //  unwrap using React.use()
+    const { slug } = use(params)
     const project = projects.find(p => p.slug === slug)
 
     const [view, setView] = useState<'web' | 'mobile'>('web')
@@ -105,8 +105,6 @@ export default function ProjectPage({ params }: Props) {
                 )}
             </section>
 
-
-
             {/* === Features === */}
             <section className="glass p-8 rounded-2xl mb-10">
                 <h3 className="text-xl font-semibold mb-3">Key Features</h3>
@@ -118,7 +116,7 @@ export default function ProjectPage({ params }: Props) {
             </section>
 
             {/* === Diagrams === */}
-            {project.diagrams?.length > 0 && (
+            {project.diagrams && project.diagrams.length > 0 && (
                 <section className="glass p-8 rounded-2xl mb-10">
                     <h3 className="text-xl font-semibold mb-4">System Diagrams</h3>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -144,7 +142,6 @@ export default function ProjectPage({ params }: Props) {
             )}
 
             {/* === Demo Video === */}
-            {/* === Demo Video === */}
             {project.demo && (
                 <section className="glass p-8 rounded-2xl mb-10">
                     <h3 className="text-xl font-semibold mb-4">Demo Video</h3>
@@ -162,7 +159,6 @@ export default function ProjectPage({ params }: Props) {
                     </div>
                 </section>
             )}
-
 
             {/* === Tech Stack === */}
             <section className="glass p-8 rounded-2xl mb-10">
