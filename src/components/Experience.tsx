@@ -7,13 +7,13 @@ export default function Experience() {
       role: 'Android Developer Intern',
       company: 'HiSkyTech',
       period: 'Aug 2024 — Sept 2024',
-      desc: 'Developed Android applications using Kotlin, XML layouts, and the native Android SDK. Built a budget tracker and job portal with API integration and role-based access management, strengthening backend communication and UI design skills.',
+      desc: 'Engineered two production-ready Android apps from concept to deployment, architecting a scalable Firebase backend with secure RBAC and a polished UI to deliver complex features like financial tracking and role-based portals.',
     },
     {
       role: 'Software Engineering Fellow',
       company: 'Headstarter',
       period: 'July 2024 — Sept 2024',
-      desc: 'Completed hands-on projects including Rate My Professor, AI Educational Chatbot, and Pantry Tracker. Gained experience in AI integration, real-world problem solving, and full-stack development through 4 mock interviews and collaborative coding sessions.',
+      desc: 'Designed and built a full-stack AI Educational Chatbot using the Gemini API and a Rate My Professor platform, delivering a complete, functional codebase that validates my capabilities in full-stack development and modern tech integration.',
     },
   ]
 
