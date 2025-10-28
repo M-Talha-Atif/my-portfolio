@@ -30,7 +30,8 @@ export default function Hero() {
           M. Talha Atif
         </h1>
         <p className="text-lg text-subtext mb-6">
-          Full Stack Engineer with mobile technologies and backend focus.
+          Full-Stack Developer specializing in EdTech and FinTech. I build secure, high-stakes platforms with a focus on real-time functionality and AI integration, 
+          ensuring powerful performance and resilient backend systems.
         </p>
 
         {/* === Buttons === */}
