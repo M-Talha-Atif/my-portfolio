@@ -4,7 +4,7 @@ export default function Footer() {
       <p className="mb-2">
         © 2025 M. Talha Atif. All rights reserved.
       </p>
-      <p>Made with ❤️ using Next.js & TailwindCSS</p>
+      <p>Made using Next.js & TailwindCSS</p>
     </footer>
   )
 }
