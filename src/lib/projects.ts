@@ -37,7 +37,7 @@ export const projects: Project[] = [
             'Multi-language support'
         ],
         tech: ['React.js', 'Node.js', 'MongoDB', 'Redis', 'Tailwind', 'TensorFlow.js', 'Web Speech API', 'Jetpack Compose'],
-        // diagrams: ['/images/diagrams/memingo-arch.svg', '/images/diagrams/memingo-flow.svg'],
+        diagrams: ['/memingoProject/diagrams/flowChart.jpg'],
         webDesigns: [
             '/memingoProject/webImages/AR_Expereinces.png',
             '/memingoProject/webImages/AR_Game.png',
