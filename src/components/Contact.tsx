@@ -56,9 +56,9 @@ export default function Contact() {
                     Let’s <span className="text-[var(--color-accent-solid)]">Connect</span>
                 </h2>
                 <p className="text-subtext text-lg leading-relaxed">
-                    I'm currently open to <span className="text-white font-medium">backend, frontend, mobile development,</span> and{' '}
-                    <span className="text-white font-medium">cloud</span> opportunities both remote and onsite in Lahore.
-                    If you have an exciting project or role in mind, I'd love to connect and discuss it further.
+                    My expertise in <span className="text-white font-medium">backend, frontend, mobile,</span> and{' '}
+                    <span className="text-white font-medium">cloud</span> development is ready to tackle your next big challenge.
+                    I'm interested in collaborating with innovative teams on complex problems and am available for remote or onsite work in Lahore.
                 </p>
 
             </motion.div>
