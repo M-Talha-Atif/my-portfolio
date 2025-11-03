@@ -4,6 +4,7 @@ import ProjectsGrid from '@/components/ProjectsGrid'
 import Articles from '@/components/Articles'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import Achievements from '@/components/Achievements'
 
 export default function Home() {
   return (
@@ -20,9 +21,13 @@ export default function Home() {
         <ProjectsGrid />
       </section>
 
-      <section id="articles" className="py-20">
-        <Articles />
+       <section id="achievements" className="py-20">
+        <Achievements />
       </section>
+
+      {/* <section id="articles" className="py-20">
+        <Articles />
+      </section> */}
 
       <section id="contact" className="py-20">
         <Contact />
