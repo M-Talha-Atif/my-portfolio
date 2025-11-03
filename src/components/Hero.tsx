@@ -30,7 +30,7 @@ export default function Hero() {
           M. Talha Atif
         </h1>
         <p className="text-lg text-subtext mb-6">
-          Full-Stack Developer specializing in EdTech and FinTech. I build secure, high-stakes platforms with a focus on real-time functionality and AI integration, 
+          Full-Stack Engineer. I build secure, high-stakes platforms with a focus on real-time functionality and AI integration,
           ensuring powerful performance and resilient backend systems.
         </p>
 
@@ -64,36 +64,47 @@ export default function Hero() {
         </div>
 
         {/* === Location + Links === */}
-        <div className="flex flex-wrap gap-5 justify-center md:justify-start text-subtext text-sm mt-4">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-5 text-subtext text-sm">
+          {/* Location */}
+          <div className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] shadow-sm">
             <MapPin className="w-4 h-4 text-[var(--color-accent-solid)]" />
-            Lahore, Pakistan
+            <span className="font-medium text-white/90">Lahore, Pakistan</span>
           </div>
 
+          {/* LeetCode */}
           <a
             href="https://leetcode.com/u/TalhaAtif/"
             target="_blank"
-            className="flex items-center gap-2 hover:text-[var(--color-accent-solid)] transition"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
-            <Code className="w-4 h-4" /> LeetCode
+            <Code className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">LeetCode</span>
           </a>
 
+          {/* GitHub */}
           <a
             href="https://github.com/M-Talha-Atif"
             target="_blank"
-            className="flex items-center gap-2 hover:text-[var(--color-accent-solid)] transition"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
-            <Github className="w-4 h-4" /> GitHub
+            <Github className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">GitHub</span>
           </a>
 
+          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/muhammad-talha-atif/"
             target="_blank"
-            className="flex items-center gap-2 hover:text-[var(--color-accent-solid)] transition"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
-            <Linkedin className="w-4 h-4" /> LinkedIn
+            <Linkedin className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">LinkedIn</span>
           </a>
         </div>
+
       </motion.div>
 
       {/* === Right: Profile Image + Stats === */}
