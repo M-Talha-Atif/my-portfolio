@@ -1,10 +1,12 @@
 import Hero from '@/components/Hero'
 import Experience from '@/components/Experience'
+import Journey from '@/components/Journey'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import Articles from '@/components/Articles'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Achievements from '@/components/Achievements'
+import Skills from "@/components/Skills"
 
 export default function Home() {
   return (
@@ -13,26 +15,30 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section id="experience" className="py-20">
-        <Experience />
-      </section>
-
       <section id="projects" className="py-20">
         <ProjectsGrid />
       </section>
-
-       <section id="achievements" className="py-20">
-        <Achievements />
+      
+      <section id="experience" className="py-20">
+        <Experience />
+      </section>
+      
+      <section id="journey" className="py-20">
+        <Journey />
       </section>
 
-      {/* <section id="articles" className="py-20">
-        <Articles />
-      </section> */}
-
+      <section id="skills" className="py-20">
+        <Skills />
+      </section>
+      
+      <section id="achievements" className="py-20">
+        <Achievements />
+      </section>
+      
       <section id="contact" className="py-20">
         <Contact />
       </section>
-
+      
       <Footer />
     </div>
   )

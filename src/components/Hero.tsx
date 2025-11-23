@@ -114,13 +114,15 @@ export default function Hero() {
         transition={{ delay: 0.3, duration: 0.6 }}
         className="flex-1 flex flex-col items-center"
       >
-        <Image
-          src="/personal/profileImage.png"
-          alt="Profile"
-          width={220}
-          height={220}
-          className="rounded-full border-4 border-[var(--color-accent-solid)] shadow-soft mb-6"
-        />
+        <div className="w-56 h-56 mx-auto mb-6"> {/* Fixed container */}
+          <Image
+            src="/personal/profileImage.png"
+            alt="Profile"
+            width={220}
+            height={220}
+            className="rounded-full border-4 border-[var(--color-accent-solid)] shadow-soft w-full h-full object-cover"
+          />
+        </div>
 
         {/* === Cool Glass Cards for Achievements === */}
         <div className="flex gap-4 flex-wrap justify-center">

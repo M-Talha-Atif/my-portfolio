@@ -4,6 +4,19 @@ import { motion } from 'framer-motion'
 export default function Experience() {
   const timeline = [
     {
+      role: 'Software Engineer',
+      company: 'Digital Upgraders LLC',
+      period: 'September 2025 — On going',
+      desc: [
+        'Engineered a full-stack, cross-platform web applications using Next.js, React, and Express.js to serve as a centralized hub for wedding planning and social interaction',
+        'Designed and developed a complete set of REST APIs with Express.js to manage user data, posts, comments, and vendor information',
+        'Implemented WebSocket connections to facilitate real-time features, including instant post liking and live comment streams, enhancing user engagement',
+        'Built a responsive and modern user interface with React components, styled with Tailwind CSS and shadcn/ui library',
+        'Integrated Supabase for backend-as-a-service, handling user authentication and real-time database operations',
+        'Configured Stripe for secure payment processing and Twilio for in-app messaging and SMS notifications'
+      ],
+    },
+    {
       role: 'Android Developer Intern',
       company: 'HiSkyTech',
       period: 'Aug 2024 — Sept 2024',
@@ -59,7 +72,20 @@ export default function Experience() {
               <p className="text-sm text-subtext mb-2">
                 {item.company} · {item.period}
               </p>
-              <p className="text-sm text-subtext leading-relaxed">{item.desc}</p>
+              <div className="text-sm text-subtext leading-relaxed">
+                {Array.isArray(item.desc) ? (
+                  <ul className="space-y-2">
+                    {item.desc.map((point, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-[var(--color-accent-solid)] mr-2">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{item.desc}</p>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}
