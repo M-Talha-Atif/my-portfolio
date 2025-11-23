@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { projects } from '../lib/projects'
 import { ExternalLink, FileText } from 'lucide-react'
+import Image from "next/image";
 
 export default function ProjectsGrid() {
   return (
@@ -34,14 +35,18 @@ export default function ProjectsGrid() {
             className="group relative glass p-6 rounded-2xl border border-[rgba(255,255,255,0.05)] transition-all duration-300 hover:shadow-[0_0_30px_var(--color-accent-solid)]/20"
           >
             {/* === Project Image === */}
-            <div className="h-44 mb-4 rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)] flex items-center justify-center transition-all group-hover:scale-[1.03]">
-              <img
+
+            {/* === Project Image === */}
+            <div className="h-44 mb-4 rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)] flex items-center justify-center relative group transition-all group-hover:scale-[1.03]">
+
+              <Image
                 src={p.hero}
                 alt={p.title}
-                className="max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                fill
+                className="object-contain transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
 
+            </div>
             {/* === Project Info === */}
             <h3 className="text-lg font-semibold mb-1 text-white group-hover:text-[var(--color-accent-solid)] transition-colors">
               {p.title}
