@@ -22,7 +22,7 @@ export type Project = {
     demo?: string,
     live?: string,
     github?: string,
-    hero?: string,
+    hero: string,
     techStack?: {
         frontend?: string[],
         backend?: string[],
