@@ -52,7 +52,7 @@ export type Project = {
 export const projects: Project[] = [
     {
         slug: 'memingo',
-        title: 'Memingo — AI-Powered Language Learning Platform',
+        title: 'Memingo, AI-Powered Language Learning Platform',
         short: 'Revolutionizing language learning through AR, AI, and gamification',
         overview: 'Memingo is an innovative language learning platform that combines augmented reality, artificial intelligence, and gamification to revolutionize how people learn new languages. The platform addresses the critical gap in traditional language learning by providing real-time object detection, contextual vocabulary building, and interactive pronunciation practice. Built with a focus on German language learning, Memingo offers an immersive experience through 3D virtual environments and AI-powered personalized tutoring. The platform was successfully presented at an exhibition where it received 99% positive feedback from audience members who tested it live, validating its approach to making language learning more engaging and effective.',
 
@@ -489,7 +489,7 @@ export const projects: Project[] = [
     },
     {
         slug: 'moodly',
-        title: 'Moodly — AI-Powered Mood-Based Experience Discovery Platform',
+        title: 'Moodly, AI-Powered Mood-Based Experience Discovery Platform',
         short: 'Revolutionizing experience discovery through emotion AI and intelligent recommendations',
         overview: 'Moodly is a revolutionary experience discovery platform that leverages artificial intelligence to connect users with activities and events perfectly aligned with their emotional state. Unlike traditional booking platforms that rely solely on category filters and keyword searches, Moodly analyzes users\' moods through facial recognition and voice sentiment analysis to provide personalized experience recommendations that truly resonate with how they\'re feeling in the moment. The platform empowers hosts to create experience listings through intuitive voice input, eliminating the friction of manual form filling, while users discover curated activities matched to their detected emotional state. By bridging the gap between emotional wellness and experience discovery, Moodly transforms how people find meaningful activities that enhance their mental and emotional well-being.',
 
