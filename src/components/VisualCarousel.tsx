@@ -1,107 +1,92 @@
 'use client'
-
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface VisualCarouselProps {
-  images?: string[]
+    images?: string[]
 }
 
 export default function VisualCarousel({ images = [] }: VisualCarouselProps) {
-  // Filter out invalid or empty URLs
-  const validImages = images.filter((img) => img && img.trim() !== '')
+    const [currentIndex, setCurrentIndex] = useState(0)
 
-  const [index, setIndex] = useState(0)
+    if (!images || images.length === 0) {
+        return <p className="text-subtext text-sm">No images available</p>
+    }
 
-  // If no valid images, return placeholder
-  if (validImages.length === 0) {
+    const handlePrev = () => {
+        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+    }
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    }
+
     return (
-      <div className="text-center text-subtext p-8 border border-[rgba(255,255,255,0.05)] rounded-xl">
-        No visuals available for this project.
-      </div>
+        <div className="relative">
+            {/* Main Image */}
+            <div className="aspect-video relative rounded-lg overflow-hidden bg-[rgba(255,255,255,0.02)]">
+                <Image
+                    src={images[currentIndex]}
+                    alt={`Design ${currentIndex + 1}`}
+                    fill
+                    className="object-contain"
+                    priority={currentIndex === 0}
+                    loading={currentIndex === 0 ? 'eager' : 'lazy'}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                />
+            </div>
+
+            {/* Navigation Buttons */}
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={handlePrev}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
+                        aria-label="Previous image"
+                    >
+                        <ChevronLeft className="w-5 h-5 text-white" />
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
+                        aria-label="Next image"
+                    >
+                        <ChevronRight className="w-5 h-5 text-white" />
+                    </button>
+                </>
+            )}
+
+            {/* Thumbnails - Load only visible ones */}
+            {images.length > 1 && (
+                <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                    {images.map((img, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setCurrentIndex(idx)}
+                            className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition ${
+                                idx === currentIndex
+                                    ? 'border-[var(--color-accent-solid)]'
+                                    : 'border-transparent hover:border-white/20'
+                            }`}
+                        >
+                            <Image
+                                src={img}
+                                alt={`Thumbnail ${idx + 1}`}
+                                width={80}
+                                height={80}
+                                className="object-cover w-full h-full"
+                                loading="lazy"
+                            />
+                        </button>
+                    ))}
+                </div>
+            )}
+
+            {/* Image Counter */}
+            <div className="text-center mt-2 text-sm text-subtext">
+                {currentIndex + 1} / {images.length}
+            </div>
+        </div>
     )
-  }
-
-  // Handle keyboard navigation
-  const next = () => setIndex((prev) => (prev + 1) % validImages.length)
-  const prev = () => setIndex((prev) => (prev - 1 + validImages.length) % validImages.length)
-
-  const handleKey = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') next()
-      if (e.key === 'ArrowLeft') prev()
-    },
-    [validImages.length]
-  )
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleKey)
-    return () => window.removeEventListener('keydown', handleKey)
-  }, [handleKey])
-
-  return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      {/* Main Image */}
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.05)]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={validImages[index]}
-              alt={`Design ${index + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority={index === 0}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Arrows */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full"
-      >
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full"
-      >
-        <ChevronRight className="w-6 h-6 text-white" />
-      </button>
-
-      {/* Thumbnails */}
-      <div className="flex gap-2 justify-center mt-4 overflow-x-auto pb-2">
-        {validImages.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`relative w-20 h-14 rounded-md overflow-hidden border ${
-              i === index
-                ? 'border-[var(--color-accent-solid)]'
-                : 'border-transparent opacity-70 hover:opacity-100'
-            } transition`}
-          >
-            <Image
-              src={img}
-              alt={`Thumbnail ${i + 1}`}
-              fill
-              className="object-cover"
-              sizes="80px"
-            />
-          </button>
-        ))}
-      </div>
-    </div>
-  )
 }
