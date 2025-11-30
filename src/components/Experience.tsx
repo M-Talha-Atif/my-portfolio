@@ -16,18 +16,6 @@ export default function Experience() {
         'Configured Stripe for secure payment processing and Twilio for in-app messaging and SMS notifications'
       ],
     },
-    {
-      role: 'Android Developer Intern',
-      company: 'HiSkyTech',
-      period: 'Aug 2024 — Sept 2024',
-      desc: 'Engineered two production-ready Android apps from concept to deployment, architecting a scalable Firebase backend with secure RBAC and a polished UI to deliver complex features like financial tracking and role-based portals.',
-    },
-    {
-      role: 'Software Engineering Fellow',
-      company: 'Headstarter',
-      period: 'July 2024 — Sept 2024',
-      desc: 'Designed and built a full-stack AI Educational Chatbot using the Gemini API and a Rate My Professor platform, delivering a complete, functional codebase that validates my capabilities in full-stack development and modern tech integration.',
-    },
   ]
 
   return (
