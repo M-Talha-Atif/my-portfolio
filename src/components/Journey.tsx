@@ -1,10 +1,10 @@
 'use client'
 import { motion } from 'framer-motion'
-import { 
-    Code2, 
-    Layers, 
-    Zap, 
-    Shield, 
+import {
+    Code2,
+    Layers,
+    Zap,
+    Shield,
     Database,
     Compass,
     Boxes,
@@ -57,7 +57,7 @@ const coreValues = [
     {
         icon: Code2,
         title: 'Problem-First Thinking',
-        description: 'Solving challenges based on the problem itself, not the stack—adapting technology to fit the need.',
+        description: 'Solving challenges based on the problem itself, not the stackadapting technology to fit the need.',
         color: 'pink'
     }
 ]
@@ -150,7 +150,7 @@ export default function Journey() {
             >
                 {/* Decorative gradient */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent-solid)]/5 rounded-full blur-3xl" />
-                
+
                 <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-6">
                         <div className="p-2 rounded-lg bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30">
@@ -158,22 +158,26 @@ export default function Journey() {
                         </div>
                         <h3 className="text-2xl font-semibold">Developer Journey</h3>
                     </div>
-                    
+
                     <div className="space-y-4 text-subtext leading-relaxed">
                         <p>
-                            I started building <span className="text-white font-medium">Android apps with Kotlin</span>, working on projects like a plant-care assistant, productivity timer, and event booking app. I worked a lot with Android system components while focusing on stable UI, smooth performance, and clean architecture.
+                            I started with <span className="text-white font-medium">Android development using Kotlin</span>, building apps like a plant-care assistant, finance tracker, and event booking system  focusing on clean architecture, MVVM patterns, and stable UI across device sizes.
                         </p>
-                        
+
                         <p>
-                            Currently, I'm working in the <span className="text-white font-medium">JavaScript/TypeScript ecosystem</span> building full-stack apps with <span className="text-white font-medium">Next.js</span> for the web (like on <a href="https://cunocovo.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent-solid)] hover:underline">cunocovo.com</a>) and doing side projects with <span className="text-white font-medium">React Native Expo</span> and <span className="text-white font-medium">NestJS</span> for backend.
+                            I then moved into <span className="text-white font-medium">Java and Spring Boot</span> backend work at <span className="text-white font-medium">MicroTechX</span>, building a distributed IAM platform with Kafka event pipelines, gRPC inter-service communication, Spring Security, and Hibernate across 8+ microservices.
                         </p>
-                        
+
                         <p>
-                            Throughout my journey, <span className="text-white font-medium">the tech stack changed, but principles like navigation flow, state management, data caching, optimization, security, and architecture stayed the same</span>. That helps me solve problems based on the problem itself, not the stack.
+                            In parallel I worked across the <span className="text-white font-medium">JavaScript and TypeScript ecosystem</span>  shipping full-stack features with <span className="text-white font-medium">Next.js, React, Node.js, and NestJS</span>, and building AI inference services with <span className="text-white font-medium">FastAPI and Python</span> for voice and facial emotion detection using Hugging Face and DeepFace.
                         </p>
-                        
+
                         <p>
-                            At <span className="text-white font-medium">Digital Upgraders LLC</span>, I'm focused on making the platform consistent across devices, improving performance, and ensuring every operation runs smoothly.
+                            At <span className="text-white font-medium">Digital Upgraders LLC</span>, I worked on <a href="https://cunocovo.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent-solid)] hover:underline">cunocovo.com</a>  handling production migrations, performance fixes, moderation systems, and real-time features across web and mobile.
+                        </p>
+
+                        <p>
+                            The stack kept changing but <span className="text-white font-medium">the problems stayed the same</span>  auth, caching, state, performance, and getting services to talk to each other reliably. That consistency is what I rely on when picking up something new.
                         </p>
                     </div>
                 </div>
@@ -198,7 +202,7 @@ export default function Journey() {
                     {coreValues.map((value, idx) => {
                         const Icon = value.icon
                         const colors = getColorClasses(value.color)
-                        
+
                         return (
                             <motion.div
                                 key={idx}
@@ -212,11 +216,11 @@ export default function Journey() {
                                 <div className={`p-3 rounded-lg ${colors.bg} border ${colors.border} w-fit mb-4`}>
                                     <Icon className={`w-6 h-6 ${colors.icon}`} />
                                 </div>
-                                
+
                                 <h4 className="text-lg font-semibold mb-2 text-white">
                                     {value.title}
                                 </h4>
-                                
+
                                 <p className="text-sm text-subtext leading-relaxed">
                                     {value.description}
                                 </p>
@@ -235,7 +239,7 @@ export default function Journey() {
                 className="text-center mt-12 p-6 rounded-xl bg-[var(--color-accent-solid)]/5 border border-[var(--color-accent-solid)]/20"
             >
                 <p className="text-lg text-subtext italic">
-                    "Technology stacks evolve, but engineering fundamentals remain constant. 
+                    "Technology stacks evolve, but engineering fundamentals remain constant.
                     <span className="text-white font-medium"> I adapt tools to solve problems, not problems to fit tools.</span>"
                 </p>
             </motion.div>
