@@ -1,20 +1,27 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { MapPin, Linkedin, Github, Code, Trophy, Cpu } from 'lucide-react'
+import { MapPin, Linkedin, Github, Code, Trophy, Cpu, Code2, Zap, Server, GitMerge } from 'lucide-react'
 
 export default function Hero() {
   const techStack = [
-    'React',
-    'NestJS',
-    'ExpressJS',
-    'Jetpack Compose',
+    'Java',
+    'Spring Boot',
+    'Kafka',
+    'Python',
     'FastAPI',
-    'Postgres',
+    'React',
+    'Next.js',
+    'NestJS',
+    'Node.js',
+    'React Native',
+    'PostgreSQL',
+    'MySQL',
     'MongoDB',
-    'Firebase',
-    'AWS',
+    'Redis',
     'Docker',
+    'AWS',
+    'gRPC',
   ]
 
   return (
@@ -126,22 +133,25 @@ export default function Hero() {
 
         {/* === Cool Glass Cards for Achievements === */}
         <div className="flex gap-4 flex-wrap justify-center">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="glass rounded-2xl p-4 px-6 border border-[rgba(255,255,255,0.05)] shadow-lg text-center w-[180px]"
-          >
-            <Trophy className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
-            <p className="text-xl font-semibold text-white">3</p>
-            <p className="text-sm text-subtext">Hackathons Participated</p>
-          </motion.div>
+ 
 
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="glass rounded-2xl p-4 px-6 border border-[rgba(255,255,255,0.05)] shadow-lg text-center w-[180px]"
           >
-            <Cpu className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
-            <p className="text-xl font-semibold text-white">4</p>
-            <p className="text-sm text-subtext">Competitive Programming Competitions</p>
+            <GitMerge className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
+            <p className="text-xl font-semibold text-white">Apache</p>
+            <p className="text-sm text-subtext">Open source PR merged into Checkstyle</p>
+          </motion.div>
+
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="glass rounded-2xl p-4 px-6 border border-[rgba(255,255,255,0.05)] shadow-lg text-center w-[180px]"
+          >
+            <Trophy className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
+            <p className="text-xl font-semibold text-white">Runner-up</p>
+            <p className="text-sm text-subtext">App Dev Hackathon, Punjab University 2025</p>
           </motion.div>
         </div>
       </motion.div>

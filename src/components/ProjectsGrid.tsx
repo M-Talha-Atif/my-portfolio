@@ -18,7 +18,7 @@ export default function ProjectsGrid() {
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
         <p className="text-subtext text-lg max-w-2xl mx-auto">
-          A collection of products and experiments I’ve designed and built — blending performance,
+          A collection of products and experiments I’ve designed and built blending performance,
           creativity, and modern engineering principles.
         </p>
       </div>
