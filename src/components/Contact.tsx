@@ -58,7 +58,7 @@ export default function Contact() {
                 <p className="text-subtext text-lg leading-relaxed">
                     My expertise in <span className="text-white font-medium">backend, frontend, mobile,</span> and{' '}
                     <span className="text-white font-medium">cloud</span> development is ready to tackle your next big challenge.
-                    I'm interested in collaborating with innovative teams on complex problems and am available for remote or onsite work in Lahore.
+                    I&apos;m interested in collaborating with innovative teams on complex problems and am available for remote or onsite work in Lahore.
                 </p>
 
             </motion.div>

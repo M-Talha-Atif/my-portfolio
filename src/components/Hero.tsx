@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { MapPin, Linkedin, Github, Code, Trophy, Cpu, Code2, Zap, Server, GitMerge } from 'lucide-react'
+import { MapPin, Linkedin, Github, Code, Trophy, GitMerge } from 'lucide-react'
 
 export default function Hero() {
   const techStack = [
@@ -132,26 +132,33 @@ export default function Hero() {
         </div>
 
         {/* === Cool Glass Cards for Achievements === */}
-        <div className="flex gap-4 flex-wrap justify-center">
- 
+        <div className="grid w-full max-w-[420px] grid-cols-2 gap-4">
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="glass rounded-2xl p-4 px-6 border border-[rgba(255,255,255,0.05)] shadow-lg text-center w-[180px]"
+            className="glass flex min-h-[152px] flex-col items-center justify-start rounded-2xl border border-[rgba(255,255,255,0.05)] p-4 px-5 text-center shadow-lg"
           >
-            <GitMerge className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
-            <p className="text-xl font-semibold text-white">Apache</p>
-            <p className="text-sm text-subtext">Open source PR merged into Checkstyle</p>
+            <GitMerge className="mx-auto mb-3 h-6 w-6 text-[var(--color-accent-solid)]" />
+            <p className="mb-2 flex min-h-[56px] items-center text-center text-lg font-semibold text-white md:text-xl">
+              Open Source
+            </p>
+            <p className="flex min-h-[40px] items-center text-center text-sm leading-relaxed text-subtext">
+              Apache Checkstyle Contributor
+            </p>
           </motion.div>
 
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="glass rounded-2xl p-4 px-6 border border-[rgba(255,255,255,0.05)] shadow-lg text-center w-[180px]"
+            className="glass flex min-h-[152px] flex-col items-center justify-start rounded-2xl border border-[rgba(255,255,255,0.05)] p-4 px-5 text-center shadow-lg"
           >
-            <Trophy className="w-6 h-6 text-[var(--color-accent-solid)] mx-auto mb-2" />
-            <p className="text-xl font-semibold text-white">Runner-up</p>
-            <p className="text-sm text-subtext">App Dev Hackathon, Punjab University 2025</p>
+            <Trophy className="mx-auto mb-3 h-6 w-6 text-[var(--color-accent-solid)]" />
+            <p className="mb-2 flex min-h-[56px] items-center text-center text-lg font-semibold text-white md:text-xl">
+              Runner-up
+            </p>
+            <p className="flex min-h-[40px] items-center text-center text-sm leading-relaxed text-subtext">
+              App Dev Hackathon, Punjab University 2025
+            </p>
           </motion.div>
         </div>
       </motion.div>
