@@ -1,10 +1,8 @@
 'use client'
-import { useTheme } from './ThemeProvider'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react' // using lucide-react icons
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {

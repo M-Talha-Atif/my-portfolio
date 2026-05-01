@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
 import {
     Code2,
     Layers,
@@ -59,6 +60,35 @@ const coreValues = [
         title: 'Problem-First Thinking',
         description: 'Solving challenges based on the problem itself, not the stackadapting technology to fit the need.',
         color: 'pink'
+    }
+]
+
+const highlightClassName = 'text-white font-medium'
+
+const developerJourneyParagraphs: { id: string, content: ReactNode }[] = [
+    {
+        id: 'freelance-android',
+        content: <>
+            I started out building <span className={highlightClassName}>Android apps</span> as a freelancer, small projects like a plant care app, learning how real software gets built by actually shipping things to users.
+        </>
+    },
+    {
+        id: 'digital-upgraders',
+        content: <>
+            That led me to <span className={highlightClassName}>Digital Upgraders</span> where I joined as a <span className={highlightClassName}>full stack engineer</span> on a social media platform. The problems there were real and immediate. Feed loading was taking 3 seconds so I fixed it down to <span className={highlightClassName}>700ms</span> through query optimization, indexing, and caching. Notifications were duplicating because of race conditions in non-transactional queries, fixed that too. I migrated the whole infrastructure from <span className={highlightClassName}>AWS to Fly.io</span> without downtime, cleaned up a frontend codebase that had grown into 3000-line files, and fixed rendering bugs users were feeling on Android, iOS, and Safari. It was fast-paced and it taught me how to find problems that matter and fix them properly.
+        </>
+    },
+    {
+        id: 'microtechx-iga',
+        content: <>
+            Now at Microtechx I am building an <span className={highlightClassName}>Identity Governance and Administration</span> product in partnership with Intimec. IGA is what enterprises use to control who has access to what, track approvals, enforce policies, and stay compliant. I joined early and own significant parts of the product. I built the entire <span className={highlightClassName}>Access Portal</span> feature end to end, the <span className={highlightClassName}>entitlement rule engine</span>, the business roles catalog with hierarchy and cycle detection, workflow and debugging analytics, and the auditing system. Before writing a single line I ask what the use case is, what the edge cases are, and what business value it actually delivers. I care that features make the product better and drive real value, not just that they work technically.
+        </>
+    },
+    {
+        id: 'current-stack',
+        content: <>
+            Full stack across the whole journey, <span className={highlightClassName}>Java Spring Boot and Next.js React TypeScript</span> today, with <span className={highlightClassName}>distributed systems</span>, event-driven architecture, PostgreSQL, Kafka, OpenSearch, and gRPC in between.
+        </>
     }
 ]
 
@@ -160,25 +190,9 @@ export default function Journey() {
                     </div>
 
                     <div className="space-y-4 text-subtext leading-relaxed">
-                        <p>
-                            I started with <span className="text-white font-medium">Android development using Kotlin</span>, building apps like a plant-care assistant, finance tracker, and event booking system  focusing on clean architecture, MVVM patterns, and stable UI across device sizes.
-                        </p>
-
-                        <p>
-                            I then moved into <span className="text-white font-medium">Java and Spring Boot</span> backend work at <span className="text-white font-medium">MicroTechX</span>, building a distributed IAM platform with Kafka event pipelines, gRPC inter-service communication, Spring Security, and Hibernate across 8+ microservices.
-                        </p>
-
-                        <p>
-                            In parallel I worked across the <span className="text-white font-medium">JavaScript and TypeScript ecosystem</span>  shipping full-stack features with <span className="text-white font-medium">Next.js, React, Node.js, and NestJS</span>, and building AI inference services with <span className="text-white font-medium">FastAPI and Python</span> for voice and facial emotion detection using Hugging Face and DeepFace.
-                        </p>
-
-                        <p>
-                            At <span className="text-white font-medium">Digital Upgraders LLC</span>, I worked on <a href="https://cunocovo.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent-solid)] hover:underline">cunocovo.com</a>  handling production migrations, performance fixes, moderation systems, and real-time features across web and mobile.
-                        </p>
-
-                        <p>
-                            The stack kept changing but <span className="text-white font-medium">the problems stayed the same</span>  auth, caching, state, performance, and getting services to talk to each other reliably. That consistency is what I rely on when picking up something new.
-                        </p>
+                        {developerJourneyParagraphs.map((paragraph) => (
+                            <p key={paragraph.id}>{paragraph.content}</p>
+                        ))}
                     </div>
                 </div>
             </motion.div>
@@ -239,8 +253,8 @@ export default function Journey() {
                 className="text-center mt-12 p-6 rounded-xl bg-[var(--color-accent-solid)]/5 border border-[var(--color-accent-solid)]/20"
             >
                 <p className="text-lg text-subtext italic">
-                    "Technology stacks evolve, but engineering fundamentals remain constant.
-                    <span className="text-white font-medium"> I adapt tools to solve problems, not problems to fit tools.</span>"
+                    &ldquo;Technology stacks evolve, but engineering fundamentals remain constant.
+                    <span className="text-white font-medium"> I adapt tools to solve problems, not problems to fit tools.</span>&rdquo;
                 </p>
             </motion.div>
         </motion.section>
