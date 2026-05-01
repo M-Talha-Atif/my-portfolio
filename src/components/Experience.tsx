@@ -8,7 +8,7 @@ export default function Experience() {
       company: "MicroTechX",
       period: "December 2025 — Present",
       desc: [
-        "Built a self-service Access Portal in Next.js and TypeScript covering tile catalog, cart, multi-user role requests, approval tracking, and provisioning status — owning the full request lifecycle from UI to API integration.",
+        "Built a self-service Access Portal in Next.js and TypeScript covering tile catalog, cart, multi-user role requests, approval tracking, and provisioning status, owning the full request lifecycle from UI to API integration.",
         "Engineered an entitlement rule builder with grouped AND/OR conditions, inter-group operators, and negation support; fixed a full re-render storm on every keystroke by switching to uncontrolled mode with useRef and controlled remount via builderKey.",
         "Built workflow and debugging analytics dashboards with 8 KPI drill-down types, paginated modals, per-section independent loading states, and CSV export, wired to real backend APIs replacing mock data across all charts.",
         "Re-architected the Roles Hierarchy from a full client-side in-memory grouping model to a backend-driven summary-first approach, cutting initial page load data to aggregate counts only and moving search and filtering server-side.",
