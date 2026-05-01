@@ -1,4 +1,4 @@
-# M. Talha Atif — Portfolio
+# M. Talha Atif, Portfolio
 
 A modern engineering portfolio built with **Next.js App Router**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and rich project case studies. The site presents professional experience, production-impact engineering work, architecture diagrams, metrics, visual galleries, and a contact flow backed by Nodemailer.
 
