@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import mermaid from 'mermaid'
 
 interface MermaidDiagramProps {
@@ -9,7 +9,7 @@ interface MermaidDiagramProps {
 
 export default function MermaidDiagram({ code, title }: MermaidDiagramProps) {
     const containerRef = useRef<HTMLDivElement>(null)
-    const idRef = useRef(`mermaid-${Math.random().toString(36).substr(2, 9)}`)
+    const diagramId = `mermaid-${useId().replace(/:/g, '')}`
 
     useEffect(() => {
         // Initialize mermaid with dark theme configuration
@@ -77,7 +77,7 @@ export default function MermaidDiagram({ code, title }: MermaidDiagramProps) {
                     containerRef.current.innerHTML = ''
                     
                     // Render the diagram
-                    const { svg } = await mermaid.render(idRef.current, code)
+                    const { svg } = await mermaid.render(diagramId, code)
                     containerRef.current.innerHTML = svg
                     
                     // Apply additional styling to SVG
@@ -99,7 +99,7 @@ export default function MermaidDiagram({ code, title }: MermaidDiagramProps) {
         }
 
         renderDiagram()
-    }, [code])
+    }, [code, diagramId])
 
     return (
         <div className="mermaid-container">

@@ -8,15 +8,16 @@ export default function Experience() {
       company: "MicroTechX",
       period: "December 2025 — Present",
       desc: [
-        "Built a self-service IAM portal using React and TypeScript where users request access to platform tiles, assign roles to team members, and track request lifecycle from submission to provisioning.",
-        "Developed Spring Boot REST APIs for access request management, tile configuration, and department scoping with Hibernate/JPA entity mappings and MySQL as the primary data store.",
-        "Architected Kafka event-driven pipelines for audit trails and provisioning workflows across 8+ microservices, configuring consumer concurrency, retry windows, and dead-letter queues.",
-        "Implemented gRPC inter-service calls for user identity and manager resolution between distributed Spring Boot services.",
-        "Refactored an O(n²) access-request lookup to O(n) using a Java Collections map-based strategy, eliminating a bottleneck in the role-assignment approval flow.",
-        "Enforced Spring Security authentication, JWT validation, and RBAC policies across all API endpoints.",
-        "Wrote JUnit unit and integration tests for tile, cart, and request modules; maintained GitHub Actions CI/CD pipelines for automated build, test, and deploy cycles.",
-        "Consolidated 50+ color variables into design tokens, migrated 30+ drill-down modals to slide-in sheets, and reduced initial bundle size by 15% through component consolidation.",
-        "Collaborated with React frontend engineers to align API contracts, resolve integration issues, and deliver features iteratively across Agile/Scrum sprints.",
+        "Built a self-service Access Portal in Next.js and TypeScript covering tile catalog, cart, multi-user role requests, approval tracking, and provisioning status — owning the full request lifecycle from UI to API integration.",
+        "Engineered an entitlement rule builder with grouped AND/OR conditions, inter-group operators, and negation support; fixed a full re-render storm on every keystroke by switching to uncontrolled mode with useRef and controlled remount via builderKey.",
+        "Built workflow and debugging analytics dashboards with 8 KPI drill-down types, paginated modals, per-section independent loading states, and CSV export, wired to real backend APIs replacing mock data across all charts.",
+        "Re-architected the Roles Hierarchy from a full client-side in-memory grouping model to a backend-driven summary-first approach, cutting initial page load data to aggregate counts only and moving search and filtering server-side.",
+        "Built a reusable component system across the platform including StandardTabs, IconTabs, PageHeader, BadgeEditor, CustomPagination, and a centralized risk color utility, standardizing UI patterns across 78+ files.",
+        "Built an entitlement assignment rule engine in Spring Boot with grouped conditions stored as JSONB in PostgreSQL, JPA Criteria API for dynamic predicate building, and IMMEDIATE/CRON/MANUAL/ONE_TIME scheduler with a global tenant-level schedule config.",
+        "Designed an async bulk role assignment pipeline using Kafka workers, a Batch Job table for real-time status tracking, and chunk-based persistence to control memory pressure; refactored permission API from one-to-one to many-to-many with O(1) Set-based duplication checks.",
+        "Implemented Spring AOP auditing across the role lifecycle enforcing one user action equals one audit event, with backend diff computation capturing entitlement and child-role adds and removes in a single consolidated audit record.",
+        "Built a bulk application lookup endpoint eliminating N+1 cross-service calls in the entitlements module, collapsing per-record API calls into a single request with resilient fallback defaulting resourceName to Unknown on dependency failure.",
+        "Resolved a production OpenSearch crisis by reindexing 5M+ documents using index templates and alias switching with zero downtime, migrated high-cardinality fields from text+keyword to keyword type, and fixed the 10k result-window limit by redesigning deep pagination queries as aggregation-based queries."
       ],
     },
     {
@@ -64,7 +65,7 @@ export default function Experience() {
 
         {timeline.map((item, i) => (
           <motion.div
-            key={i}
+            key={`${item.company}-${item.period}`}
             initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -82,8 +83,8 @@ export default function Experience() {
               <div className="text-sm text-subtext leading-relaxed">
                 {Array.isArray(item.desc) ? (
                   <ul className="space-y-2">
-                    {item.desc.map((point, index) => (
-                      <li key={index} className="flex items-start">
+                    {item.desc.map((point) => (
+                      <li key={point} className="flex items-start">
                         <span className="text-[var(--color-accent-solid)] mr-2">•</span>
                         <span>{point}</span>
                       </li>
