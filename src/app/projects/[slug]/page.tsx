@@ -19,6 +19,45 @@ interface Props {
     params: Promise<{ slug: string }>
 }
 
+type MediaTab = 'visuals' | 'demo'
+
+function getDemoEmbedUrl(url: string): string {
+    try {
+        const parsedUrl = new URL(url)
+        const hostname = parsedUrl.hostname.replace('www.', '')
+
+        if (hostname === 'loom.com' && parsedUrl.pathname.startsWith('/share/')) {
+            const id = parsedUrl.pathname.split('/share/')[1]
+            return `https://www.loom.com/embed/${id}`
+        }
+
+        if (hostname === 'youtu.be') {
+            const id = parsedUrl.pathname.replace('/', '')
+            return `https://www.youtube.com/embed/${id}`
+        }
+
+        if (hostname.endsWith('youtube.com')) {
+            if (parsedUrl.pathname === '/watch') {
+                const id = parsedUrl.searchParams.get('v')
+                if (id) {
+                    return `https://www.youtube.com/embed/${id}`
+                }
+            }
+
+            if (parsedUrl.pathname.startsWith('/shorts/')) {
+                const id = parsedUrl.pathname.split('/shorts/')[1]?.split('/')[0]
+                if (id) {
+                    return `https://www.youtube.com/embed/${id}`
+                }
+            }
+        }
+
+        return url
+    } catch {
+        return url
+    }
+}
+
 // Lightweight skeleton
 const SectionSkeleton = () => (
     <div className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)] animate-pulse">
@@ -33,6 +72,7 @@ export default function ProjectPage({ params }: Props) {
     const [project, setProject] = useState<Project | null>(null)
     const [loading, setLoading] = useState(true)
     const [view, setView] = useState<'web' | 'mobile'>('web')
+    const [mediaTab, setMediaTab] = useState<MediaTab>('visuals')
 
     // Load project data asynchronously
     useEffect(() => {
@@ -43,6 +83,7 @@ export default function ProjectPage({ params }: Props) {
             if (mounted && data) {
                 setProject(data)
                 setView(data.platforms?.includes('web') ? 'web' : 'mobile')
+                setMediaTab('visuals')
             }
             setLoading(false)
         }
@@ -75,6 +116,8 @@ export default function ProjectPage({ params }: Props) {
 
     const hasBoth = project.platforms?.includes('web') && project.platforms?.includes('mobile')
     const currentDesigns = view === 'mobile' ? project.mobileDesigns : project.webDesigns
+    const hasDemo = Boolean(project.demo)
+    const demoEmbedUrl = project.demo ? getDemoEmbedUrl(project.demo) : null
 
     return (
         <motion.div
@@ -112,6 +155,23 @@ export default function ProjectPage({ params }: Props) {
                     </div>
                 </div>
                 <p className="text-subtext text-lg">{project.short}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                    {project.live && (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition">
+                            <ExternalLink className="w-4 h-4" /> View Live
+                        </a>
+                    )}
+                    {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                            <Github className="w-4 h-4" /> Source Code
+                        </a>
+                    )}
+                    {project.apk && (
+                        <a href={project.apk} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                            <Download className="w-4 h-4" /> Download APK
+                        </a>
+                    )}
+                </div>
             </header>
 
             {/* Metrics */}
@@ -200,51 +260,94 @@ export default function ProjectPage({ params }: Props) {
                 </section>
             )}
 
-            {/* Platform Switcher */}
-            {hasBoth && (
-                <div className="flex justify-center gap-4 mb-8">
-                    <button
-                        onClick={() => setView('web')}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-lg border transition-all ${view === 'web'
-                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
-                            }`}
-                    >
-                        <Monitor className="w-4 h-4" /> Web
-                    </button>
-                    <button
-                        onClick={() => setView('mobile')}
-                        className={`flex items-center gap-2 px-6 py-3 rounded-lg border transition-all ${view === 'mobile'
-                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
-                            }`}
-                    >
-                        <Smartphone className="w-4 h-4" /> Mobile
-                    </button>
-                </div>
-            )}
-
-            {/* Visual Designs - LAZY LOADED */}
+            {/* Project Media - LAZY LOADED */}
             <Suspense fallback={<SectionSkeleton />}>
                 <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
-                    <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        {view === 'mobile' ? <Smartphone className="w-5 h-5 text-[var(--color-accent-solid)]" /> : <Monitor className="w-5 h-5 text-[var(--color-accent-solid)]" />}
-                        Visual Designs — {view === 'mobile' ? 'Mobile App' : 'Web Platform'}
-                    </h3>
-                    {currentDesigns && currentDesigns.length > 0 ? (
+                    <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
+                        <h3 className="text-xl font-semibold flex items-center gap-2">
+                            {mediaTab === 'demo'
+                                ? <ExternalLink className="w-5 h-5 text-[var(--color-accent-solid)]" />
+                                : view === 'mobile'
+                                    ? <Smartphone className="w-5 h-5 text-[var(--color-accent-solid)]" />
+                                    : <Monitor className="w-5 h-5 text-[var(--color-accent-solid)]" />}
+                            {mediaTab === 'demo'
+                                ? 'Live Demo'
+                                : `Visual Designs - ${view === 'mobile' ? 'Mobile App' : 'Web Platform'}`}
+                        </h3>
+
+                        <div className="flex flex-wrap gap-3">
+                            {hasBoth && (
+                                <>
+                                    <button
+                                        onClick={() => setView('web')}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${view === 'web'
+                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                            }`}
+                                    >
+                                        <Monitor className="w-4 h-4" /> Web
+                                    </button>
+                                    <button
+                                        onClick={() => setView('mobile')}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${view === 'mobile'
+                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                            }`}
+                                    >
+                                        <Smartphone className="w-4 h-4" /> Mobile
+                                    </button>
+                                </>
+                            )}
+
+                            {hasDemo && (
+                                <>
+                                    <button
+                                        onClick={() => setMediaTab('visuals')}
+                                        className={`px-4 py-2 rounded-lg border transition-all ${mediaTab === 'visuals'
+                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                            }`}
+                                    >
+                                        Visuals
+                                    </button>
+                                    <button
+                                        onClick={() => setMediaTab('demo')}
+                                        className={`px-4 py-2 rounded-lg border transition-all ${mediaTab === 'demo'
+                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                            }`}
+                                    >
+                                        Demo
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                    </div>
+
+                    {mediaTab === 'demo' && demoEmbedUrl ? (
+                        <div className="aspect-video rounded-lg overflow-hidden border border-[rgba(255,255,255,0.1)] bg-black/20">
+                            <iframe
+                                src={demoEmbedUrl}
+                                title={`${project.title} Demo`}
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                className="w-full h-full"
+                                loading="lazy"
+                            />
+                        </div>
+                    ) : currentDesigns && currentDesigns.length > 0 ? (
                         <VisualCarousel images={currentDesigns} />
                     ) : (
                         <p className="text-subtext text-sm">No designs available.</p>
                     )}
 
-                    {view === 'mobile' && project.apk && (
+                    {mediaTab === 'visuals' && view === 'mobile' && project.apk && (
                         <div className="mt-6 p-4 rounded-lg bg-[var(--color-accent-solid)]/5 border border-[var(--color-accent-solid)]/20">
                             <div className="flex items-center justify-between flex-wrap gap-4">
                                 <div className="flex items-center gap-3">
                                     <Download className="w-5 h-5 text-[var(--color-accent-solid)]" />
                                     <div>
                                         <div className="font-medium text-white">Download Android APK</div>
-                                        <div className="text-xs text-subtext">Version 1.0 • {project.apkSize || '—'} MB</div>
+                                        <div className="text-xs text-subtext">Version 1.0 • {project.apkSize || 'N/A'} MB</div>
                                     </div>
                                 </div>
 
@@ -418,40 +521,6 @@ export default function ProjectPage({ params }: Props) {
                 </section>
             )}
 
-            {/* Demo Video */}
-            {project.demo && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
-                    <h3 className="text-xl font-semibold mb-4">📹 Live Demo</h3>
-                    <div className="aspect-video rounded-lg overflow-hidden border border-[rgba(255,255,255,0.1)] bg-black/20">
-                        <iframe
-                            src={project.demo.includes('loom.com/share') ? project.demo.replace('share', 'embed') : project.demo}
-                            title={`${project.title} Demo`}
-                            allow="autoplay; fullscreen"
-                            className="w-full h-full"
-                            loading="lazy"
-                        />
-                    </div>
-                </section>
-            )}
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-                {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition">
-                        <ExternalLink className="w-4 h-4" /> View Live
-                    </a>
-                )}
-                {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
-                        <Github className="w-4 h-4" /> Source Code
-                    </a>
-                )}
-                {project.apk && (
-                    <a href={project.apk} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
-                        <Download className="w-4 h-4" /> Download APK
-                    </a>
-                )}
-            </div>
         </motion.div>
     )
 }

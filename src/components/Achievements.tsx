@@ -42,9 +42,9 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-20"
+            className="py-12 md:py-16"
         >
-            <div className="max-w-6xl mx-auto text-center mb-12">
+            <div className="max-w-6xl mx-auto text-center mb-8 md:mb-10">
                 <h2 className="text-4xl font-bold mb-4">Achievements</h2>
                 <p className="text-subtext text-lg max-w-2xl mx-auto">
                     Recognitions and milestones that reflect my technical growth, teamwork, and
@@ -92,8 +92,8 @@ export default function Achievements() {
 
                         {/* Learnings */}
                         <ul className="text-sm text-subtext text-left space-y-1">
-                            {a.learning.map((point, idx) => (
-                                <li key={idx} className="leading-relaxed before:content-['•'] before:mr-2">
+                            {a.learning.map((point) => (
+                                <li key={`${a.title}-${point}`} className="leading-relaxed before:content-['•'] before:mr-2">
                                     {point}
                                 </li>
                             ))}
