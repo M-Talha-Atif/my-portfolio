@@ -1,8 +1,9 @@
 import './globals.css'
-import { ThemeProvider } from '../components/ThemeProvider'
-import ClientLayoutWrapper from '../components/ClientLayoutWrapper'
+import type { Metadata } from 'next'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'M. Talha Atif Full Stack Developer',
   description:
     'Professional portfolio of M. Talha Atif, a Full Stack Developer specializing in backend development, AI apps, and modern full stack technologies',
@@ -21,12 +22,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider>
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         </ThemeProvider>

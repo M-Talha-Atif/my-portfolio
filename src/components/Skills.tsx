@@ -158,10 +158,10 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-20"
+            className="py-12 md:py-16"
         >
             {/* === Section Header === */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function Skills() {
             </div>
 
             {/* === Category Filter === */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 mb-8 md:mb-10">
                 <button
                     onClick={() => setActiveCategory(null)}
                     className={`px-5 py-2 rounded-full border transition-all ${

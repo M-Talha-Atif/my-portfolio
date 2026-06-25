@@ -582,5 +582,5 @@ export const moodlyProject: Project = {
         demo: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
         live: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
         github: 'https://github.com/yourusername/moodly',
-        hero: '/moodlyProject/hero/moodly-hero-2.png'
+        hero: '/moodlyProject/hero/moodly-hero.png?v=20260625'
     }

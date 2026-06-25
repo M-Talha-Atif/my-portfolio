@@ -39,7 +39,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-24 relative overflow-hidden"
+            className="py-12 md:py-16 relative overflow-hidden"
         >
             {/* subtle gradient orb background */}
             <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -50,7 +50,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-center max-w-2xl mx-auto mb-16"
+                className="text-center max-w-2xl mx-auto mb-8 md:mb-12"
             >
                 <h2 className="text-4xl font-bold mb-4">
                     Let’s <span className="text-[var(--color-accent-solid)]">Connect</span>
@@ -63,7 +63,7 @@ export default function Contact() {
 
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+            <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
                 {/* === Contact Form === */}
                 <motion.form
                     onSubmit={handleSubmit}
@@ -71,11 +71,15 @@ export default function Contact() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    suppressHydrationWarning
+                    data-lpignore="true"
                     className="glass p-8 rounded-2xl flex flex-col gap-4 shadow-soft"
                 >
                     <input
                         type="text"
                         name="name"
+                        autoComplete="off"
+                        data-lpignore="true"
                         placeholder="Your Name"
                         value={form.name}
                         onChange={handleChange}
@@ -85,6 +89,8 @@ export default function Contact() {
                     <input
                         type="email"
                         name="email"
+                        autoComplete="off"
+                        data-lpignore="true"
                         placeholder="Your Email"
                         value={form.email}
                         onChange={handleChange}
@@ -93,6 +99,8 @@ export default function Contact() {
                     />
                     <textarea
                         name="message"
+                        autoComplete="off"
+                        data-lpignore="true"
                         placeholder="Your Message"
                         rows={5}
                         value={form.message}
