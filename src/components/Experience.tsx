@@ -6,34 +6,24 @@ export default function Experience() {
     {
       role: "Full Stack Engineer",
       company: "MicroTechX",
-      period: "December 2025 — Present",
+      period: "December 2025 - Present",
       desc: [
-        "Built a self-service Access Portal in Next.js and TypeScript covering tile catalog, cart, multi-user role requests, approval tracking, and provisioning status, owning the full request lifecycle from UI to API integration.",
-        "Engineered an entitlement rule builder with grouped AND/OR conditions, inter-group operators, and negation support; fixed a full re-render storm on every keystroke by switching to uncontrolled mode with useRef and controlled remount via builderKey.",
-        "Built workflow and debugging analytics dashboards with 8 KPI drill-down types, paginated modals, per-section independent loading states, and CSV export, wired to real backend APIs replacing mock data across all charts.",
-        "Re-architected the Roles Hierarchy from a full client-side in-memory grouping model to a backend-driven summary-first approach, cutting initial page load data to aggregate counts only and moving search and filtering server-side.",
-        "Built a reusable component system across the platform including StandardTabs, IconTabs, PageHeader, BadgeEditor, CustomPagination, and a centralized risk color utility, standardizing UI patterns across 78+ files.",
-        "Built an entitlement assignment rule engine in Spring Boot with grouped conditions stored as JSONB in PostgreSQL, JPA Criteria API for dynamic predicate building, and IMMEDIATE/CRON/MANUAL/ONE_TIME scheduler with a global tenant-level schedule config.",
-        "Designed an async bulk role assignment pipeline using Kafka workers, a Batch Job table for real-time status tracking, and chunk-based persistence to control memory pressure; refactored permission API from one-to-one to many-to-many with O(1) Set-based duplication checks.",
-        "Implemented Spring AOP auditing across the role lifecycle enforcing one user action equals one audit event, with backend diff computation capturing entitlement and child-role adds and removes in a single consolidated audit record.",
-        "Built a bulk application lookup endpoint eliminating N+1 cross-service calls in the entitlements module, collapsing per-record API calls into a single request with resilient fallback defaulting resourceName to Unknown on dependency failure.",
-        "Resolved a production OpenSearch crisis by reindexing 5M+ documents using index templates and alias switching with zero downtime, migrated high-cardinality fields from text+keyword to keyword type, and fixed the 10k result-window limit by redesigning deep pagination queries as aggregation-based queries."
+        "Migrated synchronous service-to-service communication from REST to gRPC, reducing inter-service latency by 50%.",
+        "Resolved Spring AOP self-invocation bypass, restoring audit guarantee across affected service methods.",
+        "Refactored audit log schema to be PII-free, restoring compliance alignment without losing forensic traceability.",
+        "Architected the generic rule-based engine for assigning roles, entitlements, and access items to identities through grouped condition evaluation, CRON and event-based scheduling.",
+        "Standardised the frontend theme, color system, and shared component library across the Next.js dashboard, documenting conventions that improved consistency and reduced UI drift across the team.",
       ],
     },
     {
       role: "Full Stack Engineer",
       company: "Digital Upgraders LLC",
-      period: "September 2025 — January 2026",
+      period: "September 2025 - January 2026",
       desc: [
-        "Built Reported Posts and Reported Comments systems end to end schema design in Supabase, REST APIs in Express.js with popularity ranking logic, and an admin moderation panel in React.",
-        "Eliminated a 2-second comment button latency by removing a redundant API pre-check call, and reduced notification page load by consolidating fragmented calls into single enriched payloads.",
-        "Implemented rate limiting on all authentication and high-frequency post endpoints to prevent abuse, and resolved 20+ production bugs across auth flows, notification lifecycle, and cache invalidation.",
-        "Executed full production migration to Fly.io Docker configuration, Supabase production setup, Namecheap DNS, Plunk email migration, and environment variable management with zero downtime.",
-        "Refactored 3000+ line monolithic files into modular components using custom React hooks, improving code maintainability and reducing component coupling across the codebase.",
-        "Resolved Android and iOS Safari rendering issues causing input lag and scroll jank by identifying and fixing client-side execution bottlenecks.",
-        "Added Open Graph metadata for social sharing, pull-to-refresh with draft state preservation, and referral system with domain reuse prevention.",
-        "Maintained unit test coverage across critical API flows and validated all fixes against edge cases before deployment.",
-        "Worked directly with the product team in async remote sprints, handling production deployments, hotfixes, and feature delivery across web and mobile breakpoints.",
+        "Cut feed load time from 3s to 700ms by fixing query, indexing, payload, and caching bottlenecks.",
+        "Fixed duplicate notifications by redesigning concurrent writes with proper transactions.",
+        "Resolved Android, iOS, and Safari rendering issues by tracing client-side performance bottlenecks and restoring consistent cross-platform behaviour.",
+        "Led a zero-downtime migration from AWS to Fly.io, reworking infrastructure, CI/CD, DNS, and service configuration on a live platform.",
       ],
     },
   ]
@@ -45,14 +35,14 @@ export default function Experience() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="py-24 relative overflow-hidden"
+      className="py-12 md:py-16 relative overflow-hidden"
     >
       {/* gradient orb bg */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] bg-gradient-to-tr from-purple-500/10 to-blue-500/10 blur-3xl rounded-full opacity-70" />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center mb-16">
+      <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
         <h2 className="text-4xl font-bold mb-4">Experience</h2>
         <p className="text-subtext text-lg max-w-2xl mx-auto">
           A snapshot of my journey building impactful mobile and web applications from Android development to AI-powered web solutions. Each role strengthened my technical foundation and problem-solving approach.

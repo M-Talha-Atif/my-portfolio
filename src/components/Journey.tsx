@@ -153,10 +153,10 @@ export default function Journey() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="py-20"
+            className="py-12 md:py-16"
         >
             {/* === Section Header === */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function Journey() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="glass p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] mb-16 relative overflow-hidden"
+                className="glass p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] mb-8 md:mb-12 relative overflow-hidden"
             >
                 {/* Decorative gradient */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent-solid)]/5 rounded-full blur-3xl" />

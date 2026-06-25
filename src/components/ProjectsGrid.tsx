@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { projects } from '../lib/projects'
+import { projectsMetadata } from '@/lib/projects/index'
 import { ExternalLink, FileText } from 'lucide-react'
 import Image from "next/image";
 
@@ -13,9 +13,9 @@ export default function ProjectsGrid() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="py-20"
+      className="py-12 md:py-16"
     >
-      <div className="max-w-6xl mx-auto text-center mb-12">
+      <div className="max-w-6xl mx-auto text-center mb-8 md:mb-10">
         <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
         <p className="text-subtext text-lg max-w-2xl mx-auto">
           A collection of products and experiments I’ve designed and built blending performance,
@@ -24,7 +24,7 @@ export default function ProjectsGrid() {
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => (
+        {projectsMetadata.map((p, i) => (
           <motion.div
             key={p.slug}
             initial={{ opacity: 0, y: 30 }}
@@ -43,6 +43,8 @@ export default function ProjectsGrid() {
                 src={p.hero}
                 alt={p.title}
                 fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                priority={i === 0}
                 className="object-contain transition-transform duration-300 group-hover:scale-105"
               />
 
