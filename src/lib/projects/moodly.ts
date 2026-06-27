@@ -579,7 +579,10 @@ export const moodlyProject: Project = {
 
         results: 'Engineered an emotionally intelligent experience discovery platform that fundamentally transforms how users find activities aligned with their mental and emotional state. Achieved 88% reduction in recommendation latency through strategic pre-computation and Redis caching, while maintaining high recommendation quality using advanced semantic similarity matching. Implemented robust asynchronous processing architecture using RabbitMQ and Bull, reducing perceived mood detection time by 87.5% and allowing users to continue browsing during AI inference. Advanced multi-stage prompt engineering improved experience listing quality by 40% (6.2/10 to 8.7/10), directly contributing to 52% increase in booking conversion rates. Resolved critical production issues including OutOfMemoryError through systematic memory profiling and optimization, achieving 99.9% system uptime. Built comprehensive error handling and debugging infrastructure eliminating undefined crashes and improving debugging efficiency by 70%. The platform successfully addresses key pain points in traditional experience discovery: lack of emotional intelligence, tedious listing creation, and poor personalization, while enabling users to track mood patterns and understand which activities genuinely improve their well-being over time.',
 
-        demo: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
+        demo: 'https://youtu.be/oe8ZT5kMd_c',
+        demoLinks: {
+            mobile: 'https://youtu.be/oe8ZT5kMd_c'
+        },
         live: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
         github: 'https://github.com/yourusername/moodly',
         hero: '/moodlyProject/hero/moodly-hero.png?v=20260625'
