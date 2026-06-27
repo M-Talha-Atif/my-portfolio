@@ -20,6 +20,7 @@ export type Project = {
     platforms?: ('web' | 'mobile')[],
     results?: string,
     demo?: string,
+    demoLinks?: Partial<Record<'web' | 'mobile', string>>,
     live?: string,
     github?: string,
     hero: string,

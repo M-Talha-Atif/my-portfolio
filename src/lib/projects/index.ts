@@ -18,7 +18,7 @@ export const projectsMetadata = [
     hero: '/moodlyProject/hero/moodly-hero.png?v=20260625',
     platforms: ['mobile'] as ('web' | 'mobile')[],
     tech: ['React Native', 'Nest.js', 'RabbitMQ', 'PostgreSQL', 'Redis'],
-    live: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
+    live: 'https://youtu.be/oe8ZT5kMd_c',
   },
   {
     slug: 'cunocovo',
@@ -36,7 +36,7 @@ export const projectsMetadata = [
     hero: '/memingoProject/hero/heroMemingo.png',
     platforms: ['web', 'mobile'] as ('web' | 'mobile')[],
     tech: ['React.js', 'Jetpack Compose', 'Flask', 'MongoDB', 'Redis', 'YOLO', 'Three.js'],
-    live: 'https://memingo-frontend-sooty.vercel.app/',
+    live: 'https://youtu.be/a1Akh-M-9LY',
   }
 ]
 

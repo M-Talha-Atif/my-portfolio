@@ -21,6 +21,15 @@ interface Props {
 
 type MediaTab = 'visuals' | 'demo'
 
+function getProjectDemoUrl(project: Project, view: 'web' | 'mobile'): string | null {
+    const platformDemo = project.demoLinks?.[view]
+    if (platformDemo) {
+        return platformDemo
+    }
+
+    return project.demo ?? null
+}
+
 function getDemoEmbedUrl(url: string): string {
     try {
         const parsedUrl = new URL(url)
@@ -116,8 +125,9 @@ export default function ProjectPage({ params }: Props) {
 
     const hasBoth = project.platforms?.includes('web') && project.platforms?.includes('mobile')
     const currentDesigns = view === 'mobile' ? project.mobileDesigns : project.webDesigns
-    const hasDemo = Boolean(project.demo)
-    const demoEmbedUrl = project.demo ? getDemoEmbedUrl(project.demo) : null
+    const selectedDemoUrl = getProjectDemoUrl(project, view)
+    const hasDemo = Boolean(selectedDemoUrl)
+    const demoEmbedUrl = selectedDemoUrl ? getDemoEmbedUrl(selectedDemoUrl) : null
 
     return (
         <motion.div
@@ -271,7 +281,7 @@ export default function ProjectPage({ params }: Props) {
                                     ? <Smartphone className="w-5 h-5 text-[var(--color-accent-solid)]" />
                                     : <Monitor className="w-5 h-5 text-[var(--color-accent-solid)]" />}
                             {mediaTab === 'demo'
-                                ? 'Live Demo'
+                                ? `Live Demo - ${view === 'mobile' ? 'Mobile App' : 'Web Platform'}`
                                 : `Visual Designs - ${view === 'mobile' ? 'Mobile App' : 'Web Platform'}`}
                         </h3>
 
@@ -327,6 +337,7 @@ export default function ProjectPage({ params }: Props) {
                     {mediaTab === 'demo' && demoEmbedUrl ? (
                         <div className="aspect-video rounded-lg overflow-hidden border border-[rgba(255,255,255,0.1)] bg-black/20">
                             <iframe
+                                key={demoEmbedUrl}
                                 src={demoEmbedUrl}
                                 title={`${project.title} Demo`}
                                 allow="autoplay; fullscreen; picture-in-picture"

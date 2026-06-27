@@ -20,6 +20,7 @@ export type Project = {
     platforms?: ('web' | 'mobile')[],
     results?: string,
     demo?: string,
+    demoLinks?: Partial<Record<'web' | 'mobile', string>>,
     live?: string,
     github?: string,
     hero: string,
@@ -482,8 +483,12 @@ export const projects: Project[] = [
 
         results: 'Engineered a comprehensive language learning ecosystem that successfully demonstrates the power of combining AI, AR, and gamification. Achieved 99% positive feedback at live exhibition with users praising the intuitive interface and engaging learning approach. Optimized leaderboard performance reducing response times by 67% through strategic Redis caching implementation. Advanced prompt engineering techniques improved AI-generated content relevance by 78%, ensuring contextually appropriate learning materials. Implemented robust authentication system preventing 95% of bot registrations through OTP verification. Built scalable microservices architecture capable of handling millions of concurrent users while maintaining sub-100ms object detection latency. The platform successfully addresses key pain points in traditional language learning: lack of context, poor pronunciation feedback, and disengagement through tedious exercises.',
 
-        demo: 'https://www.loom.com/share/932ba5037d364dde88049686bd45c0d3',
-        live: 'https://memingo-frontend-sooty.vercel.app/',
+        demo: 'https://youtube.com/shorts/zQuP206_KRM',
+        demoLinks: {
+            web: 'https://youtu.be/a1Akh-M-9LY',
+            mobile: 'https://youtube.com/shorts/zQuP206_KRM'
+        },
+        live: 'https://youtu.be/a1Akh-M-9LY',
         github: 'https://github.com/M-Talha-Atif/Memingo-Full-Stack-FYP',
         hero: '/memingoProject/hero/heroMemingo.png'
     },
@@ -1066,7 +1071,10 @@ export const projects: Project[] = [
 
         results: 'Engineered an emotionally intelligent experience discovery platform that fundamentally transforms how users find activities aligned with their mental and emotional state. Achieved 88% reduction in recommendation latency through strategic pre-computation and Redis caching, while maintaining high recommendation quality using advanced semantic similarity matching. Implemented robust asynchronous processing architecture using RabbitMQ and Bull, reducing perceived mood detection time by 87.5% and allowing users to continue browsing during AI inference. Advanced multi-stage prompt engineering improved experience listing quality by 40% (6.2/10 to 8.7/10), directly contributing to 52% increase in booking conversion rates. Resolved critical production issues including OutOfMemoryError through systematic memory profiling and optimization, achieving 99.9% system uptime. Built comprehensive error handling and debugging infrastructure eliminating undefined crashes and improving debugging efficiency by 70%. The platform successfully addresses key pain points in traditional experience discovery: lack of emotional intelligence, tedious listing creation, and poor personalization, while enabling users to track mood patterns and understand which activities genuinely improve their well-being over time.',
 
-        demo: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
+        demo: 'https://youtu.be/oe8ZT5kMd_c',
+        demoLinks: {
+            mobile: 'https://youtu.be/oe8ZT5kMd_c'
+        },
         live: 'https://appetize.io/app/b_jy4luvflr2e72c53yqdcpewubu',
         github: 'https://github.com/yourusername/moodly',
         hero: '/moodlyProject/hero/moodly-hero.png?v=20260625'
