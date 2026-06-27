@@ -432,8 +432,12 @@ export const memingoProject: Project =  {
 
         results: 'Engineered a comprehensive language learning ecosystem that successfully demonstrates the power of combining AI, AR, and gamification. Achieved 99% positive feedback at live exhibition with users praising the intuitive interface and engaging learning approach. Optimized leaderboard performance reducing response times by 67% through strategic Redis caching implementation. Advanced prompt engineering techniques improved AI-generated content relevance by 78%, ensuring contextually appropriate learning materials. Implemented robust authentication system preventing 95% of bot registrations through OTP verification. Built scalable microservices architecture capable of handling millions of concurrent users while maintaining sub-100ms object detection latency. The platform successfully addresses key pain points in traditional language learning: lack of context, poor pronunciation feedback, and disengagement through tedious exercises.',
 
-        demo: 'https://www.loom.com/share/932ba5037d364dde88049686bd45c0d3',
-        live: 'https://memingo-frontend-sooty.vercel.app/',
+        demo: 'https://youtube.com/shorts/zQuP206_KRM',
+        demoLinks: {
+            web: 'https://youtu.be/a1Akh-M-9LY',
+            mobile: 'https://youtube.com/shorts/zQuP206_KRM'
+        },
+        live: 'https://youtu.be/a1Akh-M-9LY',
         github: 'https://github.com/M-Talha-Atif/Memingo-Full-Stack-FYP',
         hero: '/memingoProject/hero/heroMemingo.png'
 }

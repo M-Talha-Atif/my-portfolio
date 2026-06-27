@@ -186,7 +186,7 @@ export default function Journey() {
                         <div className="p-2 rounded-lg bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30">
                             <Code2 className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         </div>
-                        <h3 className="text-2xl font-semibold">Developer Journey</h3>
+                        <h3 className="text-2xl font-semibold">Career Journey</h3>
                     </div>
 
                     <div className="space-y-4 text-subtext leading-relaxed">
