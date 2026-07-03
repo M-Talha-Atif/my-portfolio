@@ -18,7 +18,7 @@ export const projectsMetadata = [
     hero: '/moodlyProject/hero/moodly-hero.png?v=20260625',
     platforms: ['mobile'] as ('web' | 'mobile')[],
     tech: ['React Native', 'Nest.js', 'RabbitMQ', 'PostgreSQL', 'Redis'],
-    live: 'https://youtu.be/oe8ZT5kMd_c',
+    live: 'https://youtu.be/t1LwExQCpE0?si=3K8tpp9H2Zu5ONxo',
   },
   {
     slug: 'cunocovo',
