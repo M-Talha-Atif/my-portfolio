@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import AnalyticsProvider from '@/components/AnalyticsProvider'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
 
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <ThemeProvider>
-          <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
-        </ThemeProvider>
+        <AnalyticsProvider>
+          <ThemeProvider>
+            <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+          </ThemeProvider>
+        </AnalyticsProvider>
       </body>
     </html>
   )
