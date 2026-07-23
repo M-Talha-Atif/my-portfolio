@@ -67,27 +67,38 @@ const highlightClassName = 'text-white font-medium'
 
 const developerJourneyParagraphs: { id: string, content: ReactNode }[] = [
     {
-        id: 'freelance-android',
+        id: 'how-i-started',
         content: <>
-            I started out building <span className={highlightClassName}>Android apps</span> as a freelancer, small projects like a plant care app, learning how real software gets built by actually shipping things to users.
+            I started with <span className={highlightClassName}>Android development</span>, doing small freelance projects like a plant care app.<br />
+            I used to sit in direct client meetings myself to catch up on requirements.<br />
+            That&apos;s where I learned that building something a real person depends on is different from finishing a tutorial.
         </>
     },
     {
-        id: 'digital-upgraders',
+        id: 'side-project',
         content: <>
-            That led me to <span className={highlightClassName}>Digital Upgraders</span> where I joined as a <span className={highlightClassName}>full stack engineer</span> on a social media platform. The problems there were real and immediate. Feed loading was taking 3 seconds so I fixed it down to <span className={highlightClassName}>700ms</span> through query optimization, indexing, and caching. Notifications were duplicating because of race conditions in non-transactional queries, fixed that too. I migrated the whole infrastructure from <span className={highlightClassName}>AWS to Fly.io</span> without downtime, cleaned up a frontend codebase that had grown into 3000-line files, and fixed rendering bugs users were feeling on Android, iOS, and Safari. It was fast-paced and it taught me how to find problems that matter and fix them properly.
+            Then I built a side project, <span className={highlightClassName}>Moodly</span>, that changed how I think, less about just coding, more about user experience and systems.<br />
+            It taught me event-driven design with <span className={highlightClassName}>RabbitMQ</span>.<br />
+            I learned to improve user experience by cutting down clicks, not adding more screens.<br />
+            I added a mood-detection based experience discovery feature, one of the standout parts of the app.
         </>
     },
     {
-        id: 'microtechx-iga',
+        id: 'intimec-challenge',
         content: <>
-            Now at Microtechx I am building an <span className={highlightClassName}>Identity Governance and Administration</span> product in partnership with Intimec. IGA is what enterprises use to control who has access to what, track approvals, enforce policies, and stay compliant. I joined early and own significant parts of the product. I built the entire <span className={highlightClassName}>Access Portal</span> feature end to end, the <span className={highlightClassName}>entitlement rule engine</span>, the business roles catalog with hierarchy and cycle detection, workflow and debugging analytics, and the auditing system. Before writing a single line I ask what the use case is, what the edge cases are, and what business value it actually delivers. I care that features make the product better and drive real value, not just that they work technically.
+            Then at <span className={highlightClassName}>Intimec</span>, in the <span className={highlightClassName}>IGA</span> domain, the hardest part was untangling complex business requirements: multiple approval stages, multiple approvers, multiple approval items, multiple users.<br />
+            I broke that complexity into <span className={highlightClassName}>microservices</span> through an event-driven approach, built for scalability and failure isolation.<br />
+            I used <span className={highlightClassName}>gRPC</span> to cut down latency between services.<br />
+            This is where I shaped real, practical experience with microservices, gRPC, and user experience.
         </>
     },
     {
-        id: 'current-stack',
+        id: 'what-i-care-about',
         content: <>
-            Full stack across the whole journey, <span className={highlightClassName}>Java Spring Boot and Next.js React TypeScript</span> today, with <span className={highlightClassName}>distributed systems</span>, event-driven architecture, PostgreSQL, Kafka, OpenSearch, and gRPC in between.
+            My working style evolved from just writing code to actually caring about the person using it.<br />
+            Outside of code, I like reading about systems, backend design, and databases.<br />
+            My take is simple: if you build a feature in a vacuum, you end up in a vacuum too.<br />
+            You find the real pain points by being the user first, then bring your tech skills in to solve them.
         </>
     }
 ]

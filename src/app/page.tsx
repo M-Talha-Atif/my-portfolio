@@ -4,6 +4,7 @@ import Journey from '@/components/Journey'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import Footer from '@/components/Footer'
 import Achievements from '@/components/Achievements'
+import OpenSource from '@/components/OpenSource'
 import ContactClientOnly from '@/components/ContactClientOnly'
 import Skills from "@/components/Skills"
 
@@ -33,7 +34,11 @@ export default function Home() {
       <section id="achievements">
         <Achievements />
       </section>
-      
+
+      <section id="opensource">
+        <OpenSource />
+      </section>
+
       <ContactClientOnly />
 
       <Footer />

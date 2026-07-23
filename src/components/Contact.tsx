@@ -1,11 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Mail, Phone, Github, Linkedin } from 'lucide-react'
+import { Mail, Phone, Github, Linkedin, Calendar, MapPin } from 'lucide-react'
 import { useState } from 'react'
+import CalendlyModal from '@/components/CalendlyModal'
+import XLogo from '@/components/icons/XLogo'
 
 export default function Contact() {
     const [form, setForm] = useState({ name: '', email: '', message: '' })
     const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle')
+    const [schedulerOpen, setSchedulerOpen] = useState(false)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -33,6 +36,7 @@ export default function Contact() {
     }
 
     return (
+        <>
         <motion.section
             id="contact"
             initial={{ opacity: 0, y: 40 }}
@@ -152,6 +156,26 @@ export default function Contact() {
 
                     <ul className="space-y-5 text-subtext">
                         <li className="flex items-center gap-4 group">
+                            <div className="p-3 rounded-lg bg-[var(--color-accent-solid)]/10 group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                                <Calendar className="w-5 h-5 text-[var(--color-accent-solid)]" />
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setSchedulerOpen(true)}
+                                className="text-left text-base font-medium text-white hover:text-[var(--color-accent-solid)] transition"
+                            >
+                                Book a call directly →
+                            </button>
+                        </li>
+
+                        <li className="flex items-center gap-4 group">
+                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                                <MapPin className="w-5 h-5 text-[var(--color-accent-solid)]" />
+                            </div>
+                            <span className="text-base">Lahore, Pakistan</span>
+                        </li>
+
+                        <li className="flex items-center gap-4 group">
                             <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <Mail className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
@@ -195,9 +219,29 @@ export default function Contact() {
                                 linkedin.com/in/muhammad-talha-atif
                             </a>
                         </li>
+
+                        <li className="flex items-center gap-4 group">
+                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                                <XLogo className="w-5 h-5 text-[var(--color-accent-solid)]" />
+                            </div>
+                            <a
+                                href="https://x.com/talhaAtif195901"
+                                target="_blank"
+                                className="hover:text-white transition text-base"
+                            >
+                                x.com/talhaAtif195901
+                            </a>
+                        </li>
                     </ul>
                 </motion.div>
             </div>
         </motion.section>
+
+        <CalendlyModal
+            open={schedulerOpen}
+            onClose={() => setSchedulerOpen(false)}
+            subtext="No back and forth over email, pick a slot that works for you."
+        />
+        </>
     )
 }
