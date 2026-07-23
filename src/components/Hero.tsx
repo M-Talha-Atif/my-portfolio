@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { MapPin, Linkedin, Github, Code, Trophy, GitMerge } from 'lucide-react'
+import posthog from 'posthog-js'
 
 export default function Hero() {
   const techStack = [
@@ -46,6 +47,7 @@ export default function Hero() {
           <a
             href="/personal/Talha-Atif-Resume.pdf"
             download
+            onClick={() => posthog.capture('resume_downloaded')}
             className="px-6 py-3 text-black rounded-[12px] bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition"
           >
             Download My Resume
@@ -83,6 +85,7 @@ export default function Hero() {
             href="https://leetcode.com/u/TalhaAtif/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'leetcode' })}
             className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
             <Code className="w-4 h-4 text-[var(--color-accent-solid)]" />
@@ -94,6 +97,7 @@ export default function Hero() {
             href="https://github.com/M-Talha-Atif"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'github' })}
             className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
             <Github className="w-4 h-4 text-[var(--color-accent-solid)]" />
@@ -105,6 +109,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/muhammad-talha-atif/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'linkedin' })}
             className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
           >
             <Linkedin className="w-4 h-4 text-[var(--color-accent-solid)]" />
