@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import AnalyticsProvider from '@/components/AnalyticsProvider'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
@@ -34,6 +35,7 @@ export default function RootLayout({
             <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
           </ThemeProvider>
         </AnalyticsProvider>
+        <Analytics />
       </body>
     </html>
   )
