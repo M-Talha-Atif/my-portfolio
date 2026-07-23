@@ -1,7 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { MapPin, Linkedin, Github, Code, Trophy, GitMerge } from 'lucide-react'
 import posthog from 'posthog-js'
 import { Linkedin, Github, Code, Hammer, RefreshCw, Rocket, ArrowRight } from 'lucide-react'
 import XLogo from '@/components/icons/XLogo'
