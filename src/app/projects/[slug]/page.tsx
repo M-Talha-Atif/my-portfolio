@@ -10,6 +10,7 @@ import {
     Users, Server, AlertCircle, Network
 } from 'lucide-react'
 import Link from "next/link"
+import posthog from 'posthog-js'
 
 // Lazy load EVERYTHING heavy
 const VisualCarousel = lazy(() => import('@/components/VisualCarousel'))
@@ -167,17 +168,17 @@ export default function ProjectPage({ params }: Props) {
                 <p className="text-subtext text-lg">{project.short}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                     {project.live && (
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'live' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition">
                             <ExternalLink className="w-4 h-4" /> View Live
                         </a>
                     )}
                     {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'github' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
                             <Github className="w-4 h-4" /> Source Code
                         </a>
                     )}
                     {project.apk && (
-                        <a href={project.apk} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                        <a href={project.apk} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'apk' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
                             <Download className="w-4 h-4" /> Download APK
                         </a>
                     )}

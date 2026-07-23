@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, Github, Linkedin, Calendar, MapPin } from 'lucide-react'
 import { useState } from 'react'
+import posthog from 'posthog-js'
 import CalendlyModal from '@/components/CalendlyModal'
 import XLogo from '@/components/icons/XLogo'
 
@@ -24,13 +25,18 @@ export default function Contact() {
                 body: JSON.stringify(form),
             })
             if (res.ok) {
+                posthog.capture('contact_form_submitted', {
+                    message_length: form.message.length,
+                })
                 setStatus('sent')
                 setForm({ name: '', email: '', message: '' })
                 setTimeout(() => setStatus('idle'), 4000)
             } else {
+                posthog.capture('contact_form_failed')
                 setStatus('error')
             }
         } catch {
+            posthog.capture('contact_form_failed')
             setStatus('error')
         }
     }
@@ -181,6 +187,7 @@ export default function Contact() {
                             </div>
                             <a
                                 href="mailto:talhaatif573@gmail.com"
+                                onClick={() => posthog.capture('contact_link_clicked', { type: 'email' })}
                                 className="hover:text-white transition text-base"
                             >
                                 talhaatif573@gmail.com
@@ -201,6 +208,7 @@ export default function Contact() {
                             <a
                                 href="https://github.com/M-Talha-Atif"
                                 target="_blank"
+                                onClick={() => posthog.capture('contact_link_clicked', { type: 'github' })}
                                 className="hover:text-white transition text-base"
                             >
                                 github.com/M-Talha-Atif
@@ -214,6 +222,7 @@ export default function Contact() {
                             <a
                                 href="https://www.linkedin.com/in/muhammad-talha-atif/"
                                 target="_blank"
+                                onClick={() => posthog.capture('contact_link_clicked', { type: 'linkedin' })}
                                 className="hover:text-white transition text-base"
                             >
                                 linkedin.com/in/muhammad-talha-atif
