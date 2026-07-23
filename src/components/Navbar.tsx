@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Achievements', href: '#achievements' },
+    { name: 'Open Source', href: '#opensource' },
     { name: 'Journey', href: '#journey' },
     { name: 'Skills', href: '#skills' },
     // { name: 'Articles', href: '#articles' },

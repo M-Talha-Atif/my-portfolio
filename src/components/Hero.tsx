@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { MapPin, Linkedin, Github, Code, Trophy, GitMerge } from 'lucide-react'
 import posthog from 'posthog-js'
+import { Linkedin, Github, Code, Hammer, RefreshCw, Rocket, ArrowRight } from 'lucide-react'
+import XLogo from '@/components/icons/XLogo'
 
 export default function Hero() {
   const techStack = [
@@ -37,10 +39,17 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-bold mb-3">
           M. Talha Atif
         </h1>
-        <p className="text-lg text-subtext mb-6">
-          Full-Stack Engineer. I build secure, high-stakes platforms with a focus on real-time functionality and AI integration,
-          ensuring powerful performance and resilient backend systems.
-        </p>
+        <div className="text-lg text-subtext mb-6 space-y-3">
+          <p>
+            As a full stack engineer, I own product outcomes end to end, translating customer and business problems into reliable systems that deliver measurable value.
+          </p>
+          <p>
+            I design for failure, continuously challenging assumptions through resilience testing, observability, and chaos engineering.
+          </p>
+          <p>
+            I take responsibility beyond deployment, ensuring the product remains correct, available, and adaptable under real-world conditions.
+          </p>
+        </div>
 
         {/* === Buttons === */}
         <div className="flex gap-4 justify-center md:justify-start mb-8">
@@ -72,13 +81,8 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* === Location + Links === */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-5 text-subtext text-sm">
-          {/* Location */}
-          <div className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] shadow-sm">
-            <MapPin className="w-4 h-4 text-[var(--color-accent-solid)]" />
-            <span className="font-medium text-white/90">Lahore, Pakistan</span>
-          </div>
+        {/* === Links: 2 x 2 === */}
+        <div className="flex flex-col items-center md:items-start gap-3 mt-5 text-subtext text-sm">
 
           {/* LeetCode */}
           <a
@@ -136,36 +140,34 @@ export default function Hero() {
           />
         </div>
 
-        {/* === Cool Glass Cards for Achievements === */}
-        <div className="grid w-full max-w-[420px] grid-cols-2 gap-4">
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="glass flex min-h-[152px] flex-col items-center justify-start rounded-2xl border border-[rgba(255,255,255,0.05)] p-4 px-5 text-center shadow-lg"
-          >
-            <GitMerge className="mx-auto mb-3 h-6 w-6 text-[var(--color-accent-solid)]" />
-            <p className="mb-2 flex min-h-[56px] items-center text-center text-lg font-semibold text-white md:text-xl">
-              Open Source
-            </p>
-            <p className="flex min-h-[40px] items-center text-center text-sm leading-relaxed text-subtext">
-              Apache Checkstyle Contributor
-            </p>
-          </motion.div>
-
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="glass flex min-h-[152px] flex-col items-center justify-start rounded-2xl border border-[rgba(255,255,255,0.05)] p-4 px-5 text-center shadow-lg"
-          >
-            <Trophy className="mx-auto mb-3 h-6 w-6 text-[var(--color-accent-solid)]" />
-            <p className="mb-2 flex min-h-[56px] items-center text-center text-lg font-semibold text-white md:text-xl">
-              Runner-up
-            </p>
-            <p className="flex min-h-[40px] items-center text-center text-sm leading-relaxed text-subtext">
-              App Dev Hackathon, Punjab University 2025
-            </p>
-          </motion.div>
-        </div>
+        {/* === Build / Iterate / Ship diagram === */}
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="glass w-full max-w-[420px] rounded-2xl border border-[rgba(255,255,255,0.05)] p-5 shadow-lg"
+        >
+          <div className="flex items-center justify-between gap-2">
+            {[
+              { label: 'Build', Icon: Hammer },
+              { label: 'Iterate', Icon: RefreshCw },
+              { label: 'Ship', Icon: Rocket },
+            ].map(({ label, Icon }, idx, arr) => (
+              <div key={label} className="flex items-center gap-2 flex-1">
+                <div className="flex flex-col items-center gap-2 flex-1">
+                  <div className="w-10 h-10 rounded-full bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-4 h-4 text-[var(--color-accent-solid)]" />
+                  </div>
+                  <span className="text-xs font-medium text-white">{label}</span>
+                </div>
+                {idx < arr.length - 1 && (
+                  <ArrowRight className="w-4 h-4 text-subtext flex-shrink-0" aria-hidden="true" />
+                )}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-xs text-subtext">
+            Continuous delivery, not a one-time release.
+          </p>
+        </motion.div>
       </motion.div>
     </section>
   )

@@ -9,7 +9,7 @@ export default function ClientLayoutWrapper({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  const hideNavbar = pathname.startsWith('/projects/')
+  const hideNavbar = pathname.startsWith('/projects/') || pathname.startsWith('/r/')
 
   return (
     <>
