@@ -1,6 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { MapPin, Linkedin, Github, Code, Trophy, GitMerge } from 'lucide-react'
+import posthog from 'posthog-js'
 import { Linkedin, Github, Code, Hammer, RefreshCw, Rocket, ArrowRight } from 'lucide-react'
 import XLogo from '@/components/icons/XLogo'
 
@@ -54,6 +56,7 @@ export default function Hero() {
           <a
             href="/personal/Talha-Atif-Resume.pdf"
             download
+            onClick={() => posthog.capture('resume_downloaded')}
             className="px-6 py-3 text-black rounded-[12px] bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition"
           >
             Download My Resume
@@ -81,51 +84,41 @@ export default function Hero() {
         {/* === Links: 2 x 2 === */}
         <div className="flex flex-col items-center md:items-start gap-3 mt-5 text-subtext text-sm">
 
-          {/* Row 1 — LeetCode + GitHub */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            <a
-              href="https://leetcode.com/u/TalhaAtif/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
-            >
-              <Code className="w-4 h-4 text-[var(--color-accent-solid)]" />
-              <span className="font-medium">LeetCode</span>
-            </a>
+          {/* LeetCode */}
+          <a
+            href="https://leetcode.com/u/TalhaAtif/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'leetcode' })}
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
+          >
+            <Code className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">LeetCode</span>
+          </a>
 
-            <a
-              href="https://github.com/M-Talha-Atif"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
-            >
-              <Github className="w-4 h-4 text-[var(--color-accent-solid)]" />
-              <span className="font-medium">GitHub</span>
-            </a>
-          </div>
+          {/* GitHub */}
+          <a
+            href="https://github.com/M-Talha-Atif"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'github' })}
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
+          >
+            <Github className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">GitHub</span>
+          </a>
 
-          {/* Row 2 — LinkedIn + X */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            <a
-              href="https://www.linkedin.com/in/muhammad-talha-atif/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
-            >
-              <Linkedin className="w-4 h-4 text-[var(--color-accent-solid)]" />
-              <span className="font-medium">LinkedIn</span>
-            </a>
-
-            <a
-              href="https://x.com/talhaAtif195901"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
-            >
-              <XLogo className="w-4 h-4 text-[var(--color-accent-solid)]" />
-              <span className="font-medium">X</span>
-            </a>
-          </div>
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/muhammad-talha-atif/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'linkedin' })}
+            className="flex items-center gap-2 bg-[rgba(255,255,255,0.03)] px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.06)] hover:border-[var(--color-accent-solid)]/50 hover:text-[var(--color-accent-solid)] transition-all shadow-sm"
+          >
+            <Linkedin className="w-4 h-4 text-[var(--color-accent-solid)]" />
+            <span className="font-medium">LinkedIn</span>
+          </a>
         </div>
 
       </motion.div>

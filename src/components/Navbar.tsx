@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react' // using lucide-react icons
+import posthog from 'posthog-js'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -35,6 +36,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
+              onClick={() => posthog.capture('nav_section_navigated', { section: item.name.toLowerCase() })}
               className="text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] transition"
             >
               {item.name}
@@ -60,7 +62,10 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  setMenuOpen(false)
+                  posthog.capture('nav_section_navigated', { section: item.name.toLowerCase() })
+                }}
                 className="text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] transition"
               >
                 {item.name}

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { projectsMetadata } from '@/lib/projects/index'
 import { ExternalLink, FileText } from 'lucide-react'
 import Image from "next/image";
+import posthog from 'posthog-js'
 
 export default function ProjectsGrid() {
   return (
@@ -74,6 +75,7 @@ export default function ProjectsGrid() {
                   href={p.live}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => posthog.capture('project_live_demo_clicked', { project: p.slug, project_title: p.title })}
                   className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[var(--color-accent-solid)] text-black hover:brightness-110 transition"
                 >
                   <ExternalLink className="w-4 h-4" /> Live Demo
@@ -81,6 +83,7 @@ export default function ProjectsGrid() {
               )}
               <Link
                 href={`/projects/${p.slug}`}
+                onClick={() => posthog.capture('project_case_study_clicked', { project: p.slug, project_title: p.title })}
                 className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition text-subtext"
               >
                 <FileText className="w-4 h-4" /> Case Study
