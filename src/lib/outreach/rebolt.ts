@@ -35,7 +35,7 @@ export const reboltOutreach: OutreachPage = {
       'I built Moodly, an AI inference pipeline, solo end to end using FastAPI on the backend with async processing via RabbitMQ and Hugging Face models on the AI side, and separately built full products with Node.js and Next.js/React.',
     overlap:
       "Direct experience with Python/FastAPI and Node/TypeScript/Next.js, plus applied AI work with LangChain, LangGraph, and RAG. I haven't built a full agentic code-generation platform specifically, so that exact problem is new ground, but the underlying stack is a direct match.",
-    projectImage: '/moodlyProject/hero/hero.png',
+    projectImage: '/moodlyProject/hero/moodly-hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/moodly',
   },
