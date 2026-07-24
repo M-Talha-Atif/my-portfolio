@@ -28,6 +28,11 @@ export const outreachPagesMetadata = [
     company: 'Ellipsis',
     role: 'Founding AI Engineer',
   },
+  {
+    slug: 'zynix',
+    company: 'Zynix AI',
+    role: 'Backend Engineer',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -52,6 +57,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'ellipsis') {
       const { ellipsisOutreach } = await import('./ellipsis')
       return ellipsisOutreach
+    }
+    if (slug === 'zynix') {
+      const { zynixOutreach } = await import('./zynix')
+      return zynixOutreach
     }
     return null
   } catch (error) {
