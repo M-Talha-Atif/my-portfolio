@@ -6,10 +6,9 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
 
 export const metadata: Metadata = {
-  title: 'M. Talha Atif Full Stack Developer',
-  description:
-    'Professional portfolio of M. Talha Atif, a Full Stack Developer specializing in backend development, AI apps, and modern full stack technologies',
-
+  title: 'M. Talha Atif Full Stack Engineer | Backend Engineer | Distributed Systems | IGA',
+  description: `I own product outcomes end to end, translating customer and business problems into reliable systems that deliver measurable value.
+  I design for failure, continuously challenging assumptions through resilience testing, observability, and chaos engineering.`,
   icons: {
     icon: [
       { url: '/faviIcons/favicon.ico', sizes: 'any' },
