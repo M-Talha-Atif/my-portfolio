@@ -43,6 +43,11 @@ export const outreachPagesMetadata = [
     company: 'Artemis Security',
     role: 'Backend Engineer (informational)',
   },
+  {
+    slug: 'texagon',
+    company: 'Texagon',
+    role: 'Jr. Software Engineer',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -79,6 +84,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'artemis') {
       const { artemisOutreach } = await import('./artemis')
       return artemisOutreach
+    }
+    if (slug === 'texagon') {
+      const { texagonOutreach } = await import('./texagon')
+      return texagonOutreach
     }
     return null
   } catch (error) {
