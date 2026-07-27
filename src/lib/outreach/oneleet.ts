@@ -11,7 +11,7 @@ export const oneleetOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'I have spent two years building the exact compliance grade systems you are now selling as a platform, and I know where the theater usually hides.',
+    headline: 'I have built the exact compliance grade systems you are now selling as a platform, and I know where the theater usually hides.',
     subtext: 'A technical introduction prepared for Oneleet, built around the direct overlap between your product, access reviews, audit trails, risk management, and the IAM and compliance systems I have actually owned.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
