@@ -219,9 +219,12 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
 
       {/* SECTION 6 — HIRING PATHS */}
       <section className="py-10 border-t border-[rgba(255,255,255,0.06)] mt-2">
-        <h2 className="text-xl font-semibold mb-2">How you'd like to evaluate me</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          {data.hiringPathsHeading ?? "How you'd like to evaluate me"}
+        </h2>
         <p className="text-subtext text-sm mb-8 max-w-2xl">
-          All three are equally welcome, this is just about whatever gets you comfortable fastest.
+          {data.hiringPathsSubtext ??
+            'All three are equally welcome, this is just about whatever gets you comfortable fastest.'}
         </p>
         <div className="grid md:grid-cols-3 gap-5">
           {data.hiringPaths.map((path) => (
