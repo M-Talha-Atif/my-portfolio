@@ -54,6 +54,13 @@ export type OutreachPage = {
     ctaTarget: string
   }[]
 
+  // Optional overrides for the hiringPaths section heading/subtext — most
+  // outreach pages are job pitches and want the default "How you'd like to
+  // evaluate me" framing, but a non-job outreach (e.g. an open source note)
+  // can override both to avoid hiring language that wouldn't fit.
+  hiringPathsHeading?: string
+  hiringPathsSubtext?: string
+
   scheduling: {
     url: string
     heading: string
