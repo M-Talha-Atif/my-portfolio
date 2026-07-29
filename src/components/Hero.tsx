@@ -53,7 +53,7 @@ export default function Hero() {
         {/* === Buttons === */}
         <div className="flex gap-4 justify-center md:justify-start mb-8">
           <a
-            href="/personal/Talha-Atif-Resume.pdf"
+            href="/personal/M.Talha-Atif-Full-Stack.pdf"
             download
             onClick={() => posthog.capture('resume_downloaded')}
             className="px-6 py-3 text-black rounded-[12px] bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition"
