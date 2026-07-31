@@ -11,18 +11,26 @@ export const diliOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'Full-stack and LLM document engineering for a compliance platform built to move faster than the paperwork.',
+    headline: 'Full-stack and LLM document engineering for a compliance platform built to **move faster than the paperwork**.',
     subtext: 'A technical introduction prepared specifically for Dili, based on the live Founding Engineer, Full Stack posting.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Python + React stack match', 'Zero-downtime migration at 5M+ scale', 'Structured document extraction experience'],
+
+  keyStats: [
+    { value: '5M+', label: 'Documents migrated, zero downtime' },
+    { value: '100K+', label: 'Logs handled per cycle' },
+    { value: '0', label: 'Downtime during the cutover' },
+  ],
+
   whatYouAreSolving: {
     points: [
       'Turning prevailing-wage and apprenticeship compliance, dense regulatory paperwork that gates federal clean-energy funding, into something a project team can actually keep up with',
-      'Building real-time UX (websockets/SSE) on top of an LLM-driven document-extraction pipeline across a Python/Django backend and React frontend',
-      'Joining as the founding engineer, defining engineering culture rather than inheriting one',
+      'Building **real-time UX (websockets/SSE)** on top of an **LLM-driven document-extraction pipeline** across a Python/Django backend and React frontend',
+      'Joining as the **founding engineer**, defining engineering culture rather than inheriting one',
     ],
   },
 
@@ -30,11 +38,11 @@ export const diliOutreach: OutreachPage = {
     intro:
       "Dili started as an AI copilot for PE/VC due diligence and has since moved into a much more concrete, physical-world problem: keeping clean-energy projects compliant with prevailing-wage and apprenticeship rules so funding doesn't get pulled. That pivot itself is a signal, going from a general 'AI reads documents' pitch to a specific, high-stakes compliance workflow real project teams depend on.",
     companyProblem:
-      'The Founding Engineer role spans real-time UX (websockets/SSE), an LLM-driven document-extraction pipeline, and specialized agents for metric extraction, on a Python/Django backend with a React frontend, AWS deployed via Terraform.',
+      'The Founding Engineer role spans **real-time UX (websockets/SSE)**, an **LLM-driven document-extraction pipeline**, and specialized agents for metric extraction, on a Python/Django backend with a React frontend, AWS deployed via Terraform.',
     myExperience:
       "I built Moodly's AI inference pipeline with FastAPI and Hugging Face models, and separately built full products with React and backend systems handling structured data extraction and validation at Intimec.",
     overlap:
-      "Direct overlap on Python and React, and on the underlying problem, extracting structured, trustworthy data from messy documents. Django specifically and Terraform would both be new ground for me, I've used Spring Boot, FastAPI, and Express, plus Docker and GitHub Actions but not Terraform, so I want to name that honestly rather than imply otherwise.",
+      "**Direct overlap on Python and React**, and on the underlying problem, extracting structured, trustworthy data from messy documents. **Django specifically and Terraform would both be new ground** for me, I've used Spring Boot, FastAPI, and Express, plus Docker and GitHub Actions but not Terraform, so I want to name that honestly rather than imply otherwise.",
     projectImage: '/moodlyProject/hero/moodly-hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/moodly',
@@ -48,7 +56,7 @@ export const diliOutreach: OutreachPage = {
     tradeoff:
       'More steps and temporary duplicate storage during reindexing, versus a faster but downtime-requiring in-place migration.',
     result:
-      '5M+ documents migrated with zero downtime, analytics handling 100K+ logs per cycle without failure.',
+      '**5M+ documents migrated with zero downtime**, analytics handling **100K+ logs per cycle** without failure.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const diliOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I haven't worked with Django or Terraform specifically, so I want to name that as real new ground rather than glossing over it. But the core problem, getting structured, trustworthy data out of messy documents at scale, is one I've built for before, and I'd welcome a conversation about where that transfers.",
+      "**I haven't worked with Django or Terraform specifically**, so I want to name that as real new ground rather than glossing over it. But the core problem, getting structured, trustworthy data out of messy documents at scale, is one I've built for before, and I'd welcome a conversation about where that transfers.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

@@ -11,30 +11,38 @@ export const wildcardOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'I have built the same kind of trustworthy structured data systems you built at Scale AI, just aimed at identity and access instead of ecommerce SKUs.',
+    headline: 'I have built the same kind of trustworthy structured data systems you built at Scale AI, just aimed at **identity and access instead of ecommerce SKUs**.',
     subtext: 'A technical introduction prepared specifically for Wildcard, based on the live Founding Engineer posting and the enrichment engine work you did at Scale AI.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Structured data at scale, verified', 'Zero-downtime migration experience', 'AI agent observability contribution'],
+
+  keyStats: [
+    { value: '50%', label: 'Month over month growth, Wildcard' },
+    { value: '5M+', label: 'Documents I migrated, zero downtime' },
+    { value: '2.8M', label: 'Attributes Kaushik managed at Scale AI' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Being engineer number one at a company growing 50 percent month over month, owning frontend, backend, queues, browser automation, and reliability with no existing team to hand decisions to',
-      'Making agentic commerce data trustworthy at scale, the same shape of problem as making 2.8 million attributes across hundreds of taxonomies trustworthy, just aimed at a different domain',
+      'Being **engineer number one** at a company growing **50 percent month over month**, owning frontend, backend, queues, browser automation, and reliability with no existing team to hand decisions to',
+      'Making agentic commerce data trustworthy at scale, the same shape of problem as making **2.8 million attributes** across hundreds of taxonomies trustworthy, just aimed at a different domain',
       'Building the reliability and observability layer, queues, retries, evals, that a fast moving AI native product needs before real ecommerce brands can trust it',
     ],
   },
 
   relevantEvidence: {
     intro:
-      "Wildcard's core problem, structured data at scale that has to be trustworthy enough for a real business decision, is the same shape of problem you solved at Scale AI with 400,000 SKUs and 2.8 million attributes across hundreds of taxonomies. I have solved that shape of problem before, aimed at identity instead of ecommerce.",
+      "Wildcard's core problem, structured data at scale that has to be trustworthy enough for a real business decision, is the same shape of problem you solved at Scale AI with **400,000 SKUs and 2.8 million attributes** across hundreds of taxonomies. I have solved that shape of problem before, aimed at identity instead of ecommerce.",
     companyProblem:
-      'The Founding Engineer role owns the full stack, frontend, backend, queues, browser automation, and reliability, plus the AI agent and MCP layer that makes the product agent native, as engineer number one at a company growing 50 percent month over month.',
+      'The Founding Engineer role owns the full stack, frontend, backend, queues, browser automation, and reliability, plus the AI agent and MCP layer that makes the product agent native, as **engineer number one** at a company growing 50 percent month over month.',
     myExperience:
-      'At Intimec I owned an enterprise IAM platform end to end, including an entitlement rule engine built across 7 categories of conditions, and a Kafka based approval pipeline with dead letter queues for reliability. I also migrated a 5 million document OpenSearch index with zero downtime after a schema drift issue caused mapping conflicts on high cardinality fields, structurally the same problem as keeping large scale attribute data consistent and trustworthy. I am also contributing to OpenTracer, an AI agent observability platform, the same layer of the stack as the evals and orchestration tooling this role needs.',
+      'At Intimec I owned an enterprise IAM platform end to end, including an entitlement rule engine built across 7 categories of conditions, and a Kafka based approval pipeline with dead letter queues for reliability. I also **migrated a 5 million document OpenSearch index with zero downtime** after a schema drift issue caused mapping conflicts on high cardinality fields, structurally the same problem as keeping large scale attribute data consistent and trustworthy. I am also contributing to **OpenTracer, an AI agent observability platform**, the same layer of the stack as the evals and orchestration tooling this role needs.',
     overlap:
-      'Direct overlap on reliability, queues, and structured data at scale, plus applied AI agent tooling through OpenTracer. Two honest gaps named directly. I have not built browser automation or scraping infrastructure specifically, and my production experience has been remote, not onsite in the US, so the citizenship or visa requirement on this posting is a real open question I do not have an answer to yet.',
+      '**Direct overlap on reliability, queues, and structured data at scale**, plus applied AI agent tooling through OpenTracer. **Two honest gaps named directly.** I have not built browser automation or scraping infrastructure specifically, and my production experience has been remote, not onsite in the US, so the citizenship or visa requirement on this posting is a real open question I do not have an answer to yet.',
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const wildcardOutreach: OutreachPage = {
     tradeoff:
       'More steps and temporary duplicate storage during reindexing, versus a faster but downtime requiring in place migration.',
     result:
-      '5 million plus documents migrated with zero downtime, analytics handling 100,000 plus logs per cycle without failure afterward.',
+      '**5 million plus documents migrated with zero downtime**, analytics handling **100,000 plus logs per cycle** without failure afterward.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const wildcardOutreach: OutreachPage = {
 
   closing: {
     note:
-      'I want to be direct about two things. I have not built browser automation or scraping infrastructure specifically, and I do not yet know whether the citizenship or visa requirement on this posting rules me out. The reliability, structured data, and applied AI experience underneath this role is real and already built. I would welcome a direct conversation about whether the rest can work.',
+      'I want to be direct about two things. **I have not built browser automation or scraping infrastructure specifically, and I do not yet know whether the citizenship or visa requirement on this posting rules me out.** The reliability, structured data, and applied AI experience underneath this role is real and already built. I would welcome a direct conversation about whether the rest can work.',
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

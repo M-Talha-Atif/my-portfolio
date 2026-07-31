@@ -11,18 +11,26 @@ export const vendraOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'Full-stack engineering for a manufacturing platform that has to get sourcing right.',
+    headline: 'Full-stack engineering for a manufacturing platform that has to **get sourcing right**.',
     subtext: 'A short technical introduction prepared specifically for Vendra, based on the Full Stack Engineer (Security and Cloud) posting.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Full stack ownership, frontend to backend', 'Transactional systems, zero data corruption', 'Applied AI product built solo'],
+
+  keyStats: [
+    { value: '0', label: 'Data-integrity incidents since launch' },
+    { value: '2', label: 'Person team, full ownership' },
+    { value: '1', label: 'AI product built solo, end to end' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Building the frontend, backend, APIs, and data systems behind an RFQ-to-delivery sourcing platform for aerospace and defense hardware teams',
-      'Keeping a fast-moving, high-ownership engineering surface reliable while the company scales past its first enterprise customers',
-      'Bringing AI workflows into a process that used to run on manual quoting and spreadsheets',
+      'Building the **frontend, backend, APIs, and data systems** behind an RFQ-to-delivery sourcing platform for aerospace and defense hardware teams',
+      'Keeping a fast-moving, **high-ownership engineering surface reliable** while the company scales past its first enterprise customers',
+      'Bringing **AI workflows** into a process that used to run on manual quoting and spreadsheets',
     ],
   },
 
@@ -30,11 +38,11 @@ export const vendraOutreach: OutreachPage = {
     intro:
       "Vendra is automating something that used to be a slow, manual RFQ process for hardware teams. That's the same shape of problem I keep running into: replacing an ad hoc manual process with a structured, auditable system without losing the trust that made the manual process work in the first place.",
     companyProblem:
-      "Vendra's Full Stack role spans frontend, backend, APIs, data systems, infrastructure, and AI workflows, with real ownership expected from day one.",
+      "Vendra's Full Stack role spans **frontend, backend, APIs, data systems, infrastructure, and AI workflows**, with real ownership expected from day one.",
     myExperience:
-      'At Intimec I built an access request system from scratch, tile catalog, cart, multi-user requests, department scoping, as the sole owner on a 2-person engineering team, and separately built an AI inference pipeline (Moodly) end to end, from data model to deployed mobile UI.',
+      'At Intimec I built an access request system **from scratch**, tile catalog, cart, multi-user requests, department scoping, as the **sole owner on a 2-person engineering team**, and separately built an AI inference pipeline (Moodly) end to end, from data model to deployed mobile UI.',
     overlap:
-      "Direct experience owning a full product surface end to end, plus backend work with Java/Spring Boot, Node.js, PostgreSQL, and REST APIs. I haven't touched ITAR or defense-specific compliance work, so I want to be upfront about that rather than imply otherwise.",
+      "**Direct experience owning a full product surface end to end**, plus backend work with Java/Spring Boot, Node.js, PostgreSQL, and REST APIs. **I haven't touched ITAR or defense-specific compliance work**, so I want to be upfront about that rather than imply otherwise.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const vendraOutreach: OutreachPage = {
     tradeoff:
       'More upfront complexity in the transaction boundaries compared to a simpler per-item write, in exchange for never having to reconcile corrupted requests later.',
     result:
-      'A working self-service system the company still uses for all access management, with no data-integrity incidents since launch.',
+      '**A working self-service system the company still uses for all access management**, with **no data-integrity incidents since launch**.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const vendraOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I'm not claiming ITAR-cleared or defense-compliance experience, and I'd rather say that directly than let it come up later. But if there's non-restricted engineering work, on the platform, integrations, or AI workflows, where a remote full-stack engineer could help, I'd welcome a short conversation.",
+      "**I'm not claiming ITAR-cleared or defense-compliance experience**, and I'd rather say that directly than let it come up later. But if there's non-restricted engineering work, on the platform, integrations, or AI workflows, where a remote full-stack engineer could help, I'd welcome a short conversation.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

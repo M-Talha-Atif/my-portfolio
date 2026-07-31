@@ -11,30 +11,38 @@ export const preciselyOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'I already treat unverified output, whether from a teammate or an AI agent, as a claim to check, not a fact to accept. That is the same discipline data integrity requires.',
+    headline: 'I already treat unverified output, whether from a teammate or an AI agent, as **a claim to check, not a fact to accept**. That is the same discipline data integrity requires.',
     subtext: 'A technical introduction prepared specifically for Precisely, based on the live Associate Software Engineer, Master Data Management posting.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Concurrency bug fixed, verified', 'Adversarial test design experience', 'AI-first, verification built in'],
+
+  keyStats: [
+    { value: '12,000+', label: 'Organizations Precisely serves' },
+    { value: '26', label: 'Person adversarial test dataset built' },
+    { value: '0', label: 'Duplicate notifications since the fix' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Keeping Master Data Management correct and trustworthy across integrations, workflows, and analytics, the same single source of truth problem as an identity governance platform, just aimed at business data instead of identities',
-      'Building full stack features in Java and React or Angular that stay reliable under concurrent load, not just correct on the happy path',
-      'Working AI first, using coding agents to move faster while still personally validating every AI generated suggestion against real behavior before it ships',
+      'Keeping Master Data Management correct and trustworthy across integrations, workflows, and analytics, the **same single source of truth problem** as an identity governance platform, just aimed at business data instead of identities',
+      'Building full stack features in **Java and React or Angular** that stay reliable under concurrent load, not just correct on the happy path',
+      'Working **AI first**, using coding agents to move faster while still personally validating every AI generated suggestion against real behavior before it ships',
     ],
   },
 
   relevantEvidence: {
     intro:
-      "Precisely's own pitch is trust in data at scale, 12,000plus organizations, 95 of the Fortune 100. That claim holds up best when the people building the platform have already worked somewhere data correctness was a strict, non negotiable requirement, not a nice to have.",
+      "Precisely's own pitch is trust in data at scale, **12,000plus organizations, 95 of the Fortune 100**. That claim holds up best when the people building the platform have already worked somewhere data correctness was a strict, non negotiable requirement, not a nice to have.",
     companyProblem:
-      'The role builds full stack features in Java and React or Angular, designs REST APIs and service integrations for MDM workflows, and expects a test driven mindset covering thread safety, mocking, and test quality gates, inside an AI first engineering culture that uses coding agents daily.',
+      'The role builds full stack features in **Java and React or Angular**, designs REST APIs and service integrations for MDM workflows, and expects a **test driven mindset** covering thread safety, mocking, and test quality gates, inside an AI first engineering culture that uses coding agents daily.',
     myExperience:
-      'At Intimec I owned the Access Portal end to end on a Java and Spring Boot backend with a React and Next.js frontend, tuned Kafka consumer counts for throughput without contention, and caught a compliance critical rule engine bug by building a deliberate adversarial test dataset rather than trusting code review alone. At Digital Upgraders I traced and fixed a duplicate notification race condition under concurrent load. Claude and GitHub Copilot are daily tools for me, and I validate every AI suggested change against real call sites before merging it.',
+      'At Intimec I owned the Access Portal end to end on a **Java and Spring Boot backend** with a **React and Next.js frontend**, tuned Kafka consumer counts for throughput without contention, and caught a compliance critical rule engine bug by building a deliberate adversarial test dataset rather than trusting code review alone. At Digital Upgraders I **traced and fixed a duplicate notification race condition** under concurrent load. Claude and GitHub Copilot are daily tools for me, and I validate every AI suggested change against real call sites before merging it.',
     overlap:
-      'Direct overlap on Java, React, REST APIs, concurrency, and daily AI assisted engineering with a verification habit already built in. Honest note, my production experience is in identity governance, not Master Data Management specifically, though the underlying problem, keeping a single source of truth correct under strict rules, is the same shape.',
+      '**Direct overlap on Java, React, REST APIs, concurrency, and daily AI assisted engineering** with a verification habit already built in. **Honest note, my production experience is in identity governance, not Master Data Management specifically**, though the underlying problem, keeping a single source of truth correct under strict rules, is the same shape.',
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const preciselyOutreach: OutreachPage = {
     tradeoff:
       'A unique constraint alone would have thrown ugly errors under the race, and a transaction alone still left a narrow window without the constraint. Doing both cost a small amount of complexity for a guarantee that actually holds under concurrent load.',
     result:
-      'Race condition eliminated entirely, with no duplicate notifications since.',
+      '**Race condition eliminated entirely**, with no duplicate notifications since.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const preciselyOutreach: OutreachPage = {
 
   closing: {
     note:
-      'I want to name one thing honestly. My production experience is in identity governance, not Master Data Management specifically. What I can say is that the underlying discipline, keeping a single source of truth correct under strict rules, catching what a quick look would miss, and verifying rather than assuming, is one I already practice daily, on code and on AI output alike.',
+      'I want to name one thing honestly. **My production experience is in identity governance, not Master Data Management specifically.** What I can say is that the underlying discipline, keeping a single source of truth correct under strict rules, catching what a quick look would miss, and verifying rather than assuming, is one I already practice daily, on code and on AI output alike.',
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

@@ -11,17 +11,25 @@ export const oneleetOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'I have built the exact compliance grade systems you are now selling as a platform, and I know where the theater usually hides.',
+    headline: 'I have built the exact compliance grade systems you are now selling as a platform, and I know **where the theater usually hides**.',
     subtext: 'A technical introduction prepared for Oneleet, built around the direct overlap between your product, access reviews, audit trails, risk management, and the IAM and compliance systems I have actually owned.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Compliance-grade IAM systems built', 'Adversarial verification instinct', 'Direct, no-hedge communication'],
+
+  keyStats: [
+    { value: '$33M', label: 'Series A Oneleet just raised' },
+    { value: '26', label: 'Person adversarial test dataset built' },
+    { value: '0', label: 'PII exposure after audit refactor' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Growing engineering quickly after a $33M Series A, while keeping the real security you are selling against rather than the theater the product is explicitly built to replace',
-      "Backend and fullstack roles that own real compliance surfaces end to end, access reviews, audit trails, risk mapping, not ticket execution against someone else's spec",
+      'Growing engineering quickly after a **$33M Series A**, while keeping the real security you are selling against rather than the theater the product is explicitly built to replace',
+      "Backend and fullstack roles that own real compliance surfaces end to end, **access reviews, audit trails, risk mapping**, not ticket execution against someone else's spec",
       'Hiring engineers who have actually lived the compliance problem from the inside, not just wired up an API that returns a checkbox',
     ],
   },
@@ -30,11 +38,11 @@ export const oneleetOutreach: OutreachPage = {
     intro:
       "Oneleet's own pitch is that most compliance platforms are theater, and real security is what you are actually selling. That claim holds up best when the people building it have actually built compliance sensitive systems before, not just read about SOC 2 in a spec sheet.",
     companyProblem:
-      'The open backend and fullstack roles center on Go, PostgreSQL, and third party integrations, building the access review, audit, and risk infrastructure the platform runs on, inside a fast moving Series A engineering team.',
+      'The open backend and fullstack roles center on **Go, PostgreSQL, and third party integrations**, building the access review, audit, and risk infrastructure the platform runs on, inside a fast moving Series A engineering team.',
     myExperience:
-      'At Intimec I owned an enterprise IAM platform end to end on a two person team, including the entitlement rule engine and the access request and audit pipeline underneath it. I refactored the entire audit log schema to remove raw personal data while preserving full forensic traceability, the same compliance versus utility trade off your platform is built around.',
+      'At Intimec I owned an **enterprise IAM platform end to end** on a two person team, including the entitlement rule engine and the access request and audit pipeline underneath it. I **refactored the entire audit log schema to remove raw personal data** while preserving full forensic traceability, the same compliance versus utility trade off your platform is built around.',
     overlap:
-      'Direct domain overlap on access governance, audit trails, and compliance sensitive data modeling, the exact surface area of Access Reviews and Risk Management. Honest gap, my production backend work has been in Java, Node, and Python, not Go, so the language itself would be new, though the systems I have built map closely to what this role actually owns.',
+      '**Direct domain overlap on access governance, audit trails, and compliance sensitive data modeling**, the exact surface area of Access Reviews and Risk Management. **Honest gap, my production backend work has been in Java, Node, and Python, not Go**, so the language itself would be new, though the systems I have built map closely to what this role actually owns.',
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const oneleetOutreach: OutreachPage = {
     tradeoff:
       'Removing personal data outright would have been faster but would have broken forensic traceability during a real investigation. Keeping raw personal data was the easy path but left exactly the exposure a real audit would flag.',
     result:
-      'Restored compliance alignment while preserving the audit detail needed for investigation, treating compliance and forensic usefulness as compatible rather than a trade off where one side has to lose.',
+      '**Restored compliance alignment while preserving the audit detail** needed for investigation, treating compliance and forensic usefulness as compatible rather than a trade off where one side has to lose.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const oneleetOutreach: OutreachPage = {
 
   closing: {
     note:
-      'I do not have production Go experience today, and I want to name that plainly rather than imply otherwise. But the systems knowledge underneath this role, access governance, audit integrity, compliance versus usability trade offs, is not new to me, it is what I have already built. I would welcome a direct conversation about where that transfers.',
+      '**I do not have production Go experience today**, and I want to name that plainly rather than imply otherwise. But the systems knowledge underneath this role, access governance, audit integrity, compliance versus usability trade offs, is not new to me, it is what I have already built. I would welcome a direct conversation about where that transfers.',
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

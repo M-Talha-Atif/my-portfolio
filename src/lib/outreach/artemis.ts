@@ -11,30 +11,38 @@ export const artemisOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'A note from an engineer who is honestly not a fit for your open role yet, written anyway.',
+    headline: 'A note from an engineer who is honestly **not a fit for your open role yet**, written anyway.',
     subtext: "A short technical introduction prepared for Artemis, after reading about the ClickHouse-powered detection pipeline and the Slack-native coding agent.",
     ctaLabel: 'See why I wrote this anyway ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Honest gap, not a role pitch', 'Reliability-at-scale experience', 'AI-native engineering habits'],
+
+  keyStats: [
+    { value: '15,000+', label: 'TB/day Artemis processes' },
+    { value: '69x', label: 'Faster detection queries, their claim' },
+    { value: '2yr', label: 'My experience vs their 4+ ask' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Processing 15,000+ TB of security telemetry a day, with detection queries running 69x faster on ClickHouse',
+      'Processing **15,000+ TB of security telemetry a day**, with detection queries running **69x faster** on ClickHouse',
       "Building AI agents that hunt threats and investigate findings fast enough to matter against AI-powered attackers",
-      'Shipping product changes through a Slack-native coding agent that opened 1,500+ PRs in a month',
+      'Shipping product changes through a Slack-native coding agent that opened **1,500+ PRs in a month**',
     ],
   },
 
   relevantEvidence: {
     intro:
-      "I want to be upfront about something most outreach like this pretends isn't true: the open Product Engineer role asks for 4+ years of experience and a founder background, and the team appears to require US work authorization with on-site relocation to NYC. I'm at about 2 years, based in Pakistan. That's a real gap, not a technicality.",
+      "I want to be upfront about something most outreach like this pretends isn't true: the open Product Engineer role asks for **4+ years of experience** and a founder background, and the team appears to require US work authorization with on-site relocation to NYC. **I'm at about 2 years, based in Pakistan.** That's a real gap, not a technicality.",
     companyProblem:
-      'Artemis runs detection at a scale (15,000+ TB/day, 69x faster ClickHouse queries) and an AI-native engineering culture (a Slack-native coding agent shipping PRs directly) that most companies at this stage never reach.',
+      'Artemis runs detection at a scale (**15,000+ TB/day**, **69x faster** ClickHouse queries) and an AI-native engineering culture (a Slack-native coding agent shipping PRs directly) that most companies at this stage never reach.',
     myExperience:
-      'At Intimec, I built a Kafka-based event pipeline with dead-letter queues for reliability at scale, and led a zero-downtime OpenSearch migration across 5M+ documents with 100K+ logs per cycle, the same order of "make this system fast and correct under real load" problem, just a different domain and a different scale tier.',
+      'At Intimec, I built a **Kafka-based event pipeline with dead-letter queues** for reliability at scale, and led a **zero-downtime OpenSearch migration across 5M+ documents** with 100K+ logs per cycle, the same order of "make this system fast and correct under real load" problem, just a different domain and a different scale tier.',
     overlap:
-      "I'm not claiming parity with a 4+ years, founder-background bar. What I can say honestly: the reliability-at-scale and AI-native engineering instincts are real and demonstrated, even if the specific seniority and work-authorization requirements here don't line up yet.",
+      "**I'm not claiming parity with a 4+ years, founder-background bar.** What I can say honestly: the reliability-at-scale and AI-native engineering instincts are real and demonstrated, even if the specific seniority and work-authorization requirements here don't line up yet.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const artemisOutreach: OutreachPage = {
     tradeoff:
       'More operational complexity than a direct synchronous call, in exchange for a system that survives individual service downtime and never silently drops a request.',
     result:
-      'Approval workflows now survive service outages, with a full audit trail of what was requested, approved, and provisioned.',
+      '**Approval workflows now survive service outages**, with a full audit trail of what was requested, approved, and provisioned.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const artemisOutreach: OutreachPage = {
 
   closing: {
     note:
-      "This isn't a pitch that I'm secretly qualified for the current Product Engineer req. I'm not, not yet. But the reliability-at-scale work I've actually shipped is real, and I wanted Artemis on my radar honestly rather than force-fitting a résumé to a role that says 4+ years and founder background.",
+      "**This isn't a pitch that I'm secretly qualified for the current Product Engineer req. I'm not, not yet.** But the reliability-at-scale work I've actually shipped is real, and I wanted Artemis on my radar honestly rather than force-fitting a résumé to a role that says 4+ years and founder background.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',
