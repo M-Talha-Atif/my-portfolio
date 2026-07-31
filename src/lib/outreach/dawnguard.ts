@@ -11,18 +11,26 @@ export const dawnguardOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'I have already lived what shift left security looks like from the inside, an access decision that has to be explainable after the fact, not just fast.',
+    headline: 'I have already lived what shift left security looks like from the inside, an access decision that has to be **explainable after the fact**, not just fast.',
     subtext: 'A technical introduction prepared specifically for Dawnguard, based on the live Medior Software Engineer, Full Stack posting.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Security-by-design experience, real', 'TypeScript + NestJS/Express match', '4 honest gaps named directly'],
+
+  keyStats: [
+    { value: '2+', label: 'Years experience vs 3-5 asked' },
+    { value: '4', label: 'Honest gaps named directly' },
+    { value: '0', label: 'PII exposure after audit refactor' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Embedding security into system architecture before a single line of code is written, validating design and generating production ready Infrastructure as Code across AWS, Azure, and GCP',
+      'Embedding security into system architecture **before a single line of code is written**, validating design and generating production ready Infrastructure as Code across AWS, Azure, and GCP',
       'Building stable, typed APIs and frontends on top of NoSQL data transformations that a small full stack team owns end to end',
-      'Using AI agents to write secure, stable, and maintainable TypeScript, not just to move faster, but to move faster without cutting corners on the thing you are actually selling',
+      'Using AI agents to write **secure, stable, and maintainable TypeScript**, not just to move faster, but to move faster without cutting corners on the thing you are actually selling',
     ],
   },
 
@@ -30,11 +38,11 @@ export const dawnguardOutreach: OutreachPage = {
     intro:
       "Dawnguard's pitch is that security should be proactive and built into architecture before code exists, not bolted on afterward. That claim holds up best when the people building it have already worked somewhere security and auditability were a real, day to day requirement, not a slide in a pitch deck.",
     companyProblem:
-      'The role spans TypeScript APIs the frontend depends on, performant data transformations for a NoSQL database, Pulumi Infrastructure as Code for customer environments, CI/CD and Docker, and an Angular frontend translating product designs into working screens, all inside a small core team.',
+      'The role spans **TypeScript APIs** the frontend depends on, performant data transformations for a NoSQL database, **Pulumi Infrastructure as Code** for customer environments, CI/CD and Docker, and an **Angular frontend** translating product designs into working screens, all inside a small core team.',
     myExperience:
-      'At Intimec I owned an enterprise Identity Governance and Access Management platform end to end, including the Next.js and TypeScript operational UI, a Kafka based event driven approval pipeline with dead letter queues, and an audit log schema I refactored to remove personal data while preserving forensic traceability. Separately, I built Moodly\'s backend in NestJS with an async RabbitMQ pipeline. Claude and GitHub Copilot are daily tools for me, not occasional ones.',
+      'At Intimec I owned an enterprise Identity Governance and Access Management platform end to end, including the **Next.js and TypeScript** operational UI, a **Kafka based event driven approval pipeline** with dead letter queues, and an **audit log schema I refactored to remove personal data** while preserving forensic traceability. Separately, I built Moodly\'s backend in **NestJS** with an async RabbitMQ pipeline. Claude and GitHub Copilot are daily tools for me, not occasional ones.',
     overlap:
-      'Direct overlap on TypeScript, NestJS and Express style backend services, event driven design, and daily AI assisted engineering. Four honest gaps named directly. My frontend production experience is in React and Next.js, not Angular. My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five this posting asks for. And I do not currently hold independent EU work authorization, which this posting requires.',
+      '**Direct overlap on TypeScript, NestJS and Express style backend services**, event driven design, and daily AI assisted engineering. **Four honest gaps named directly.** My frontend production experience is in React and Next.js, not Angular. My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five this posting asks for. And I do not currently hold independent EU work authorization, which this posting requires.',
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const dawnguardOutreach: OutreachPage = {
     tradeoff:
       'Removing personal data outright would have been faster but would have broken forensic traceability during a real investigation. Keeping raw personal data was the easy path but left exactly the exposure a real security review would flag.',
     result:
-      'Restored compliance alignment while preserving the audit detail needed for investigation, the same proactive, security first thinking Dawnguard embeds into architecture before code is written.',
+      '**Restored compliance alignment while preserving the audit detail** needed for investigation, the same proactive, security first thinking Dawnguard embeds into architecture before code is written.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const dawnguardOutreach: OutreachPage = {
 
   closing: {
     note:
-      'I want to name four things plainly rather than gloss over them. My frontend production experience is in React and Next.js, not Angular. My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five you are looking for. And I do not currently hold independent EU work authorization, which this posting requires. What I can say honestly is that the underlying problem, security built into a system before code exists, is one I have already lived on a compliance heavy platform, and I pick up new frameworks quickly.',
+      'I want to name four things plainly rather than gloss over them. **My frontend production experience is in React and Next.js, not Angular.** My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five you are looking for. **And I do not currently hold independent EU work authorization**, which this posting requires. What I can say honestly is that the underlying problem, security built into a system before code exists, is one I have already lived on a compliance heavy platform, and I pick up new frameworks quickly.',
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

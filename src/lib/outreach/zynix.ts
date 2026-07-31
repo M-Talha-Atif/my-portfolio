@@ -11,18 +11,27 @@ export const zynixOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'Backend engineering for AI agents that have to prove what they did, not just complete it.',
+    headline: 'Backend engineering for AI agents that have to **prove what they did**, not just complete it.',
     subtext: "A short technical introduction prepared specifically for Zynix AI, after reading Gautamdev Chowdary's own posts on governed autonomy and execution write-back.",
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Governed autonomy pattern match', 'Kafka reliability + audit trail experience', 'Applied AI product built solo'],
+
+  keyStats: [
+    { value: '1M', label: 'Patients Zynix supports' },
+    { value: '$300M+', label: 'Shared savings Zynix claims' },
+    { value: '60+', label: 'Person, physician-led team' },
+    { value: '0', label: 'Silently lost approval events' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      "Building AI agents that don't just recommend care actions but execute them, with audit trails, escalation paths, and write-back to the system of record",
-      'Closing the small, compounding operational gaps (retries, scheduling, documentation) across a population of thousands of patients',
-      'Growing a 60+ person, physician-led, engineer-driven team already supporting ~1M patients and $300M+ in shared savings',
+      "Building AI agents that don't just recommend care actions but **execute them**, with audit trails, escalation paths, and write-back to the system of record",
+      'Closing the small, compounding operational gaps (retries, scheduling, documentation) across a population of **thousands of patients**',
+      'Growing a **60+ person**, physician-led, engineer-driven team already supporting **~1M patients** and **$300M+ in shared savings**',
     ],
   },
 
@@ -30,11 +39,11 @@ export const zynixOutreach: OutreachPage = {
     intro:
       "Gautamdev's posts keep circling one idea: autonomy without auditability is just risk. That's not an abstract concern to me, it's the exact problem I hit refactoring an audit schema that had to prove who did what without leaking personal data.",
     companyProblem:
-      "Zynix AI's care-execution agents have to log what they were allowed to do, what data they used, when they escalated, and what got written back, not just complete the task.",
+      "Zynix AI's care-execution agents have to **log what they were allowed to do, what data they used, when they escalated, and what got written back**, not just complete the task.",
     myExperience:
-      'At Intimec, I built a Kafka-based approval pipeline with dead-letter queues so failures were caught and retried instead of silently lost, and separately refactored an entire audit log schema to remove PII while preserving full forensic traceability.',
+      'At Intimec, I built a **Kafka-based approval pipeline with dead-letter queues** so failures were caught and retried instead of silently lost, and separately refactored an entire **audit log schema to remove PII** while preserving full forensic traceability.',
     overlap:
-      "Direct overlap with the 'governed autonomy' pattern Gautamdev writes about: reliable retries, audit trails, and write-back completeness. I haven't built for healthcare or ACO workflows specifically, so the clinical domain would be new, but the underlying reliability and audit discipline is the same problem.",
+      "**Direct overlap with the 'governed autonomy' pattern** Gautamdev writes about: reliable retries, audit trails, and write-back completeness. **I haven't built for healthcare or ACO workflows specifically**, so the clinical domain would be new, but the underlying reliability and audit discipline is the same problem.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +57,7 @@ export const zynixOutreach: OutreachPage = {
     tradeoff:
       'More operational complexity than a direct synchronous call, in exchange for a system that survives individual service downtime and never silently drops a request.',
     result:
-      'Approval workflows now survive service outages, with a full audit trail of what was requested, approved, and provisioned.',
+      '**Approval workflows now survive service outages**, with a full audit trail of what was requested, approved, and provisioned.',
   },
 
   cultureFit: {
@@ -122,7 +131,7 @@ export const zynixOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I haven't built specifically for ACOs or value-based care workflows, so that clinical domain would be new ground. But the reliability and audit discipline underneath governed autonomy, the thing that keeps showing up in your posts, is something I've built before, and I'd welcome a conversation about where that transfers.",
+      "**I haven't built specifically for ACOs or value-based care workflows**, so that clinical domain would be new ground. But the reliability and audit discipline underneath governed autonomy, the thing that keeps showing up in your posts, is something I've built before, and I'd welcome a conversation about where that transfers.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

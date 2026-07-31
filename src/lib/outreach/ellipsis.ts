@@ -11,18 +11,26 @@ export const ellipsisOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'AI engineering for a code-review tool that already merges PRs 13% faster.',
+    headline: 'AI engineering for a code-review tool that already merges PRs **13% faster**.',
     subtext: "A short technical introduction prepared specifically for Ellipsis, based on Hunter Brooks' own Founding AI Engineer posting.",
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['4 of 5 stack technologies match', 'Adversarial test design experience', 'Applied AI product built solo'],
+
+  keyStats: [
+    { value: '13%', label: 'Faster PR merges, Ellipsis claim' },
+    { value: '19,000', label: 'Codebases Ellipsis reviews' },
+    { value: '4/5', label: 'Stack technologies matched directly' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Turning a GitHub PR into an automated review that catches logic errors, not just style nits, across 100+ companies and 19,000 codebases',
-      'Building the Founding AI Engineer stack directly: Python, FastAPI, Hatchet, Postgres, TypeScript, and Next.js',
-      'Shipping as one of the first engineering hires at a fast-moving, YC-backed dev-tools company',
+      'Turning a GitHub PR into an automated review that catches logic errors, not just style nits, across **100+ companies and 19,000 codebases**',
+      'Building the Founding AI Engineer stack directly: **Python, FastAPI, Hatchet, Postgres, TypeScript, and Next.js**',
+      'Shipping as one of the first engineering hires at a fast-moving, **YC-backed** dev-tools company',
     ],
   },
 
@@ -30,11 +38,11 @@ export const ellipsisOutreach: OutreachPage = {
     intro:
       "Ellipsis isn't just catching style nits, it's trying to make an AI reliable enough that a real engineering team trusts it to review production code. That's the exact problem I keep running into with agentic workflows: getting an AI's output from 'plausible' to 'actually trustworthy' for someone who has to ship on top of it.",
     companyProblem:
-      "Ellipsis's Founding AI Engineer role is built on Python, FastAPI, Hatchet, Postgres, TypeScript, and Next.js.",
+      "Ellipsis's Founding AI Engineer role is built on **Python, FastAPI, Hatchet, Postgres, TypeScript, and Next.js**.",
     myExperience:
-      'I built Moodly, an AI inference pipeline, solo end to end with FastAPI on the backend and async processing via RabbitMQ, and separately built full products with Node.js, TypeScript, and Next.js/React.',
+      'I built Moodly, an AI inference pipeline, **solo end to end** with FastAPI on the backend and async processing via RabbitMQ, and separately built full products with Node.js, TypeScript, and Next.js/React.',
     overlap:
-      "Direct overlap on four of the five listed technologies (Python/FastAPI, Postgres, TypeScript, Next.js). Hatchet specifically would be new to me, though I've built comparable async task orchestration with Kafka and RabbitMQ, so the underlying pattern isn't unfamiliar.",
+      "**Direct overlap on four of the five listed technologies** (Python/FastAPI, Postgres, TypeScript, Next.js). **Hatchet specifically would be new to me**, though I've built comparable async task orchestration with Kafka and RabbitMQ, so the underlying pattern isn't unfamiliar.",
     projectImage: '/moodlyProject/hero/moodly-hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/moodly',
@@ -48,7 +56,7 @@ export const ellipsisOutreach: OutreachPage = {
     tradeoff:
       'More upfront time spent designing adversarial cases instead of shipping the happy path faster, in exchange for catching a compliance-critical bug before production.',
     result:
-      'Caught the bug before it caused incorrect access grants, and introduced a proper interGroupOperator field with a backward-compatible migration.',
+      '**Caught the bug before it caused incorrect access grants**, and introduced a proper interGroupOperator field with a backward-compatible migration.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const ellipsisOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I know the role is listed on-site in New York, and I'm based in Pakistan, so I want to name that gap directly rather than skip past it. But four of the five stack technologies are a direct match, and I'd welcome a conversation about whether a remote arrangement could work.",
+      "**I know the role is listed on-site in New York, and I'm based in Pakistan**, so I want to name that gap directly rather than skip past it. But four of the five stack technologies are a direct match, and I'd welcome a conversation about whether a remote arrangement could work.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

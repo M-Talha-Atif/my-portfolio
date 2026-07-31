@@ -12,18 +12,26 @@ export const zenbuOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'React Scan, the Next.js team, and now the IDE you actually wanted for working with agents. That is a rare, real throughline.',
+    headline: 'React Scan, the Next.js team, and now the IDE you actually wanted for working with agents. That is a **rare, real throughline**.',
     subtext: 'A note prepared for Rob Pruzan and Zenbu. This is not a job pitch, just genuine interest in Zenbu.js and a direct question about contributing.',
     ctaLabel: 'See why it resonates ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Not a job pitch, genuine interest', '13 open issues, 16 open PRs read', 'Real offer to help the backlog'],
+
+  keyStats: [
+    { value: '253', label: 'Stars on zenbu-labs/zenbu.js' },
+    { value: '13', label: 'Open issues right now' },
+    { value: '16', label: 'Open pull requests right now' },
+  ],
+
   whatYouAreSolving: {
     points: [
       'Running several coding agents in parallel and trusting what they changed without anyone reviewing it by hand line by line',
       'Giving every developer and team a way to shape the IDE itself around how they actually work, instead of accepting one fixed workflow',
-      'Keeping an extensible, plugin first architecture coherent as real community contributions start arriving faster than one founder can review them',
+      'Keeping an extensible, plugin first architecture coherent as real community contributions start arriving **faster than one founder can review them**',
     ],
   },
 
@@ -31,11 +39,11 @@ export const zenbuOutreach: OutreachPage = {
     intro:
       'Zenbu.js is a genuinely well scoped idea. Hackable software where the real source code ships to production instead of a frozen bundle, tracked by git on the user\'s machine, with plugins hot reloading the same way application code does. I read through the repo, the docs, and your blog before writing this.',
     companyProblem:
-      'Zenbu.js ships raw source code to production and keeps it git tracked on the user\'s machine, with plugins hot reloading the same way application code does. It is still Alpha on Electron, with Node, Tauri, and browser native all marked as work in progress, and fault isolation for the plugin and injection layer is an open item on the roadmap.',
+      'Zenbu.js ships raw source code to production and keeps it git tracked on the user\'s machine, with plugins hot reloading the same way application code does. It is still **Alpha on Electron**, with Node, Tauri, and browser native all marked as work in progress, and fault isolation for the plugin and injection layer is an open item on the roadmap.',
     myExperience:
-      'I work inside Claude, Copilot, and Cursor daily, use LangGraph and CrewAI for multi agent orchestration, and currently contribute to OpenTracer, an AI agent observability project. The problem underneath Zenbu, trusting and managing what a coding agent actually changed, is one I think about often, not just as a user of these tools.',
+      'I work inside Claude, Copilot, and Cursor daily, use LangGraph and CrewAI for multi agent orchestration, and currently contribute to **OpenTracer, an AI agent observability project**. The problem underneath Zenbu, trusting and managing what a coding agent actually changed, is one I think about often, not just as a user of these tools.',
     overlap:
-      'I noticed 13 open issues and 16 open pull requests on zenbu-labs/zenbu.js right now, several from real outside contributors, sitting open for a while against what looks like a small core team. I am not raising that as a criticism, open source moving this fast tends to outrun one person\'s review bandwidth, and that is a good problem to have. I wanted to ask directly, do you accept outside help working through some of that backlog, because I would genuinely like to contribute rather than just star the repo.',
+      'I noticed **13 open issues and 16 open pull requests** on zenbu-labs/zenbu.js right now, several from real outside contributors, sitting open for a while against what looks like a small core team. I am not raising that as a criticism, open source moving this fast tends to outrun one person\'s review bandwidth, and that is a good problem to have. I wanted to ask directly, **do you accept outside help** working through some of that backlog, because I would genuinely like to contribute rather than just star the repo.',
     projectImage: '/moodlyProject/hero/moodly-hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/moodly',
@@ -49,7 +57,7 @@ export const zenbuOutreach: OutreachPage = {
     tradeoff:
       'Chose reliability and fault isolation over raw latency, since approval workflows are reliability sensitive, not latency sensitive.',
     result:
-      'Approval workflows now survive individual service downtime, with failures caught and isolated instead of taking down the whole chain, the same instinct behind hardening an injection layer for fault isolation.',
+      '**Approval workflows now survive individual service downtime**, with failures caught and isolated instead of taking down the whole chain, the same instinct behind hardening an injection layer for fault isolation.',
   },
 
   cultureFit: {

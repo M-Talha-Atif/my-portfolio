@@ -11,18 +11,26 @@ export const reboltOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'Backend engineering for an AI agent platform that builds real full-stack apps.',
+    headline: 'Backend engineering for an **AI agent platform** that builds real full-stack apps.',
     subtext: 'A short technical introduction prepared specifically for Rebolt, based on the Founding Backend Software Engineer posting.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['FastAPI + Next.js/TypeScript match', 'Applied AI pipeline built solo', 'Async systems tuned for real scale'],
+
+  keyStats: [
+    { value: '5,000+', label: 'Users handled after async redesign' },
+    { value: '500', label: 'User timeout threshold, fixed' },
+    { value: '1', label: 'AI product built solo, end to end' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Building an AI agent platform that turns a conversation into a deployed, custom full-stack application',
-      'Working across Python/FastAPI and TypeScript/Next.js, backend, frontend, and the AI layer, as one of the first engineering hires',
-      'Shaping the technical architecture and culture of a fast-moving, just-launched YC startup',
+      'Building an **AI agent platform** that turns a conversation into a deployed, custom full-stack application',
+      'Working across **Python/FastAPI and TypeScript/Next.js**, backend, frontend, and the AI layer, as one of the first engineering hires',
+      'Shaping the technical architecture and culture of a fast-moving, just-launched **YC startup**',
     ],
   },
 
@@ -30,11 +38,11 @@ export const reboltOutreach: OutreachPage = {
     intro:
       "Rebolt is letting people build their own internal tools by talking to an AI agent instead of stitching together a one-size-fits-all SaaS product. That's the same shape of problem I keep gravitating toward, taking something that used to require a dedicated engineering team and making it something one person can own end to end.",
     companyProblem:
-      "Rebolt's Founding Backend role asks for 2+ years of backend experience, fluency in Python and TypeScript, and hands-on work with FastAPI and Next.js, building an AI agent platform from 0 to 1.",
+      "Rebolt's Founding Backend role asks for **2+ years of backend experience**, fluency in **Python and TypeScript**, and hands-on work with **FastAPI and Next.js**, building an AI agent platform from 0 to 1.",
     myExperience:
-      'I built Moodly, an AI inference pipeline, solo end to end using FastAPI on the backend with async processing via RabbitMQ and Hugging Face models on the AI side, and separately built full products with Node.js and Next.js/React.',
+      'I built Moodly, an AI inference pipeline, **solo end to end** using FastAPI on the backend with async processing via RabbitMQ and Hugging Face models on the AI side, and separately built full products with Node.js and Next.js/React.',
     overlap:
-      "Direct experience with Python/FastAPI and Node/TypeScript/Next.js, plus applied AI work with LangChain, LangGraph, and RAG. I haven't built a full agentic code-generation platform specifically, so that exact problem is new ground, but the underlying stack is a direct match.",
+      "**Direct experience with Python/FastAPI and Node/TypeScript/Next.js**, plus applied AI work with LangChain, LangGraph, and RAG. **I haven't built a full agentic code-generation platform specifically**, so that exact problem is new ground, but the underlying stack is a direct match.",
     projectImage: '/moodlyProject/hero/moodly-hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/moodly',
@@ -48,7 +56,7 @@ export const reboltOutreach: OutreachPage = {
     tradeoff:
       'More moving parts than a single bulk insert, in exchange for real progress tracking and the ability to resume from the last completed chunk instead of restarting from zero.',
     result:
-      'Operations that previously timed out now complete for 5,000+ users, with real-time progress tracking and per-user failure reasons.',
+      '**Operations that previously timed out now complete for 5,000+ users**, with real-time progress tracking and per-user failure reasons.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const reboltOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I'm not claiming to have built an agentic code-generation platform before, that part would be new ground. But the backend and applied-AI stack underneath it is a direct match, and I'd welcome a conversation about where that does and doesn't transfer.",
+      "**I'm not claiming to have built an agentic code-generation platform before**, that part would be new ground. But the backend and applied-AI stack underneath it is a direct match, and I'd welcome a conversation about where that does and doesn't transfer.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

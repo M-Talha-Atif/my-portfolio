@@ -11,18 +11,27 @@ export const atomicOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'Backend engineering for systems where reliability matters.',
+    headline: 'Backend engineering for systems where **reliability matters**.',
     subtext: 'A short technical introduction prepared specifically for Atomic, based on the Backend Engineer role.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['gRPC + distributed systems', 'Zero-downtime migration at scale', '2-person team, full ownership'],
+
+  keyStats: [
+    { value: '50%', label: 'Inter-service latency cut via gRPC' },
+    { value: '5M+', label: 'Documents migrated, zero downtime' },
+    { value: '2', label: 'Person team, full ownership' },
+    { value: '0', label: 'Downtime during the cutover' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Running gRPC services across a distributed, Kubernetes-based backend, where keeping many services predictable together matters more than any single service in isolation',
-      'Moving financial data through async pipelines (Kinesis) where correctness under load is not negotiable',
-      'Scaling a Go and PostgreSQL backend as a small engineering team without losing operational discipline as headcount grows',
+      'Running **gRPC services** across a **distributed, Kubernetes-based** backend, where keeping many services predictable together matters more than any single service in isolation',
+      'Moving financial data through **async pipelines (Kinesis)** where correctness under load is not negotiable',
+      'Scaling a **Go and PostgreSQL** backend as a small engineering team without losing operational discipline as headcount grows',
     ],
   },
 
@@ -30,11 +39,11 @@ export const atomicOutreach: OutreachPage = {
     intro:
       "Atomic isn't choosing gRPC because it's trendy. It's choosing it because Go services talking to other services across Kubernetes need a contract that survives ambiguity, not just a fast one. I've sat on the other side of that exact argument, the day REST latency got expensive enough to justify migrating three services to gRPC. Different codebase, same reasoning.",
     companyProblem:
-      "Atomic's backend runs gRPC services across a distributed, Kubernetes-based architecture, where the hard part is keeping many services predictable together, not writing any one of them.",
+      "Atomic's backend runs **gRPC services** across a **distributed, Kubernetes-based** architecture, where the hard part is keeping many services predictable together, not writing any one of them.",
     myExperience:
-      'At Intimec, I migrated inter-service identity lookups from REST to gRPC, cutting inter-service latency in half, and separately led a zero-downtime migration of a 5M+ document search index using an alias-based cutover so production traffic was never at risk during the switch.',
+      'At Intimec, I migrated inter-service identity lookups from REST to gRPC, **cutting inter-service latency in half**, and separately led a **zero-downtime migration of a 5M+ document search index** using an alias-based cutover so production traffic was never at risk during the switch.',
     overlap:
-      "Direct experience with gRPC and with the reliability discipline distributed backends require. Go and Kubernetes ownership specifically would be new ground for me, I've built this discipline on Java/Spring Boot and Node, not Go, so that part is transferable rather than direct.",
+      "**Direct experience with gRPC** and with the reliability discipline distributed backends require. **Go and Kubernetes ownership specifically would be new ground** for me, I've built this discipline on Java/Spring Boot and Node, not Go, so that part is transferable rather than direct.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +57,7 @@ export const atomicOutreach: OutreachPage = {
     tradeoff:
       "Two different communication patterns to maintain instead of one, and gRPC's binary format is not human-readable without the shared .proto schema.",
     result:
-      'Inter-service latency on the synchronous path dropped by 50%, and lifecycle events kept processing safely even when Auth Service was down.',
+      '**Inter-service latency on the synchronous path dropped by 50%**, and lifecycle events kept processing safely even when Auth Service was down.',
   },
 
   cultureFit: {
@@ -127,7 +136,7 @@ export const atomicOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I'm not claiming to have solved Atomic's exact problems, Go and Kubernetes would both be new ground for me. But the underlying discipline, splitting sync from async by real requirement, migrating safely with zero downtime, is the same regardless of language. Happy to talk through where that does and does not transfer.",
+      "I'm not claiming to have solved Atomic's exact problems, **Go and Kubernetes would both be new ground for me**. But the underlying discipline, splitting sync from async by real requirement, migrating safely with zero downtime, is the same regardless of language. Happy to talk through where that does and does not transfer.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

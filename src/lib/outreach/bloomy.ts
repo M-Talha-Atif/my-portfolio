@@ -11,18 +11,26 @@ export const bloomyOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: 'The engineer who builds the harness that catches what the agent fleet gets wrong, before a sixth grader does.',
+    headline: 'The engineer who builds the harness that catches what the agent fleet gets wrong, **before a sixth grader does**.',
     subtext: 'A technical introduction prepared specifically for Bloomy, based on the live Founding Engineer posting and the gap you named directly: an engineer who can turn a fleet of coding agents into something you can trust in front of a real classroom.',
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Verification-first engineering habit', 'Solo AI product, real users', 'Non-technical founder communication'],
+
+  keyStats: [
+    { value: '26', label: 'Person adversarial test dataset built' },
+    { value: '1', label: 'AI product owned solo, end to end' },
+    { value: '500', label: 'User threshold where bulk ops broke' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      "Being the first technical hire under a non-technical founder who is already shipping production code and curriculum through orchestrated coding-agent fleets, and needs someone to turn that into a real engineering practice, specs, harnesses, QA gates, not just more prompting",
-      "Closing the loop between student telemetry, every answer, retry, and tutor conversation, and the instruction itself, in days instead of textbook-revision cycles",
-      "Joining at the exact moment Bloomy goes from one founder's product to a real engineering team, on a stack (React, TypeScript, Supabase, Postgres) I already work in daily",
+      "Being the first technical hire under a non-technical founder who is already shipping production code and curriculum through orchestrated coding-agent fleets, and needs someone to turn that into a real engineering practice, **specs, harnesses, QA gates**, not just more prompting",
+      "Closing the loop between student telemetry, every answer, retry, and tutor conversation, and the instruction itself, **in days instead of textbook-revision cycles**",
+      "Joining at the exact moment Bloomy goes from one founder's product to a real engineering team, on a stack (**React, TypeScript, Supabase, Postgres**) I already work in daily",
     ],
   },
 
@@ -30,11 +38,11 @@ export const bloomyOutreach: OutreachPage = {
     intro:
       "Bloomy's model is unusual, and from the outside the hard part is obvious: you're shipping a large share of production code and curriculum through orchestrated coding agents, with one founder as the entire engineering org until now. That only works if someone builds the verification layer, specs, harnesses, QA gates, that lets you trust what a dozen concurrent agents produce enough to put it in front of real students the next school day.",
     companyProblem:
-      "The Founding Engineer role splits roughly into shipping product across a React/TypeScript/Supabase stack, running and extending the agent fleet's infrastructure, and turning conversations with teachers and students into roadmap. All three need the same underlying skill: taking something ambiguous and making it trustworthy and shippable.",
+      "The Founding Engineer role splits roughly into shipping product across a **React/TypeScript/Supabase** stack, running and extending the agent fleet's infrastructure, and turning conversations with teachers and students into roadmap. All three need the same underlying skill: taking something ambiguous and making it trustworthy and shippable.",
     myExperience:
-      "I own an enterprise IAM platform end to end at Intimec on a 2-person engineering team, and separately built Moodly, a solo AI inference product (FastAPI, Hugging Face, async processing via RabbitMQ) that real users interacted with, requirements through deployment, alone. Claude, Copilot, and Cursor are daily tools for me, not occasional ones, and I'm currently contributing to OpenTracer, an AI-agent observability platform, the same 'can I actually trust what the agent did' problem your fleet runs into every day.",
+      "I own an enterprise IAM platform end to end at Intimec on a **2-person engineering team**, and separately built Moodly, a **solo AI inference product** (FastAPI, Hugging Face, async processing via RabbitMQ) that real users interacted with, requirements through deployment, alone. Claude, Copilot, and Cursor are daily tools for me, not occasional ones, and I'm currently contributing to **OpenTracer, an AI-agent observability platform**, the same 'can I actually trust what the agent did' problem your fleet runs into every day.",
     overlap:
-      "Direct stack overlap on React, TypeScript, and Postgres/Supabase-adjacent systems. The harness instinct is already real, not theoretical: I built a deliberate 26-employee adversarial test dataset specifically to catch a compliance-critical bug in a rule engine that ordinary code review would have missed, the same discipline a QA gate needs against agent output. Honest gap: I haven't personally run a fleet of concurrent coding agents at Bloomy's scale, only single-agent and pair workflows, so the orchestration-infrastructure side would be new ground, though the verification mindset underneath it isn't.",
+      "**Direct stack overlap on React, TypeScript, and Postgres/Supabase-adjacent systems.** The harness instinct is already real, not theoretical: I built a deliberate 26-employee adversarial test dataset specifically to catch a compliance-critical bug in a rule engine that ordinary code review would have missed, the same discipline a QA gate needs against agent output. **Honest gap: I haven't personally run a fleet of concurrent coding agents at Bloomy's scale**, only single-agent and pair workflows, so the orchestration-infrastructure side would be new ground, though the verification mindset underneath it isn't.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const bloomyOutreach: OutreachPage = {
     tradeoff:
       "Building an adversarial dataset upfront costs real time versus shipping on green tests and hoping review catches edge cases. I chose the slower path because a wrong access grant is a compliance failure, not just a bug.",
     result:
-      'Caught the bug before it reached production, preventing incorrect access grants across a compliance-critical system.',
+      '**Caught the bug before it reached production**, preventing incorrect access grants across a compliance-critical system.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const bloomyOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I haven't personally run a fleet of concurrent coding agents at Bloomy's scale, so I want to name that honestly rather than imply otherwise. But the harder problem underneath it, building the verification layer that lets you trust what gets shipped, is one I've built for before, under real compliance stakes, and I'd like to talk about where that transfers to a classroom of real kids.",
+      "**I haven't personally run a fleet of concurrent coding agents at Bloomy's scale**, so I want to name that honestly rather than imply otherwise. But the harder problem underneath it, building the verification layer that lets you trust what gets shipped, is one I've built for before, under real compliance stakes, and I'd like to talk about where that transfers to a classroom of real kids.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',

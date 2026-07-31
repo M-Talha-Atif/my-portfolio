@@ -11,18 +11,26 @@ export const inblickOutreach: OutreachPage = {
   },
 
   hero: {
-    headline: "Backend and applied-AI engineering for an insights platform built for people who aren't data analysts.",
+    headline: "Backend and applied-AI engineering for an insights platform built for people who **aren't data analysts**.",
     subtext: "A short technical introduction prepared specifically for Inblick, after seeing Andreas Kaltenbach's own call for full-stack developers who want to work more with AI.",
     ctaLabel: 'See the relevant evidence ↓',
     ctaTarget: '#evidence',
     profileImage: '/personal/profileImage.png',
   },
 
+  heroHighlights: ['Backend + Applied AI overlap', 'Auth/RBAC production experience', 'AI product built solo, end to end'],
+
+  keyStats: [
+    { value: '0', label: 'PII exposure after audit refactor' },
+    { value: '3', label: 'Shipped together: backend, AI, auth' },
+    { value: '1', label: 'AI pipeline built solo, end to end' },
+  ],
+
   whatYouAreSolving: {
     points: [
-      'Turning scattered organizational data, across schools, municipalities, and private companies, into plain-language, auto-generated insights',
-      'Integrating GPT-5 and Grok AI into a production BI product alongside PhenixID login, admin controls, and Slack-delivered updates',
-      'Building as a small, founder-led team where one engineer covers real ground across backend, AI integration, and infrastructure',
+      'Turning scattered organizational data, across schools, municipalities, and private companies, into **plain-language, auto-generated insights**',
+      'Integrating **GPT-5 and Grok AI** into a production BI product alongside PhenixID login, admin controls, and Slack-delivered updates',
+      'Building as a **small, founder-led team** where one engineer covers real ground across backend, AI integration, and infrastructure',
     ],
   },
 
@@ -30,11 +38,11 @@ export const inblickOutreach: OutreachPage = {
     intro:
       "Inblick is built on the idea that BI tools are boring and most people aren't data analysts, so the product does the analysis and hands back an answer in plain language instead. That's the same problem I keep circling with RAG and agentic workflows, making an AI-powered system trustworthy enough that a non-technical person can act on what it tells them.",
     companyProblem:
-      'Inblick 1.1 shipped GPT-5 and Grok AI-powered insights, PhenixID login, and stronger admin controls, on a small, founder-led team.',
+      'Inblick 1.1 shipped **GPT-5 and Grok AI-powered insights**, PhenixID login, and stronger admin controls, on a small, founder-led team.',
     myExperience:
-      'I built Moodly, an AI inference pipeline, solo end to end with FastAPI and Hugging Face models, and separately built production backend systems handling authentication, RBAC, and audit logging (Java, Spring Security, JWT, OAuth 2.0) at Intimec.',
+      'I built Moodly, an AI inference pipeline, **solo end to end** with FastAPI and Hugging Face models, and separately built production backend systems handling **authentication, RBAC, and audit logging** (Java, Spring Security, JWT, OAuth 2.0) at Intimec.',
     overlap:
-      "Direct overlap with backend plus AI integration plus auth/admin-control work, the same three things Inblick 1.1 shipped together. I haven't worked with GPT-5, Grok, or PhenixID specifically, so those exact integrations would be new ground, but the underlying pattern, wiring an LLM API into a product with real access control, is one I've built before.",
+      "**Direct overlap with backend plus AI integration plus auth/admin-control work**, the same three things Inblick 1.1 shipped together. **I haven't worked with GPT-5, Grok, or PhenixID specifically**, so those exact integrations would be new ground, but the underlying pattern, wiring an LLM API into a product with real access control, is one I've built before.",
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -48,7 +56,7 @@ export const inblickOutreach: OutreachPage = {
     tradeoff:
       "More indirection when reading a raw log entry, since resolving 'who did what' requires a join instead of reading a name directly, in exchange for real compliance safety.",
     result:
-      'Restored compliance alignment without losing the forensic detail needed for investigation.',
+      '**Restored compliance alignment without losing the forensic detail** needed for investigation.',
   },
 
   cultureFit: {
@@ -122,7 +130,7 @@ export const inblickOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I haven't worked with GPT-5, Grok, or PhenixID specifically, so I want to be upfront that part would be new ground. But the underlying pattern, wiring an LLM into a product non-experts can trust, plus the backend and auth discipline around it, is something I've built before, and I'd welcome a conversation about where that does and doesn't transfer.",
+      "**I haven't worked with GPT-5, Grok, or PhenixID specifically**, so I want to be upfront that part would be new ground. But the underlying pattern, wiring an LLM into a product non-experts can trust, plus the backend and auth discipline around it, is something I've built before, and I'd welcome a conversation about where that does and doesn't transfer.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',
