@@ -17,6 +17,17 @@ export type OutreachPage = {
     profileImage: string
   }
 
+  // Optional skim-layer: short chips rendered under the hero subtext so a
+  // visitor gets the value proposition in seconds without reading prose.
+  heroHighlights?: string[]
+
+  // Optional big-number stat band rendered right below the hero — the
+  // "5-second read" of the page. Keep values short ("50%", "5M+", "0").
+  keyStats?: {
+    value: string
+    label: string
+  }[]
+
   whatYouAreSolving: {
     points: string[]
   }
