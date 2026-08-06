@@ -93,6 +93,11 @@ export const outreachPagesMetadata = [
     company: 'ProhostAI',
     role: 'Founding Engineer, Full Stack',
   },
+  {
+    slug: 'the-company-company',
+    company: 'The Company Company',
+    role: 'Founding Engineer',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -169,6 +174,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'prohostai') {
       const { prohostaiOutreach } = await import('./prohostai')
       return prohostaiOutreach
+    }
+    if (slug === 'the-company-company') {
+      const { theCompanyCompanyOutreach } = await import('./thecompanycompany')
+      return theCompanyCompanyOutreach
     }
     return null
   } catch (error) {
