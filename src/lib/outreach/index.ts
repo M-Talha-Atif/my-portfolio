@@ -78,6 +78,11 @@ export const outreachPagesMetadata = [
     company: 'Precisely',
     role: 'Associate Software Engineer, MDM',
   },
+  {
+    slug: 'conductor',
+    company: 'Conductor',
+    role: 'Software Engineer',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -142,6 +147,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'precisely') {
       const { preciselyOutreach } = await import('./precisely')
       return preciselyOutreach
+    }
+    if (slug === 'conductor') {
+      const { conductorOutreach } = await import('./conductor')
+      return conductorOutreach
     }
     return null
   } catch (error) {
