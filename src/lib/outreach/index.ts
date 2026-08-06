@@ -88,6 +88,11 @@ export const outreachPagesMetadata = [
     company: 'QFEX',
     role: 'Backend Engineer',
   },
+  {
+    slug: 'prohostai',
+    company: 'ProhostAI',
+    role: 'Founding Engineer, Full Stack',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -160,6 +165,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'qfex') {
       const { qfexOutreach } = await import('./qfex')
       return qfexOutreach
+    }
+    if (slug === 'prohostai') {
+      const { prohostaiOutreach } = await import('./prohostai')
+      return prohostaiOutreach
     }
     return null
   } catch (error) {
