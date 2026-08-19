@@ -6,24 +6,29 @@ export default function Experience() {
     {
       role: "Full Stack Engineer",
       company: "MicroTechX",
-      period: "December 2025 - Present",
+      location: "Malaysia",
+      period: "December 2025 - June 2026",
       desc: [
-        "Migrated synchronous service-to-service communication from REST to gRPC, reducing inter-service latency by 50%.",
-        "Resolved Spring AOP self-invocation bypass, restoring audit guarantee across affected service methods.",
-        "Refactored audit log schema to be PII-free, restoring compliance alignment without losing forensic traceability.",
-        "Architected the generic rule-based engine for assigning roles, entitlements, and access items to identities through grouped condition evaluation, CRON and event-based scheduling.",
-        "Standardised the frontend theme, color system, and shared component library across the Next.js dashboard, documenting conventions that improved consistency and reduced UI drift across the team.",
+        "Migrated synchronous service-to-service communication from REST to gRPC across Auth, Identity, and Access Portal, cutting inter-service latency by 50%, with retries and a circuit breaker handling downstream failures, and deliberately prioritizing consistency over availability so the system never serves stale identity or access data.",
+        "Architected a rule engine evaluating dynamic, attribute-based condition groups, so new categories can be added per identity without touching the engine, triggered on CRON schedules or Kafka events to assign roles, entitlements, and access items, replacing fully manual access provisioning as the platform's core decision system.",
+        "Refactored the audit log schema to be PII-free, restoring compliance alignment without losing forensic traceability, and resolved a Spring AOP self-invocation bypass that was silently skipping audit advice on critical methods.",
+        "Built a shared component library and standardized the theme and color system across the Next.js dashboard, replacing ad hoc, duplicated UI code with components the whole team adopted, cutting UI code duplication by 50% and eliminating visual drift across every new feature.",
+        "Diagnosed a schema drift issue causing production analytics failures on a 5M+ document OpenSearch index, then executed a zero-downtime migration using alias switching, new index, background reindex, verify, atomic swap, restoring analytics to handle 100K+ logs per cycle without failure.",
+        "Designed an event-driven Kafka pipeline for approval, rejection, and provisioning workflows, replacing synchronous REST calls where one service outage could break the entire approval chain, with dead letter queues catching failures instead of losing them silently.",
       ],
     },
     {
       role: "Full Stack Engineer",
       company: "Digital Upgraders LLC",
+      location: "Dubai",
       period: "September 2025 - January 2026",
       desc: [
-        "Cut feed load time from 3s to 700ms by fixing query, indexing, payload, and caching bottlenecks.",
-        "Fixed duplicate notifications by redesigning concurrent writes with proper transactions.",
-        "Resolved Android, iOS, and Safari rendering issues by tracing client-side performance bottlenecks and restoring consistent cross-platform behaviour.",
-        "Led a zero-downtime migration from AWS to Fly.io, reworking infrastructure, CI/CD, DNS, and service configuration on a live platform.",
+        "Cut feed load time from 3s to 700ms by fixing query structure, indexing, payload size, and caching bottlenecks across the production feed system.",
+        "Fixed duplicate notifications by redesigning concurrent write flows with proper database transactions, restoring consistency across the notification system.",
+        "Fixed inconsistent scroll-to-hide header behaviour across Android, iOS, and Safari by tracing how each platform actually fired scroll events, since Safari's scroll mechanism diverged sharply from Android's.",
+        "AWS's operational cost and infrastructure overhead had become hard to justify and manage at the platform's scale, so I led a zero-downtime migration to Fly.io, reworking infrastructure, CI/CD, DNS, and service configuration on a live production platform without disrupting real users.",
+        "Fixed a production authentication bug where the OAuth token and JWT token were both being stored under the same cookie key, silently overwriting each other and dropping user sessions, tracing the root cause through production logs and redesigning token storage so each token persists under its own key.",
+        "Refactored the frontend codebase by applying separation-of-concerns design patterns, splitting logic into hooks, types, and components instead of one tangled structure, so the codebase could actually scale without repeatedly re-touching the same files.",
       ],
     },
   ]
@@ -68,7 +73,7 @@ export default function Experience() {
             <div className="glass p-6 rounded-2xl backdrop-blur-md border border-[rgba(255,255,255,0.08)] shadow-soft">
               <h3 className="text-lg font-semibold text-white">{item.role}</h3>
               <p className="text-sm text-subtext mb-2">
-                {item.company} · {item.period}
+                {item.company} · {item.location} · {item.period}
               </p>
               <div className="text-sm text-subtext leading-relaxed">
                 {Array.isArray(item.desc) ? (
