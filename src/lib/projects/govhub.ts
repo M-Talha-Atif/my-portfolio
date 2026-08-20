@@ -1,13 +1,13 @@
 import { Project } from './types'
 
-export const staffHubProject: Project = {
-  slug: 'jb-marks-staffhub',
+export const govHubProject: Project = {
+  slug: 'jb-marks-govhub',
 
-  title: 'StaffHub — Municipal HR Platform for JB Marks Local Municipality',
+  title: 'GovHub — Municipal HR Platform for JB Marks Local Municipality',
 
   short: 'Enterprise HR and workforce management platform serving 15,000 municipal employees across attendance, leave, payroll, and compliance workflows.',
 
-  overview: 'StaffHub is a full-stack enterprise HR platform built for JB Marks Local Municipality to replace paper-based and spreadsheet-driven HR processes. It serves up to 15,000 employees across a Flutter mobile app and a Next.js admin panel, with a NestJS microservice-style backend handling attendance tracking, multi-level leave approvals, study assistance, shift enforcement, and compliance reporting. The platform is designed to scale to additional South African municipalities with zero architectural changes.',
+  overview: 'GovHub is a full-stack enterprise HR platform built for JB Marks Local Municipality to replace paper-based and spreadsheet-driven HR processes. It serves up to 15,000 employees across a Flutter mobile app and a Next.js admin panel, with a NestJS microservice-style backend handling attendance tracking, multi-level leave approvals, study assistance, shift enforcement, and compliance reporting. The platform is designed to scale to additional South African municipalities with zero architectural changes.',
 
   problem: 'JB Marks Municipality managed attendance, leave, and HR workflows entirely through paper forms and disconnected spreadsheets, creating approval bottlenecks that delayed employee requests by weeks, made compliance reporting impossible to automate, and gave HR and Finance no real-time visibility into workforce status. With 15,000 employees across multiple departments and operational roles, the manual process could not scale and introduced significant audit risk.',
 
@@ -230,5 +230,5 @@ export const staffHubProject: Project = {
     { label: 'Approval Levels', value: '4' },
   ],
 
-  results: 'StaffHub replaced manual paper-based HR workflows for JB Marks Municipality with a real-time platform handling attendance, leave, study assistance, notifications, and compliance reporting across up to 15,000 employees. The configurable approval chain engine eliminated hardcoded role logic and allows HR Admin to reconfigure approval workflows without a deployment. The Phase 1 shift enforcement architecture was designed so the Phase 2 roster module introduction requires changes to exactly one method. The CI/CD pipeline with automated type-checking, Prisma migration validation, and Docker build gating ensures production deployments are reliable and repeatable.',
+  results: 'GovHub replaced manual paper-based HR workflows for JB Marks Municipality with a real-time platform handling attendance, leave, study assistance, notifications, and compliance reporting across up to 15,000 employees. The configurable approval chain engine eliminated hardcoded role logic and allows HR Admin to reconfigure approval workflows without a deployment. The Phase 1 shift enforcement architecture was designed so the Phase 2 roster module introduction requires changes to exactly one method. The CI/CD pipeline with automated type-checking, Prisma migration validation, and Docker build gating ensures production deployments are reliable and repeatable.',
 }
