@@ -37,6 +37,14 @@ export const projectsMetadata = [
     platforms: ['web', 'mobile'] as ('web' | 'mobile')[],
     tech: ['React.js', 'Jetpack Compose', 'Flask', 'MongoDB', 'Redis', 'YOLO', 'Three.js'],
     live: 'https://youtu.be/a1Akh-M-9LY',
+  },
+  {
+    slug: 'jb-marks-staffhub',
+    title: 'StaffHub, Municipal HR Platform for JB Marks Local Municipality',
+    short: 'Enterprise HR and workforce management platform serving 15,000 municipal employees across attendance, leave, payroll, and compliance workflows.',
+    hero: '/jbmarksProject/hero/hero.png',
+    platforms: ['web', 'mobile'] as ('web' | 'mobile')[],
+    tech: ['NestJS', 'Next.js 14', 'Flutter', 'PostgreSQL', 'Prisma ORM', 'Redis', 'BullMQ', 'Cloudflare R2', 'Docker'],
   }
 ]
 
@@ -58,6 +66,10 @@ export async function getProject(slug: string): Promise<Project | null> {
     if (slug === 'intimec') {
       const { intimecProject } = await import('./intimec')
       return intimecProject
+    }
+    if (slug === 'jb-marks-staffhub') {
+      const { staffHubProject } = await import('./staffhub')
+      return staffHubProject
     }
     return null
   } catch (error) {
