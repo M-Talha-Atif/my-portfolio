@@ -39,8 +39,8 @@ export const projectsMetadata = [
     live: 'https://youtu.be/a1Akh-M-9LY',
   },
   {
-    slug: 'jb-marks-staffhub',
-    title: 'StaffHub, Municipal HR Platform for JB Marks Local Municipality',
+    slug: 'jb-marks-govhub',
+    title: 'GovHub, Municipal HR Platform for JB Marks Local Municipality',
     short: 'Enterprise HR and workforce management platform serving 15,000 municipal employees across attendance, leave, payroll, and compliance workflows.',
     hero: '/jbmarksProject/hero/hero.png',
     platforms: ['web', 'mobile'] as ('web' | 'mobile')[],
@@ -67,9 +67,9 @@ export async function getProject(slug: string): Promise<Project | null> {
       const { intimecProject } = await import('./intimec')
       return intimecProject
     }
-    if (slug === 'jb-marks-staffhub') {
-      const { staffHubProject } = await import('./staffhub')
-      return staffHubProject
+    if (slug === 'jb-marks-govhub') {
+      const { govHubProject } = await import('./govhub')
+      return govHubProject
     }
     return null
   } catch (error) {
