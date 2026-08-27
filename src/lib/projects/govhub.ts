@@ -3,7 +3,7 @@ import { Project } from './types'
 export const govHubProject: Project = {
   slug: 'jb-marks-govhub',
 
-  title: 'GovHub — Municipal HR Platform for JB Marks Local Municipality',
+  title: 'GovHub, Municipal HR Platform for JB Marks Local Municipality',
 
   short: 'Enterprise HR and workforce management platform serving 15,000 municipal employees across attendance, leave, payroll, and compliance workflows.',
 
@@ -130,7 +130,7 @@ export const govHubProject: Project = {
     {
       layer: 'Domain Modules',
       technology: 'NestJS modular DDD, 12 bounded contexts',
-      purpose: 'Auth, Users, Departments, Attendance, Leave, Study, Notifications, Employee Import, Theme, Approval Chain Config, Storage, Analytics — each with its own service, controller, DTO, and constants layer',
+      purpose: 'Auth, Users, Departments, Attendance, Leave, Study, Notifications, Employee Import, Theme, Approval Chain Config, Storage, Analytics, each with its own service, controller, DTO, and constants layer',
     },
     {
       layer: 'Approval Chain Engine',
