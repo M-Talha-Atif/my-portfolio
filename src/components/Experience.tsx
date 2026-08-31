@@ -21,7 +21,7 @@ export default function Experience() {
       role: "Full Stack Engineer",
       company: "Digital Upgraders LLC",
       location: "Dubai",
-      period: "September 2025 - January 2026",
+      period: "May 2025 - December 2025",
       desc: [
         "Cut feed load time from 3s to 700ms by fixing query structure, indexing, payload size, and caching bottlenecks across the production feed system.",
         "Fixed duplicate notifications by redesigning concurrent write flows with proper database transactions, restoring consistency across the notification system.",
@@ -29,6 +29,16 @@ export default function Experience() {
         "AWS's operational cost and infrastructure overhead had become hard to justify and manage at the platform's scale, so I led a zero-downtime migration to Fly.io, reworking infrastructure, CI/CD, DNS, and service configuration on a live production platform without disrupting real users.",
         "Fixed a production authentication bug where the OAuth token and JWT token were both being stored under the same cookie key, silently overwriting each other and dropping user sessions, tracing the root cause through production logs and redesigning token storage so each token persists under its own key.",
         "Refactored the frontend codebase by applying separation-of-concerns design patterns, splitting logic into hooks, types, and components instead of one tangled structure, so the codebase could actually scale without repeatedly re-touching the same files.",
+      ],
+    },
+    {
+      role: "Full Stack Engineer",
+      company: "HannSoft",
+      location: "Remote",
+      period: "February 2024 - April 2025",
+      desc: [
+        "Shipped 10+ production web and Android apps for clients across multiple countries, including Plant Care, Focus Frame, Youth Sphere, and Fridge Buddy, each one built from a blank requirements doc with its own auth, APIs, database, and role-based logic rather than extending one shared codebase.",
+        "Owned each engagement end to end as the hands-on engineer, technical owner, and project lead at once, managing scope, deadlines, and outsourced development teams, reviewing their implementations, and resolving engineering issues they couldn't.",
       ],
     },
   ]

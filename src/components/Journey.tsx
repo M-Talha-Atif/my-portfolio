@@ -69,7 +69,7 @@ const developerJourneyParagraphs: { id: string, content: ReactNode }[] = [
     {
         id: 'how-i-started',
         content: <>
-            I started with <span className={highlightClassName}>Android development</span>, doing small freelance projects like a plant care app.<br />
+            I started with <span className={highlightClassName}>Android development</span> at <span className={highlightClassName}>HannSoft</span>, shipping small apps for clients across different countries, like a plant care app.<br />
             I used to sit in direct client meetings myself to catch up on requirements.<br />
             That&apos;s where I learned that building something a real person depends on is different from finishing a tutorial.
         </>
