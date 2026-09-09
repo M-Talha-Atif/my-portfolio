@@ -41,6 +41,8 @@ export const govHubProject: Project = {
 
   hero: '/jbmarksProject/hero/hero.png',
 
+  live: 'https://mystaffhub.org',
+
   platforms: ['web', 'mobile'],
 
   webDesigns: [
