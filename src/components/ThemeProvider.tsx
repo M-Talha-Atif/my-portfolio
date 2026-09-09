@@ -6,23 +6,24 @@ type Theme = 'dark' | 'light'
 interface ThemeContextType {
   theme: Theme
   toggleTheme: () => void
+  mounted: boolean
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') {
-      return 'dark'
-    }
-
-    const saved = localStorage.getItem('theme') as Theme | null
-    return saved === 'light' || saved === 'dark' ? saved : 'dark'
-  })
+  // Always start at 'dark' so the first client render matches the server-rendered HTML exactly.
+  // The real saved theme is applied after mount (see effect below), avoiding a hydration mismatch.
+  const [theme, setTheme] = useState<Theme>('dark')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+    const saved = localStorage.getItem('theme') as Theme | null
+    const initial = saved === 'light' || saved === 'dark' ? saved : 'dark'
+    setTheme(initial)
+    document.documentElement.setAttribute('data-theme', initial)
+    setMounted(true)
+  }, [])
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
@@ -31,9 +32,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.documentElement.setAttribute('data-theme', newTheme)
   }
 
-  // Always return the context provider, even during SSR
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>
       {children}
     </ThemeContext.Provider>
   )

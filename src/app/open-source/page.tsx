@@ -60,7 +60,7 @@ export default function OpenSourcePage() {
   }, [query, activeTechs, activeCategories])
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-10 pb-24">
+    <div className="max-w-6xl mx-auto px-6 pt-28 pb-24">
       <Link
         href="/"
         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all group"
