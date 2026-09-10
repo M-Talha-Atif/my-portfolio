@@ -18,6 +18,7 @@ export const projectsMetadata = [
     hero: '/jbmarksProject/hero/hero.png',
     platforms: ['web', 'mobile'] as ('web' | 'mobile')[],
     tech: ['NestJS', 'Next.js 14', 'Flutter', 'PostgreSQL', 'Prisma ORM', 'Redis', 'BullMQ', 'Cloudflare R2', 'Docker'],
+    live: 'https://mystaffhub.org',
   },
   {
     slug: 'moodly',
