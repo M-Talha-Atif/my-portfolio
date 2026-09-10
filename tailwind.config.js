@@ -8,13 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1f2937',
-        bg: '#0b0b0d',
-        surface: 'rgba(255, 255, 255, 0.03)',
-        text: '#e6e6e6',
-        subtext: '#bdbdbd',
-        accent: '#7dd3fc',
-        glass: 'rgba(255,255,255,0.06)',
+        primary: 'var(--color-primary)',
+        bg: 'var(--color-bg)',
+        surface: 'var(--color-surface)',
+        card: 'var(--color-card-bg)',
+        text: 'var(--color-text)',
+        subtext: 'var(--color-subtext)',
+        heading: 'var(--color-heading)',
+        accent: 'var(--color-accent-solid)',
+        onaccent: 'var(--color-on-accent)',
+        glass: 'var(--color-surface)',
+        edge: 'var(--color-border)',
+        'edge-strong': 'var(--color-border-strong)',
       },
       borderRadius: {
         base: '12px',

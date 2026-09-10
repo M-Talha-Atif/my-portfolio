@@ -17,7 +17,8 @@ export default function ThemeToggle() {
       type="button"
       onClick={handleToggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="relative w-9 h-9 rounded-lg border border-[var(--color-nav-border)] bg-[var(--color-surface)] flex items-center justify-center overflow-hidden hover:border-[var(--color-accent-solid)]/50 transition-colors"
+      data-tooltip={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      className="tooltip relative w-9 h-9 rounded-lg border border-[var(--color-nav-border)] bg-[var(--color-surface)] flex items-center justify-center overflow-hidden hover:border-[var(--color-accent-solid)]/50 transition-colors"
     >
       <Sun
         className={`absolute w-4 h-4 text-[var(--color-accent-solid)] transition-all duration-300 ${

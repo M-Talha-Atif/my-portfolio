@@ -38,11 +38,11 @@ export default function OpenSource() {
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                         whileHover={{ scale: 1.02, y: -4 }}
                         onClick={() => posthog.capture('opensource_pr_clicked', { pr: c.slug })}
-                        className="group glass p-6 rounded-2xl border border-[rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all text-left"
+                        className="group glass p-6 rounded-2xl border border-[var(--color-border)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all text-left"
                     >
                         <div className="flex items-center gap-2 mb-3">
                             <GitPullRequest className="w-4 h-4 text-[var(--color-accent-solid)] flex-shrink-0" />
-                            <h3 className="text-base font-semibold text-white group-hover:text-[var(--color-accent-solid)] transition-colors">
+                            <h3 className="text-base font-semibold text-heading group-hover:text-[var(--color-accent-solid)] transition-colors">
                                 {c.repo}
                             </h3>
                             <span className="text-sm text-subtext">{c.prNumber}</span>

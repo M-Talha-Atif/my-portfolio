@@ -23,6 +23,9 @@ export default function CalendlyModal({
 
   useEffect(() => {
     if (!open) {
+      // Resetting visibility when the modal closes (rather than during render) is
+      // intentional: it drives the exit transition before the modal unmounts.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(false)
       return
     }
@@ -32,6 +35,8 @@ export default function CalendlyModal({
 
   useEffect(() => {
     if (!open) {
+      // Same as above: resets the iframe-loaded flag so the loader shows again next open.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLoaded(false)
       return
     }
@@ -68,13 +73,13 @@ export default function CalendlyModal({
         role="dialog"
         aria-modal="true"
         aria-label={heading}
-        className={`relative w-full max-w-2xl glass rounded-2xl border border-[rgba(255,255,255,0.08)] shadow-soft overflow-hidden transition-all duration-200 ${
+        className={`relative w-full max-w-2xl glass rounded-2xl border border-[var(--color-border)] shadow-soft overflow-hidden transition-all duration-200 ${
           visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-[0.98]'
         }`}
       >
-        <div className="flex items-center justify-between gap-4 px-5 py-4 border-b border-[rgba(255,255,255,0.06)]">
+        <div className="flex items-center justify-between gap-4 px-5 py-4 border-b border-[var(--color-border)]">
           <div>
-            <div className="text-sm font-medium text-white/90 flex items-center gap-2">
+            <div className="text-sm font-medium text-heading flex items-center gap-2">
               <Calendar className="w-4 h-4 text-[var(--color-accent-solid)]" />
               {heading}
             </div>
@@ -84,8 +89,9 @@ export default function CalendlyModal({
             type="button"
             onClick={onClose}
             aria-label="Close scheduler"
+            data-tooltip="Close"
             autoFocus
-            className="p-1.5 rounded-lg text-subtext hover:text-white hover:bg-[rgba(255,255,255,0.08)] transition-colors flex-shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-solid)]"
+            className="tooltip p-1.5 rounded-lg text-subtext hover:text-heading hover:bg-[var(--color-border)] transition-colors flex-shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-solid)]"
           >
             <X className="w-4 h-4" />
           </button>

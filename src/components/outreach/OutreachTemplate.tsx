@@ -12,9 +12,9 @@ import Footer from '@/components/Footer'
 import XLogo from '@/components/icons/XLogo'
 
 const TIER_STYLES: Record<OutreachPage['hiringPaths'][number]['tier'], string> = {
-  Premium: 'bg-[var(--color-accent-solid)] text-black',
-  Silver: 'border border-[rgba(255,255,255,0.2)] text-white/90',
-  Bronze: 'border border-[rgba(255,255,255,0.2)] text-white/90',
+  Premium: 'bg-[var(--color-accent-solid)] text-onaccent',
+  Silver: 'border border-[var(--color-border)] text-heading',
+  Bronze: 'border border-[var(--color-border)] text-heading',
 }
 
 // Fixed identity, not company-specific — same reach-out channels on every
@@ -35,7 +35,7 @@ function Emphasis({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         i % 2 === 1 ? (
-          <strong key={i} className="font-semibold text-white">
+          <strong key={i} className="font-semibold text-heading">
             {part}
           </strong>
         ) : (
@@ -151,7 +151,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       {/* BACK TO PORTFOLIO */}
       <a
         href={data.backToPortfolio.href}
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all group"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all group"
       >
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         <span>{data.backToPortfolio.label.replace(/^←\s*/, '')}</span>
@@ -178,7 +178,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
               {data.heroHighlights.map((chip) => (
                 <span
                   key={chip}
-                  className="text-xs font-medium px-3 py-1.5 rounded-full border border-[var(--color-accent-solid)]/40 bg-[var(--color-accent-solid)]/10 text-white"
+                  className="text-xs font-medium px-3 py-1.5 rounded-full border border-[var(--color-accent-solid)]/40 bg-[var(--color-accent-solid)]/10 text-heading"
                 >
                   {chip}
                 </span>
@@ -224,7 +224,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
           {data.keyStats.map((stat) => (
             <div
               key={stat.label}
-              className="glass rounded-2xl border border-[rgba(255,255,255,0.05)] p-5 text-center hover:border-[var(--color-accent-solid)]/30 transition-colors"
+              className="glass rounded-2xl border border-[var(--color-border)] p-5 text-center hover:border-[var(--color-accent-solid)]/30 transition-colors"
             >
               <div className="text-2xl md:text-3xl font-bold text-[var(--color-accent-solid)] mb-1">
                 {stat.value}
@@ -238,7 +238,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       {/* SECTION 2 — WHAT YOU'RE SOLVING */}
       <section
         data-track-section="what-you-are-solving"
-        className="py-8 border-t border-[rgba(255,255,255,0.06)]"
+        className="py-8 border-t border-[var(--color-border)]"
       >
         <h2 className="text-xl font-semibold mb-5">What {data.company.name} is solving</h2>
         <ul className="space-y-3 max-w-2xl">
@@ -257,20 +257,20 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       <section
         id="evidence"
         data-track-section="evidence"
-        className="py-8 border-t border-[rgba(255,255,255,0.06)]"
+        className="py-8 border-t border-[var(--color-border)]"
       >
         <h2 className="text-xl font-semibold mb-3">Relevant evidence</h2>
         <p className="text-subtext leading-relaxed max-w-3xl mb-6">
           <Emphasis text={data.relevantEvidence.intro} />
         </p>
 
-        <div className="glass rounded-2xl border border-[rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="glass rounded-2xl border border-[var(--color-border)] overflow-hidden">
           <div className="grid md:grid-cols-2">
-            <div className="p-6 md:p-8 md:border-r border-[rgba(255,255,255,0.06)]">
+            <div className="p-6 md:p-8 md:border-r border-[var(--color-border)]">
               <div className="text-xs font-medium uppercase tracking-wide text-subtext mb-3">
                 Your problem
               </div>
-              <p className="text-white/90 leading-relaxed">
+              <p className="text-heading leading-relaxed">
                 <Emphasis text={data.relevantEvidence.companyProblem} />
               </p>
             </div>
@@ -278,13 +278,13 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
               <div className="text-xs font-medium uppercase tracking-wide text-[var(--color-accent-solid)] mb-3">
                 My experience
               </div>
-              <p className="text-white/90 leading-relaxed">
+              <p className="text-heading leading-relaxed">
                 <Emphasis text={data.relevantEvidence.myExperience} />
               </p>
             </div>
           </div>
 
-          <div className="px-6 md:px-8 py-6 border-t border-[rgba(255,255,255,0.06)]">
+          <div className="px-6 md:px-8 py-6 border-t border-[var(--color-border)]">
             <p className="text-sm text-subtext leading-relaxed">
               <Emphasis text={data.relevantEvidence.overlap} />
             </p>
@@ -292,7 +292,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
 
           {data.relevantEvidence.projectImage && (
             <div className="px-6 md:px-8 pt-2">
-              <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.06)]">
+              <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-[var(--color-border)]">
                 <Image
                   src={data.relevantEvidence.projectImage}
                   alt={`${data.company.name} evidence visual`}
@@ -326,35 +326,35 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       <section
         id="decision"
         data-track-section="real-decision"
-        className="py-8 border-t border-[rgba(255,255,255,0.06)]"
+        className="py-8 border-t border-[var(--color-border)]"
       >
         <h2 className="text-xl font-semibold mb-5">A real decision</h2>
-        <div className="rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#111114] p-6 md:p-8 font-mono text-sm leading-relaxed">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[#111114] p-6 md:p-8 font-mono text-sm leading-relaxed">
           <p>
-            <span className="text-subtext">problem</span>
-            <span className="text-white/40"> → </span>
-            <span className="text-white/90">
+            <span className="text-[var(--color-subtext-on-dark)]">problem</span>
+            <span className="text-[var(--color-subtext-on-dark)]"> → </span>
+            <span className="text-[var(--color-text-on-dark)]">
               <Emphasis text={data.realDecision.problem} />
             </span>
           </p>
           <p className="mt-4">
-            <span className="text-subtext">decision</span>
-            <span className="text-white/40"> → </span>
-            <span className="text-white/90">
+            <span className="text-[var(--color-subtext-on-dark)]">decision</span>
+            <span className="text-[var(--color-subtext-on-dark)]"> → </span>
+            <span className="text-[var(--color-text-on-dark)]">
               <Emphasis text={data.realDecision.decision} />
             </span>
           </p>
           <p className="mt-4">
-            <span className="text-subtext">trade-off</span>
-            <span className="text-white/40"> → </span>
-            <span className="text-white/90">
+            <span className="text-[var(--color-subtext-on-dark)]">trade-off</span>
+            <span className="text-[var(--color-subtext-on-dark)]"> → </span>
+            <span className="text-[var(--color-text-on-dark)]">
               <Emphasis text={data.realDecision.tradeoff} />
             </span>
           </p>
           <p className="mt-4">
             <span className="text-[var(--color-accent-solid)]">result</span>
-            <span className="text-white/40"> → </span>
-            <span className="text-white/90">
+            <span className="text-[var(--color-subtext-on-dark)]"> → </span>
+            <span className="text-[var(--color-text-on-dark)]">
               <Emphasis text={data.realDecision.result} />
             </span>
           </p>
@@ -383,7 +383,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
                   <span className="text-[var(--color-accent-solid)] text-xs font-bold">{idx + 1}</span>
                 </div>
                 <div>
-                  <div className="text-white font-medium text-sm mb-1">{item.trait}</div>
+                  <div className="text-heading font-medium text-sm mb-1">{item.trait}</div>
                   <p className="text-subtext text-sm leading-relaxed">
                     <Emphasis text={item.description} />
                   </p>
@@ -397,7 +397,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       {/* SECTION 6 — HIRING PATHS */}
       <section
         data-track-section="hiring-paths"
-        className="py-8 border-t border-[rgba(255,255,255,0.06)] mt-2"
+        className="py-8 border-t border-[var(--color-border)] mt-2"
       >
         <h2 className="text-xl font-semibold mb-2">
           {data.hiringPathsHeading ?? "How you'd like to evaluate me"}
@@ -410,14 +410,14 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
           {data.hiringPaths.map((path) => (
             <div
               key={path.tier}
-              className="glass rounded-2xl border border-[rgba(255,255,255,0.05)] p-6 flex flex-col h-full"
+              className="glass rounded-2xl border border-[var(--color-border)] p-6 flex flex-col h-full"
             >
               <span
                 className={`self-start text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4 ${TIER_STYLES[path.tier]}`}
               >
                 {path.tier}
               </span>
-              <h3 className="font-medium text-white mb-2">{path.title}</h3>
+              <h3 className="font-medium text-heading mb-2">{path.title}</h3>
               <p className="text-sm text-subtext leading-relaxed flex-grow">
                 <Emphasis text={path.message} />
               </p>
@@ -427,7 +427,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
                 slug={data.slug}
                 location={`hiring-path-${path.tier.toLowerCase()}`}
                 onOpenScheduler={() => setSchedulerOpen(true)}
-                className="mt-6 inline-flex justify-center px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.15)] text-sm font-medium text-white hover:border-[var(--color-accent-solid)] hover:text-[var(--color-accent-solid)] transition-all"
+                className="mt-6 inline-flex justify-center px-5 py-2.5 rounded-xl border border-[var(--color-border)] text-sm font-medium text-heading hover:border-[var(--color-accent-solid)] hover:text-[var(--color-accent-solid)] transition-all"
               />
             </div>
           ))}
@@ -438,7 +438,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       {relevantProjects.length > 0 && (
         <section
           data-track-section="relevant-projects"
-          className="py-8 border-t border-[rgba(255,255,255,0.06)]"
+          className="py-8 border-t border-[var(--color-border)]"
         >
           <h2 className="text-xl font-semibold mb-5">Relevant projects</h2>
           <div className="grid md:grid-cols-2 gap-5">
@@ -454,13 +454,13 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
                     target: `/projects/${project.slug}`,
                   })
                 }
-                className="glass rounded-2xl border border-[rgba(255,255,255,0.05)] overflow-hidden hover:border-[var(--color-accent-solid)]/40 transition-colors group"
+                className="glass rounded-2xl border border-[var(--color-border)] overflow-hidden hover:border-[var(--color-accent-solid)]/40 transition-colors group"
               >
                 <div className="relative w-full aspect-[16/9]">
                   <Image src={project.hero} alt={project.title} fill className="object-cover" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-medium text-white mb-1">{project.title}</h3>
+                  <h3 className="font-medium text-heading mb-1">{project.title}</h3>
                   <p className="text-sm text-subtext leading-relaxed mb-3">{project.short}</p>
                   <span className="text-sm font-medium text-[var(--color-accent-solid)] group-hover:underline underline-offset-4">
                     Explore the work →
@@ -475,7 +475,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
       {/* SECTION 8 — CLOSING NOTE */}
       <section
         data-track-section="closing"
-        className="py-12 border-t border-[rgba(255,255,255,0.06)] text-center max-w-lg mx-auto"
+        className="py-12 border-t border-[var(--color-border)] text-center max-w-lg mx-auto"
       >
         <p className="text-subtext leading-relaxed">
           <Emphasis text={data.closing.note} />
@@ -488,7 +488,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
             slug={data.slug}
             location="closing"
             onOpenScheduler={() => setSchedulerOpen(true)}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[var(--color-accent-solid)] text-black text-sm font-medium hover:brightness-110 transition text-center"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[var(--color-accent-solid)] text-onaccent text-sm font-medium hover:brightness-110 transition text-center"
           />
           <CtaAction
             target={data.closing.emailCtaTarget}
@@ -496,7 +496,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
             slug={data.slug}
             location="closing"
             onOpenScheduler={() => setSchedulerOpen(true)}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl border border-[rgba(255,255,255,0.15)] text-sm font-medium text-white hover:border-[var(--color-accent-solid)] hover:text-[var(--color-accent-solid)] transition-all text-center"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl border border-[var(--color-border)] text-sm font-medium text-heading hover:border-[var(--color-accent-solid)] hover:text-[var(--color-accent-solid)] transition-all text-center"
           />
         </div>
 
@@ -509,7 +509,7 @@ export default function OutreachTemplate({ data }: { data: OutreachPage }) {
               rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
               aria-label={label}
               title={label}
-              className="p-2.5 rounded-lg border border-[rgba(255,255,255,0.1)] text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)]/50 transition-all"
+              className="p-2.5 rounded-lg border border-[var(--color-border)] text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)]/50 transition-all"
             >
               <Icon className="w-4 h-4" />
             </a>

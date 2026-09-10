@@ -63,7 +63,7 @@ const coreValues = [
     }
 ]
 
-const highlightClassName = 'text-white font-medium'
+const highlightClassName = 'text-heading font-medium'
 
 const developerJourneyParagraphs: { id: string, content: ReactNode }[] = [
     {
@@ -187,7 +187,7 @@ export default function Journey() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="glass p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] mb-8 md:mb-12 relative overflow-hidden"
+                className="glass p-8 md:p-10 rounded-2xl border border-[var(--color-border)] mb-8 md:mb-12 relative overflow-hidden"
             >
                 {/* Decorative gradient */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent-solid)]/5 rounded-full blur-3xl" />
@@ -242,7 +242,7 @@ export default function Journey() {
                                     <Icon className={`w-6 h-6 ${colors.icon}`} />
                                 </div>
 
-                                <h4 className="text-lg font-semibold mb-2 text-white">
+                                <h4 className="text-lg font-semibold mb-2 text-heading">
                                     {value.title}
                                 </h4>
 
@@ -265,7 +265,7 @@ export default function Journey() {
             >
                 <p className="text-lg text-subtext italic">
                     &ldquo;Technology stacks evolve, but engineering fundamentals remain constant.
-                    <span className="text-white font-medium"> I adapt tools to solve problems, not problems to fit tools.</span>&rdquo;
+                    <span className="text-heading font-medium"> I adapt tools to solve problems, not problems to fit tools.</span>&rdquo;
                 </p>
             </motion.div>
         </motion.section>

@@ -33,12 +33,12 @@ export default function ProjectsGrid() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             whileHover={{ scale: 1.02, y: -4 }}
-            className="group relative glass p-6 rounded-2xl border border-[rgba(255,255,255,0.05)] transition-all duration-300 hover:shadow-[0_0_30px_var(--color-accent-solid)]/20"
+            className="group relative glass p-6 rounded-2xl border border-[var(--color-border)] transition-all duration-300 hover:shadow-[0_0_30px_var(--color-accent-solid)]/20"
           >
             {/* === Project Image === */}
 
             {/* === Project Image === */}
-            <div className="h-44 mb-4 rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)] flex items-center justify-center relative group transition-all group-hover:scale-[1.03]">
+            <div className="h-44 mb-4 rounded-xl overflow-hidden bg-[var(--color-surface)] flex items-center justify-center relative group transition-all group-hover:scale-[1.03]">
 
               <Image
                 src={p.hero}
@@ -51,7 +51,7 @@ export default function ProjectsGrid() {
 
             </div>
             {/* === Project Info === */}
-            <h3 className="text-lg font-semibold mb-1 text-white group-hover:text-[var(--color-accent-solid)] transition-colors">
+            <h3 className="text-lg font-semibold mb-1 text-heading group-hover:text-[var(--color-accent-solid)] transition-colors">
               {p.title}
             </h3>
             <p className="text-sm text-subtext mb-3">{p.short}</p>
@@ -61,7 +61,7 @@ export default function ProjectsGrid() {
               {p.tech.map(t => (
                 <span
                   key={t}
-                  className="text-xs px-2 py-1 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] group-hover:border-[var(--color-accent-solid)]/40 transition-colors"
+                  className="text-xs px-2 py-1 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] group-hover:border-[var(--color-accent-solid)]/40 transition-colors"
                 >
                   {t}
                 </span>
@@ -76,7 +76,7 @@ export default function ProjectsGrid() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => posthog.capture('project_live_demo_clicked', { project: p.slug, project_title: p.title })}
-                  className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[var(--color-accent-solid)] text-black hover:brightness-110 transition"
+                  className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[var(--color-accent-solid)] text-onaccent hover:brightness-110 transition"
                 >
                   <ExternalLink className="w-4 h-4" /> Live Demo
                 </a>
@@ -84,7 +84,7 @@ export default function ProjectsGrid() {
               <Link
                 href={`/projects/${p.slug}`}
                 onClick={() => posthog.capture('project_case_study_clicked', { project: p.slug, project_title: p.title })}
-                className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition text-subtext"
+                className="flex-1 flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[var(--color-border)] hover:bg-[var(--color-border)] transition text-subtext"
               >
                 <FileText className="w-4 h-4" /> Case Study
               </Link>

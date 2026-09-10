@@ -66,8 +66,8 @@ export default function Contact() {
                     Let’s <span className="text-[var(--color-accent-solid)]">Connect</span>
                 </h2>
                 <p className="text-subtext text-lg leading-relaxed">
-                    My expertise in <span className="text-white font-medium">backend, frontend, mobile,</span> and{' '}
-                    <span className="text-white font-medium">cloud</span> development is ready to tackle your next big challenge.
+                    My expertise in <span className="text-heading font-medium">backend, frontend, mobile,</span> and{' '}
+                    <span className="text-heading font-medium">cloud</span> development is ready to tackle your next big challenge.
                     I&apos;m interested in collaborating with innovative teams on complex problems and am available for remote or onsite work in Lahore.
                 </p>
 
@@ -94,7 +94,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 rounded-lg bg-transparent border border-[rgba(255,255,255,0.08)] focus:border-[var(--color-accent-solid)] outline-none transition"
+                        className="w-full p-3 rounded-lg bg-transparent border border-[var(--color-border)] focus:border-[var(--color-accent-solid)] outline-none transition"
                     />
                     <input
                         type="email"
@@ -105,7 +105,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 rounded-lg bg-transparent border border-[rgba(255,255,255,0.08)] focus:border-[var(--color-accent-solid)] outline-none transition"
+                        className="w-full p-3 rounded-lg bg-transparent border border-[var(--color-border)] focus:border-[var(--color-accent-solid)] outline-none transition"
                     />
                     <textarea
                         name="message"
@@ -116,13 +116,13 @@ export default function Contact() {
                         value={form.message}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 rounded-lg bg-transparent border border-[rgba(255,255,255,0.08)] focus:border-[var(--color-accent-solid)] outline-none transition resize-none"
+                        className="w-full p-3 rounded-lg bg-transparent border border-[var(--color-border)] focus:border-[var(--color-accent-solid)] outline-none transition resize-none"
                     />
 
                     <button
                         type="submit"
                         disabled={status === 'loading'}
-                        className="mt-2 px-6 py-3 text-black rounded-xl bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition disabled:opacity-60"
+                        className="mt-2 px-6 py-3 text-onaccent rounded-xl bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition disabled:opacity-60"
                     >
                         {status === 'loading' ? 'Sending...' : 'Get in Touch'}
                     </button>
@@ -158,7 +158,7 @@ export default function Contact() {
                 >
                     <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-gradient-to-br from-[var(--color-accent)]/10 to-transparent blur-2xl rounded-full -z-10" />
 
-                    <h3 className="text-2xl font-semibold mb-8 text-white">Contact Info</h3>
+                    <h3 className="text-2xl font-semibold mb-8 text-heading">Contact Info</h3>
 
                     <ul className="space-y-5 text-subtext">
                         <li className="flex items-center gap-4 group">
@@ -168,75 +168,75 @@ export default function Contact() {
                             <button
                                 type="button"
                                 onClick={() => setSchedulerOpen(true)}
-                                className="text-left text-base font-medium text-white hover:text-[var(--color-accent-solid)] transition"
+                                className="text-left text-base font-medium text-heading hover:text-[var(--color-accent-solid)] transition"
                             >
                                 Book a call directly →
                             </button>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <MapPin className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <span className="text-base">Lahore, Pakistan</span>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <Mail className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <a
                                 href="mailto:talhaatif573@gmail.com"
                                 onClick={() => posthog.capture('contact_link_clicked', { type: 'email' })}
-                                className="hover:text-white transition text-base"
+                                className="hover:text-heading transition text-base"
                             >
                                 talhaatif573@gmail.com
                             </a>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <Phone className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <span className="text-base">+92 306 4391520</span>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <Github className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <a
                                 href="https://github.com/M-Talha-Atif"
                                 target="_blank"
                                 onClick={() => posthog.capture('contact_link_clicked', { type: 'github' })}
-                                className="hover:text-white transition text-base"
+                                className="hover:text-heading transition text-base"
                             >
                                 github.com/M-Talha-Atif
                             </a>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <Linkedin className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <a
                                 href="https://www.linkedin.com/in/muhammad-talha-atif/"
                                 target="_blank"
                                 onClick={() => posthog.capture('contact_link_clicked', { type: 'linkedin' })}
-                                className="hover:text-white transition text-base"
+                                className="hover:text-heading transition text-base"
                             >
                                 linkedin.com/in/muhammad-talha-atif
                             </a>
                         </li>
 
                         <li className="flex items-center gap-4 group">
-                            <div className="p-3 rounded-lg bg-[rgba(255,255,255,0.05)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
+                            <div className="p-3 rounded-lg bg-[var(--color-surface)] group-hover:bg-[var(--color-accent-solid)]/20 transition">
                                 <XLogo className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             </div>
                             <a
                                 href="https://x.com/talhaAtif195901"
                                 target="_blank"
-                                className="hover:text-white transition text-base"
+                                className="hover:text-heading transition text-base"
                             >
                                 x.com/talhaAtif195901
                             </a>

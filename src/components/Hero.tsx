@@ -56,13 +56,13 @@ export default function Hero() {
             href="/personal/M.Talha-Atif-Full-Stack.pdf"
             download
             onClick={() => posthog.capture('resume_downloaded')}
-            className="px-6 py-3 text-black rounded-[12px] bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition"
+            className="px-6 py-3 text-onaccent rounded-[12px] bg-[var(--color-accent-solid)] text-sm font-medium hover:brightness-110 transition"
           >
             Download My Resume
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-[12px] border border-[rgba(255,255,255,0.1)] text-sm font-medium hover:bg-[rgba(255,255,255,0.05)] transition"
+            className="px-6 py-3 rounded-[12px] border border-[var(--color-border)] text-sm font-medium hover:bg-[var(--color-border)] transition"
           >
             Contact Me
           </a>
@@ -73,7 +73,7 @@ export default function Hero() {
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 text-sm rounded-[10px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] text-subtext hover:border-[var(--color-accent-solid)] transition"
+              className="px-3 py-1 text-sm rounded-[10px] bg-[var(--color-surface)] border border-[var(--color-border)] text-subtext hover:border-[var(--color-accent-solid)] transition"
             >
               {tech}
             </span>
@@ -109,7 +109,7 @@ export default function Hero() {
 
           {/* X */}
           <a
-            href="https://x.com/"
+            href="https://x.com/talhaAtif195901"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => posthog.capture('hero_social_link_clicked', { platform: 'x' })}
@@ -154,7 +154,7 @@ export default function Hero() {
         {/* === Build / Iterate / Ship diagram === */}
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="glass w-full max-w-[420px] rounded-2xl border border-[rgba(255,255,255,0.05)] p-5 shadow-lg"
+          className="glass w-full max-w-[420px] rounded-2xl border border-[var(--color-border)] p-5 shadow-lg"
         >
           <div className="flex items-center justify-between gap-2">
             {[
@@ -167,7 +167,7 @@ export default function Hero() {
                   <div className="w-10 h-10 rounded-full bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-4 h-4 text-[var(--color-accent-solid)]" />
                   </div>
-                  <span className="text-xs font-medium text-white">{label}</span>
+                  <span className="text-xs font-medium text-heading">{label}</span>
                 </div>
                 {idx < arr.length - 1 && (
                   <ArrowRight className="w-4 h-4 text-subtext flex-shrink-0" aria-hidden="true" />

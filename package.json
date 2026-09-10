@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:precommit": "pnpm audit || (echo \"Commit blocked: dependency vulnerabilities found. Fix them (pnpm update / check advisories) before committing.\" && exit 1)",
+    "prepare": "husky"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -15,7 +17,7 @@
     "lucide-react": "^0.548.0",
     "mermaid": "^11.14.0",
     "next": "16.3.3",
-    "nodemailer": "^9.0.5",
+    "nodemailer": "^10.0.1",
     "posthog-js": "^1.407.1",
     "posthog-node": "^5.46.1",
     "react": "18.3.1",
@@ -24,12 +26,13 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.39",
-    "@types/nodemailer": "^8.0.0",
+    "@types/nodemailer": "^8.0.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.5.0",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.3.3",
+    "husky": "^9.1.7",
     "postcss": "^8.5.13",
     "typescript": "^5"
   },

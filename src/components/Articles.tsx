@@ -41,16 +41,16 @@ export default function Articles() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: i * 0.1 }}
                         whileHover={{ scale: 1.02, y: -4 }}
-                        className="group glass p-6 rounded-2xl block border border-[rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all"
+                        className="group glass p-6 rounded-2xl block border border-[var(--color-border)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all"
                     >
                         <div className="flex justify-between items-start mb-3">
-                            <h3 className="text-lg font-semibold text-white group-hover:text-[var(--color-accent-solid)] transition-colors">
+                            <h3 className="text-lg font-semibold text-heading group-hover:text-[var(--color-accent-solid)] transition-colors">
                                 {p.title}
                             </h3>
                             <ExternalLink className="w-4 h-4 text-subtext group-hover:text-[var(--color-accent-solid)] transition" />
                         </div>
 
-                        <p className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.05)] text-[var(--color-accent-solid)]">
+                        <p className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-accent-solid)]">
                             {p.date}
                         </p>
                     </motion.a>

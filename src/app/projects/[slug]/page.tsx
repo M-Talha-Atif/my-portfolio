@@ -70,10 +70,10 @@ function getDemoEmbedUrl(url: string): string {
 
 // Lightweight skeleton
 const SectionSkeleton = () => (
-    <div className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)] animate-pulse">
-        <div className="h-6 bg-white/10 rounded w-1/3 mb-4" />
-        <div className="h-4 bg-white/5 rounded w-full mb-2" />
-        <div className="h-4 bg-white/5 rounded w-5/6" />
+    <div className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)] animate-pulse">
+        <div className="h-6 bg-[var(--color-border)] rounded w-1/3 mb-4" />
+        <div className="h-4 bg-[var(--color-surface)] rounded w-full mb-2" />
+        <div className="h-4 bg-[var(--color-surface)] rounded w-5/6" />
     </div>
 )
 
@@ -140,7 +140,7 @@ export default function ProjectPage({ params }: Props) {
             {/* Back Button */}
             <Link
                 href="/"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all mb-6 group"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all mb-6 group"
             >
                 <span className="group-hover:-translate-x-1 transition-transform">←</span>
                 <span>Back to Home</span>
@@ -168,17 +168,17 @@ export default function ProjectPage({ params }: Props) {
                 <p className="text-subtext text-lg">{project.short}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                     {project.live && (
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'live' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'live' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-accent-solid)] text-onaccent font-medium hover:brightness-110 transition">
                             <ExternalLink className="w-4 h-4" /> View Live
                         </a>
                     )}
                     {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'github' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'github' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition">
                             <Github className="w-4 h-4" /> Source Code
                         </a>
                     )}
                     {project.apk && (
-                        <a href={project.apk} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'apk' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] transition">
+                        <a href={project.apk} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'apk' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition">
                             <Download className="w-4 h-4" /> Download APK
                         </a>
                     )}
@@ -191,7 +191,7 @@ export default function ProjectPage({ params }: Props) {
                     {project.metrics.map((metric, idx) => (
                         <div
                             key={idx}
-                            className="glass p-5 rounded-xl border border-[rgba(255,255,255,0.05)] text-center hover:border-[var(--color-accent-solid)]/30 transition-colors"
+                            className="glass p-5 rounded-xl border border-[var(--color-border)] text-center hover:border-[var(--color-accent-solid)]/30 transition-colors"
                         >
                             <div className="flex justify-center mb-2">
                                 <TrendingUp className="w-4 h-4 text-[var(--color-accent-solid)]" />
@@ -208,19 +208,19 @@ export default function ProjectPage({ params }: Props) {
             )}
 
             {/* Overview */}
-            <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+            <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                 <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
                 <p className="text-subtext leading-relaxed">{project.overview}</p>
             </section>
 
             {/* Problem / Solution */}
             <section className="grid md:grid-cols-2 gap-8 mb-10">
-                <div className="glass p-8 rounded-2xl border border-[rgba(255,255,255,0.05)] relative overflow-hidden">
+                <div className="glass p-8 rounded-2xl border border-[var(--color-border)] relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl" />
                     <h3 className="text-xl font-semibold mb-3">Problem Statement</h3>
                     <p className="text-subtext relative z-10 leading-relaxed">{project.problem}</p>
                 </div>
-                <div className="glass p-8 rounded-2xl border border-[rgba(255,255,255,0.05)] relative overflow-hidden">
+                <div className="glass p-8 rounded-2xl border border-[var(--color-border)] relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full blur-3xl" />
                     <h3 className="text-xl font-semibold mb-3">Solution</h3>
                     <p className="text-subtext relative z-10 leading-relaxed">{project.solution}</p>
@@ -229,7 +229,7 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Project Goals */}
             {project.projectGoals && project.projectGoals.length > 0 && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex items-center gap-2 mb-5">
                         <Target className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">Project Goals</h3>
@@ -238,7 +238,7 @@ export default function ProjectPage({ params }: Props) {
                         {project.projectGoals.map((goal, idx) => (
                             <div
                                 key={idx}
-                                className="flex items-start gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.04)] transition-colors"
+                                className="flex items-start gap-3 p-3 rounded-lg bg-[var(--color-surface)] hover:bg-[var(--color-border)] transition-colors"
                             >
                                 <div className="w-6 h-6 rounded-full bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <span className="text-[var(--color-accent-solid)] text-xs font-bold">{idx + 1}</span>
@@ -252,7 +252,7 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Technical Highlights */}
             {project.highlights && project.highlights.length > 0 && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex items-center gap-2 mb-5">
                         <Zap className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">Technical Highlights</h3>
@@ -261,7 +261,7 @@ export default function ProjectPage({ params }: Props) {
                         {project.highlights.map((highlight, idx) => (
                             <div
                                 key={idx}
-                                className="flex items-start gap-3 p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:border-[var(--color-accent-solid)]/30 transition-colors"
+                                className="flex items-start gap-3 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent-solid)]/30 transition-colors"
                             >
                                 <CheckCircle2 className="w-5 h-5 text-[var(--color-accent-solid)] flex-shrink-0 mt-0.5" />
                                 <p className="text-sm text-subtext leading-relaxed">{highlight}</p>
@@ -273,7 +273,7 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Project Media - LAZY LOADED */}
             <Suspense fallback={<SectionSkeleton />}>
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
                         <h3 className="text-xl font-semibold flex items-center gap-2">
                             {mediaTab === 'demo'
@@ -292,8 +292,8 @@ export default function ProjectPage({ params }: Props) {
                                     <button
                                         onClick={() => setView('web')}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${view === 'web'
-                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                                ? 'bg-[var(--color-accent-solid)] text-onaccent font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                                             }`}
                                     >
                                         <Monitor className="w-4 h-4" /> Web
@@ -301,8 +301,8 @@ export default function ProjectPage({ params }: Props) {
                                     <button
                                         onClick={() => setView('mobile')}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all ${view === 'mobile'
-                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                                ? 'bg-[var(--color-accent-solid)] text-onaccent font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                                             }`}
                                     >
                                         <Smartphone className="w-4 h-4" /> Mobile
@@ -315,8 +315,8 @@ export default function ProjectPage({ params }: Props) {
                                     <button
                                         onClick={() => setMediaTab('visuals')}
                                         className={`px-4 py-2 rounded-lg border transition-all ${mediaTab === 'visuals'
-                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                                ? 'bg-[var(--color-accent-solid)] text-onaccent font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                                             }`}
                                     >
                                         Visuals
@@ -324,8 +324,8 @@ export default function ProjectPage({ params }: Props) {
                                     <button
                                         onClick={() => setMediaTab('demo')}
                                         className={`px-4 py-2 rounded-lg border transition-all ${mediaTab === 'demo'
-                                                ? 'bg-[var(--color-accent-solid)] text-black font-medium border-[var(--color-accent-solid)]'
-                                                : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.2)]'
+                                                ? 'bg-[var(--color-accent-solid)] text-onaccent font-medium border-[var(--color-accent-solid)]'
+                                                : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                                             }`}
                                     >
                                         Demo
@@ -336,7 +336,7 @@ export default function ProjectPage({ params }: Props) {
                     </div>
 
                     {mediaTab === 'demo' && demoEmbedUrl ? (
-                        <div className="aspect-video rounded-lg overflow-hidden border border-[rgba(255,255,255,0.1)] bg-black/20">
+                        <div className="aspect-video rounded-lg overflow-hidden border border-[var(--color-border)] bg-black/20">
                             <iframe
                                 key={demoEmbedUrl}
                                 src={demoEmbedUrl}
@@ -358,7 +358,7 @@ export default function ProjectPage({ params }: Props) {
                                 <div className="flex items-center gap-3">
                                     <Download className="w-5 h-5 text-[var(--color-accent-solid)]" />
                                     <div>
-                                        <div className="font-medium text-white">Download Android APK</div>
+                                        <div className="font-medium text-heading">Download Android APK</div>
                                         <div className="text-xs text-subtext">Version 1.0 • {project.apkSize || 'N/A'} MB</div>
                                     </div>
                                 </div>
@@ -367,7 +367,7 @@ export default function ProjectPage({ params }: Props) {
                                     href={project.apk}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="px-4 py-2 rounded-lg bg-[var(--color-accent-solid)] text-black font-medium hover:brightness-110 transition"
+                                    className="px-4 py-2 rounded-lg bg-[var(--color-accent-solid)] text-onaccent font-medium hover:brightness-110 transition"
                                 >
                                     Download
                                 </a>
@@ -379,14 +379,14 @@ export default function ProjectPage({ params }: Props) {
             </Suspense>
 
             {/* Features */}
-            <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+            <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                 <h3 className="text-xl font-semibold mb-5 flex items-center gap-2">
                     <Award className="w-5 h-5 text-[var(--color-accent-solid)]" />
                     Key Features
                 </h3>
                 <div className="grid md:grid-cols-2 gap-3">
                     {project.features.map((f, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)]">
+                        <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-[var(--color-surface)]">
                             <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-solid)] flex-shrink-0 mt-2" />
                             <span className="text-subtext text-sm leading-relaxed">{f}</span>
                         </div>
@@ -396,14 +396,14 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Contributions */}
             {project.individualContributions && project.individualContributions.length > 0 && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex items-center gap-2 mb-5">
                         <Users className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">My Contributions</h3>
                     </div>
                     <div className="space-y-3">
                         {project.individualContributions.map((c, idx) => (
-                            <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)]">
+                            <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]">
                                 <Code2 className="w-4 h-4 text-[var(--color-accent-solid)] flex-shrink-0 mt-1" />
                                 <p className="text-sm text-subtext leading-relaxed">{c}</p>
                             </div>
@@ -414,7 +414,7 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Architecture Table */}
             {project.architectureDetails && project.architectureDetails.length > 0 && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex items-center gap-2 mb-5">
                         <Server className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">System Architecture</h3>
@@ -422,7 +422,7 @@ export default function ProjectPage({ params }: Props) {
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-[rgba(255,255,255,0.1)]">
+                                <tr className="border-b border-[var(--color-border)]">
                                     <th className="text-left py-3 px-4 text-[var(--color-accent-solid)] font-semibold">Layer</th>
                                     <th className="text-left py-3 px-4 text-[var(--color-accent-solid)] font-semibold">Technology</th>
                                     <th className="text-left py-3 px-4 text-[var(--color-accent-solid)] font-semibold">Purpose</th>
@@ -430,8 +430,8 @@ export default function ProjectPage({ params }: Props) {
                             </thead>
                             <tbody>
                                 {project.architectureDetails.map((detail, idx) => (
-                                    <tr key={idx} className="border-b border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.02)]">
-                                        <td className="py-3 px-4 text-white font-medium">{detail.layer}</td>
+                                    <tr key={idx} className="border-b border-[var(--color-border)] hover:bg-[var(--color-border)]">
+                                        <td className="py-3 px-4 text-heading font-medium">{detail.layer}</td>
                                         <td className="py-3 px-4 text-blue-300">{detail.technology}</td>
                                         <td className="py-3 px-4 text-subtext">{detail.purpose}</td>
                                     </tr>
@@ -445,14 +445,14 @@ export default function ProjectPage({ params }: Props) {
             {/* Mermaid Diagrams - LAZY LOADED */}
             {project.mermaidDiagrams && project.mermaidDiagrams.length > 0 && (
                 <Suspense fallback={<SectionSkeleton />}>
-                    <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                    <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                         <div className="flex items-center gap-2 mb-6">
                             <Network className="w-5 h-5 text-[var(--color-accent-solid)]" />
                             <h3 className="text-xl font-semibold">Architecture Diagrams</h3>
                         </div>
                         <div className="space-y-8">
                             {project.mermaidDiagrams.map((diagram, idx) => (
-                                <div key={idx} className="p-6 rounded-xl border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)]">
+                                <div key={idx} className="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
                                     <MermaidDiagram code={diagram.code} title={diagram.title} />
                                 </div>
                             ))}
@@ -462,7 +462,7 @@ export default function ProjectPage({ params }: Props) {
             )}
 
             {/* Tech Stack */}
-            <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+            <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                 <h3 className="text-xl font-semibold mb-5">Technology Stack</h3>
                 {project.techStack ? (
                     <div className="space-y-5">
@@ -487,7 +487,7 @@ export default function ProjectPage({ params }: Props) {
                 ) : (
                     <div className="flex gap-3 flex-wrap">
                         {project.tech.map(t => (
-                            <span key={t} className="px-3 py-1.5 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.1)] text-subtext">
+                            <span key={t} className="px-3 py-1.5 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] text-subtext">
                                 {t}
                             </span>
                         ))}
@@ -497,15 +497,15 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Challenges */}
             {project.challenges && project.challenges.length > 0 && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)]">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)]">
                     <div className="flex items-center gap-2 mb-6">
                         <AlertCircle className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">Challenges & Solutions</h3>
                     </div>
                     <div className="space-y-6">
                         {project.challenges.map((ch, idx) => (
-                            <div key={idx} className="p-6 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)]">
-                                <h4 className="text-lg font-semibold text-white mb-3">{ch.title}</h4>
+                            <div key={idx} className="p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)]">
+                                <h4 className="text-lg font-semibold text-heading mb-3">{ch.title}</h4>
                                 <div className="space-y-3">
                                     <div>
                                         <div className="text-xs font-medium text-red-300 mb-1">Challenge:</div>
@@ -524,7 +524,7 @@ export default function ProjectPage({ params }: Props) {
 
             {/* Results */}
             {project.results && (
-                <section className="glass p-8 rounded-2xl mb-10 border border-[rgba(255,255,255,0.05)] bg-gradient-to-br from-[var(--color-accent-solid)]/5 to-transparent">
+                <section className="glass p-8 rounded-2xl mb-10 border border-[var(--color-border)] bg-gradient-to-br from-[var(--color-accent-solid)]/5 to-transparent">
                     <div className="flex items-center gap-2 mb-4">
                         <TrendingUp className="w-5 h-5 text-[var(--color-accent-solid)]" />
                         <h3 className="text-xl font-semibold">Results & Impact</h3>
