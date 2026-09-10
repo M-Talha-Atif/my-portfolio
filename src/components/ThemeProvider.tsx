@@ -18,8 +18,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // Reading localStorage here (rather than in useState's initializer) is intentional:
+    // it keeps the first client render identical to the server-rendered HTML, avoiding
+    // a hydration mismatch. This one-time sync-after-mount is the documented exception
+    // to the set-state-in-effect rule for persisted UI preferences.
     const saved = localStorage.getItem('theme') as Theme | null
     const initial = saved === 'light' || saved === 'dark' ? saved : 'dark'
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initial)
     document.documentElement.setAttribute('data-theme', initial)
     setMounted(true)

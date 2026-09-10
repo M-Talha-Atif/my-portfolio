@@ -63,7 +63,7 @@ export default function OpenSourcePage() {
     <div className="max-w-6xl mx-auto px-6 pt-28 pb-24">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgba(255,255,255,0.1)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all group"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--color-border)] text-sm font-medium text-subtext hover:text-[var(--color-accent-solid)] hover:border-[var(--color-accent-solid)] transition-all group"
       >
         <span className="group-hover:-translate-x-1 transition-transform">←</span>
         <span>Back to portfolio</span>
@@ -86,7 +86,7 @@ export default function OpenSourcePage() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by title, repo, or technology..."
-          className="w-full pl-11 pr-4 py-3 rounded-xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] text-white placeholder:text-subtext focus:outline-none focus:border-[var(--color-accent-solid)] transition-colors"
+          className="w-full pl-11 pr-4 py-3 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] text-heading placeholder:text-subtext focus:outline-none focus:border-[var(--color-accent-solid)] transition-colors"
         />
       </div>
 
@@ -105,8 +105,8 @@ export default function OpenSourcePage() {
                 onClick={() => toggleTech(tech)}
                 className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${
                   active
-                    ? 'bg-[var(--color-accent-solid)] text-black border-[var(--color-accent-solid)] font-medium'
-                    : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[var(--color-accent-solid)]/40'
+                    ? 'bg-[var(--color-accent-solid)] text-onaccent border-[var(--color-accent-solid)] font-medium'
+                    : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-accent-solid)]/40'
                 }`}
               >
                 {tech}
@@ -131,8 +131,8 @@ export default function OpenSourcePage() {
                 onClick={() => toggleCategory(category)}
                 className={`text-xs px-3 py-1.5 rounded-lg border transition-colors ${
                   active
-                    ? 'bg-[var(--color-accent-solid)] text-black border-[var(--color-accent-solid)] font-medium'
-                    : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[var(--color-accent-solid)]/40'
+                    ? 'bg-[var(--color-accent-solid)] text-onaccent border-[var(--color-accent-solid)] font-medium'
+                    : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-accent-solid)]/40'
                 }`}
               >
                 {category}
@@ -172,11 +172,11 @@ export default function OpenSourcePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
               onClick={() => posthog.capture('opensource_pr_clicked', { pr: c.slug, source: 'listing_page' })}
-              className="group glass p-6 rounded-2xl border border-[rgba(255,255,255,0.05)] hover:border-[var(--color-accent-solid)]/40 hover:shadow-[0_0_30px_var(--color-accent-solid)]/10 transition-all text-left flex flex-col"
+              className="group glass p-6 rounded-2xl border border-[var(--color-border)] hover:border-[var(--color-accent-solid)]/40 hover:shadow-[0_0_30px_var(--color-accent-solid)]/10 transition-all text-left flex flex-col"
             >
               <div className="flex items-center gap-2 mb-2">
                 <GitPullRequest className="w-4 h-4 text-[var(--color-accent-solid)] flex-shrink-0" />
-                <span className="text-sm font-medium text-white">{c.repo}</span>
+                <span className="text-sm font-medium text-heading">{c.repo}</span>
                 <span className="text-xs text-subtext">{c.prNumber}</span>
                 {(c.linesAdded > 0 || c.linesRemoved > 0) && (
                   <span className="ml-auto text-xs font-mono">
@@ -186,7 +186,7 @@ export default function OpenSourcePage() {
                 )}
               </div>
 
-              <h3 className="text-base font-semibold text-white group-hover:text-[var(--color-accent-solid)] transition-colors mb-2">
+              <h3 className="text-base font-semibold text-heading group-hover:text-[var(--color-accent-solid)] transition-colors mb-2">
                 {c.title}
               </h3>
 
@@ -200,7 +200,7 @@ export default function OpenSourcePage() {
                 {c.technologies.map((t) => (
                   <span
                     key={t}
-                    className="text-xs px-2 py-1 rounded-lg border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)]"
+                    className="text-xs px-2 py-1 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]"
                   >
                     {t}
                   </span>

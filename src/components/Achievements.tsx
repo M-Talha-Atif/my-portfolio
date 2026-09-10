@@ -61,10 +61,10 @@ export default function Achievements() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                         whileHover={{ scale: 1.02, y: -4 }}
-                        className="group relative glass p-6 rounded-2xl border border-[rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all"
+                        className="group relative glass p-6 rounded-2xl border border-[var(--color-border)] hover:shadow-[0_0_30px_var(--color-accent-solid)]/20 transition-all"
                     >
                         {/* Image */}
-                        <div className="h-40 mb-4 rounded-xl overflow-hidden flex items-center justify-center bg-[rgba(255,255,255,0.02)] relative">
+                        <div className="h-40 mb-4 rounded-xl overflow-hidden flex items-center justify-center bg-[var(--color-surface)] relative">
                             <Image
                                 src={a.image}
                                 alt={a.title}
@@ -76,7 +76,7 @@ export default function Achievements() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg font-semibold mb-3 text-white group-hover:text-[var(--color-accent-solid)] transition-colors">
+                        <h3 className="text-lg font-semibold mb-3 text-heading group-hover:text-[var(--color-accent-solid)] transition-colors">
                             {a.title}
                             {a.link && (
                                 <a

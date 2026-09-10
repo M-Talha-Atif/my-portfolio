@@ -10,7 +10,7 @@ import ThemeToggle from '@/components/ThemeToggle'
 const socialLinks = [
   { name: 'LeetCode', href: 'https://leetcode.com/u/TalhaAtif/', Icon: Code },
   { name: 'GitHub', href: 'https://github.com/M-Talha-Atif', Icon: Github },
-  { name: 'X', href: 'https://x.com/', Icon: XLogo },
+  { name: 'X', href: 'https://x.com/talhaAtif195901', Icon: XLogo },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/muhammad-talha-atif/', Icon: Linkedin },
 ]
 
@@ -71,8 +71,9 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
+                  data-tooltip={name}
                   onClick={() => posthog.capture('nav_social_link_clicked', { platform: name.toLowerCase() })}
-                  className="text-subtext hover:text-[var(--color-accent-solid)] transition"
+                  className="tooltip text-subtext hover:text-[var(--color-accent-solid)] transition"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -87,9 +88,10 @@ export default function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
-            className="p-2 rounded-lg bg-[var(--color-surface)] hover:brightness-110 transition border border-[var(--color-nav-border)]"
+            className="tooltip p-2 rounded-lg bg-[var(--color-surface)] hover:brightness-110 transition border border-[var(--color-nav-border)]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            data-tooltip={menuOpen ? 'Close menu' : 'Open menu'}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

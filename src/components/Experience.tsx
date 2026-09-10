@@ -80,8 +80,8 @@ export default function Experience() {
             {/* glowing timeline dot */}
             <span className="absolute left-[6px] top-2 w-3 h-3 bg-[var(--color-accent-solid)] rounded-full shadow-[0_0_10px_var(--color-accent-solid)]" />
 
-            <div className="glass p-6 rounded-2xl backdrop-blur-md border border-[rgba(255,255,255,0.08)] shadow-soft">
-              <h3 className="text-lg font-semibold text-white">{item.role}</h3>
+            <div className="glass p-6 rounded-2xl backdrop-blur-md border border-[var(--color-border)] shadow-soft">
+              <h3 className="text-lg font-semibold text-heading">{item.role}</h3>
               <p className="text-sm text-subtext mb-2">
                 {item.company} · {item.location} · {item.period}
               </p>

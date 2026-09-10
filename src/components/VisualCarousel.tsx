@@ -25,7 +25,7 @@ export default function VisualCarousel({ images = [] }: VisualCarouselProps) {
     return (
         <div className="relative">
             {/* Main Image */}
-            <div className="aspect-video relative rounded-lg overflow-hidden bg-[rgba(255,255,255,0.02)]">
+            <div className="aspect-video relative rounded-lg overflow-hidden bg-[var(--color-surface)]">
                 <Image
                     src={images[currentIndex]}
                     alt={`Design ${currentIndex + 1}`}
@@ -42,17 +42,19 @@ export default function VisualCarousel({ images = [] }: VisualCarouselProps) {
                 <>
                     <button
                         onClick={handlePrev}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
+                        className="tooltip absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
                         aria-label="Previous image"
+                        data-tooltip="Previous"
                     >
-                        <ChevronLeft className="w-5 h-5 text-white" />
+                        <ChevronLeft className="w-5 h-5 text-[var(--color-text-on-dark)]" />
                     </button>
                     <button
                         onClick={handleNext}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
+                        className="tooltip absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 transition backdrop-blur-sm"
                         aria-label="Next image"
+                        data-tooltip="Next"
                     >
-                        <ChevronRight className="w-5 h-5 text-white" />
+                        <ChevronRight className="w-5 h-5 text-[var(--color-text-on-dark)]" />
                     </button>
                 </>
             )}
@@ -67,7 +69,7 @@ export default function VisualCarousel({ images = [] }: VisualCarouselProps) {
                             className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition ${
                                 idx === currentIndex
                                     ? 'border-[var(--color-accent-solid)]'
-                                    : 'border-transparent hover:border-white/20'
+                                    : 'border-transparent hover:border-[var(--color-border-strong)]'
                             }`}
                         >
                             <Image

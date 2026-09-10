@@ -181,8 +181,8 @@ export default function Skills() {
                     onClick={() => setActiveCategory(null)}
                     className={`px-5 py-2 rounded-full border transition-all ${
                         activeCategory === null
-                            ? 'bg-[var(--color-accent-solid)] text-black border-[var(--color-accent-solid)] font-medium'
-                            : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.3)]'
+                            ? 'bg-[var(--color-accent-solid)] text-onaccent border-[var(--color-accent-solid)] font-medium'
+                            : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                     }`}
                 >
                     All
@@ -197,7 +197,7 @@ export default function Skills() {
                             className={`px-5 py-2 rounded-full border transition-all flex items-center gap-2 ${
                                 activeCategory === category.id
                                     ? `${colors.bg} ${colors.text} ${colors.border} font-medium`
-                                    : 'border-[rgba(255,255,255,0.1)] text-subtext hover:border-[rgba(255,255,255,0.3)]'
+                                    : 'border-[var(--color-border)] text-subtext hover:border-[var(--color-border)]'
                             }`}
                         >
                             <Icon className="w-4 h-4" />
@@ -229,7 +229,7 @@ export default function Skills() {
                                         <Icon className={`w-6 h-6 ${colors.text}`} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-semibold text-white">{category.name}</h3>
+                                        <h3 className="text-xl font-semibold text-heading">{category.name}</h3>
                                         <p className="text-xs text-subtext">{category.skills.length} technologies</p>
                                     </div>
                                 </div>
@@ -246,7 +246,7 @@ export default function Skills() {
                                             whileHover={{ y: -2 }}
                                             className={`glass px-4 py-3 rounded-lg border ${colors.border} ${colors.hover} transition-all duration-200 text-center`}
                                         >
-                                            <span className="text-sm text-white font-medium">{skill}</span>
+                                            <span className="text-sm text-heading font-medium">{skill}</span>
                                         </motion.div>
                                     ))}
                                 </div>

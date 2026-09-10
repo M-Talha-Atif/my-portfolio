@@ -104,7 +104,7 @@ export default function MermaidDiagram({ code, title }: MermaidDiagramProps) {
     return (
         <div className="mermaid-container">
             {title && (
-                <h4 className="text-sm font-medium text-white mb-3">{title}</h4>
+                <h4 className="text-sm font-medium text-heading mb-3">{title}</h4>
             )}
             <div 
                 ref={containerRef} 
