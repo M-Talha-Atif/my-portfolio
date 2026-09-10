@@ -23,6 +23,7 @@ export type Project = {
     demoLinks?: Partial<Record<'web' | 'mobile', string>>,
     live?: string,
     github?: string,
+    instagram?: string,
     hero: string,
     techStack?: {
         frontend?: string[],

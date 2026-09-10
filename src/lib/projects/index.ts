@@ -9,7 +9,7 @@ export const projectsMetadata = [
     hero: '/intimecProject/hero/hero.png',
     platforms: ['web'] as ('web' | 'mobile')[],
     tech: ['Java', 'Spring Boot', 'Kafka', 'Next.js', 'PostgreSQL', 'OpenSearch', 'gRPC', 'Multi Tenant'],
-    live: 'https://youtu.be/OK640zuXBr8',
+    live: 'https://www.aidentx.com/igax',
   },
   {
     slug: 'jb-marks-govhub',
@@ -36,7 +36,7 @@ export const projectsMetadata = [
     hero: '/cunocovoProject/hero/hero.png?v=20260625',
     platforms: ['web'] as ('web' | 'mobile')[],
     tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Supabase', 'Express.js', 'Plunk.js'],
-    live: 'https://cc-prod-user.fly.dev/',
+    live: 'https://uppercase.cc/',
   },
   {
     slug: 'memingo',

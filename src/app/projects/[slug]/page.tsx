@@ -7,7 +7,7 @@ import { use } from 'react'
 import {
     Monitor, Smartphone, ExternalLink, Github, Download,
     Award, TrendingUp, Zap, Target, CheckCircle2, Code2,
-    Users, Server, AlertCircle, Network
+    Users, Server, AlertCircle, Network, Instagram
 } from 'lucide-react'
 import Link from "next/link"
 import posthog from 'posthog-js'
@@ -175,6 +175,11 @@ export default function ProjectPage({ params }: Props) {
                     {project.github && (
                         <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'github' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition">
                             <Github className="w-4 h-4" /> Source Code
+                        </a>
+                    )}
+                    {project.instagram && (
+                        <a href={project.instagram} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture('project_external_link_clicked', { project: slug, link_type: 'instagram' })} className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] hover:bg-[var(--color-border)] transition">
+                            <Instagram className="w-4 h-4" /> Instagram
                         </a>
                     )}
                     {project.apk && (

@@ -385,6 +385,7 @@ export const intimecProject: Project = {
 
   platforms: ['web'],
   demo: 'https://youtu.be/OK640zuXBr8',
+  live: 'https://www.aidentx.com/igax',
   hero: '/intimecProject/hero/hero.png',
   webDesigns: Array.from(
     { length: 25 },
