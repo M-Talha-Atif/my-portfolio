@@ -348,6 +348,7 @@ export const cunocovoProject: Project = {
   ],
 
   metrics: [
+    { label: 'Registered Users', value: '2,000+' },
     { label: 'Feed Load Time', value: '700ms' },
     { label: 'Feed Improvement', value: '77%' },
     { label: 'Comment Latency', value: '0ms' },
@@ -361,7 +362,8 @@ export const cunocovoProject: Project = {
   results: 'Built and maintained a production social platform serving real creative professionals with consistent reliability. Reduced feed loading from 3 seconds to 700ms through systematic multi-layer optimisation. Eliminated a 2-second comment button latency by identifying and removing a redundant API call. Fixed a notification duplication race condition through proper database transaction design. Resolved cross-platform rendering failures on Android, iOS, and Safari affecting scroll behaviour and tap interactions. Led a complete zero-downtime infrastructure migration from AWS EC2 to Fly.io. Built a full content moderation system that removed engineering from the report-to-resolution workflow. The platform operates with reliable uptime serving a community of photographers, videographers, and creative professionals.',
 
   platforms: ['web'],
-  live: 'https://cc-prod-user.fly.dev/',
+  live: 'https://uppercase.cc/',
+  instagram: 'https://www.instagram.com/uppercase.cc/',
   hero: '/cunocovoProject/hero/hero.png?v=20260625'
 }
 
