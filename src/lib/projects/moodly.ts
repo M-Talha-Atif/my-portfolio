@@ -552,8 +552,8 @@ export const moodlyProject: Project = {
         ],
 
         platforms: ['mobile'],
-        apk: '/downloads/moodly-v1.0.apk',
-        apkSize: 52,
+        apk: 'https://github.com/M-Talha-Atif/Portfolio-NEXTJS/releases/download/moodly-apk-v1.0/app-release.apk',
+        apkSize: 122,
 
         highlights: [
             'Asynchronous mood processing reducing perceived wait time from 4-8s to under 1s (87.5% improvement)',
