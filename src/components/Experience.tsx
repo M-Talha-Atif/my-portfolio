@@ -37,8 +37,9 @@ export default function Experience() {
       location: "Remote",
       period: "February 2024 - April 2025",
       desc: [
-        "Shipped 10+ production web and Android apps for clients across multiple countries, including Plant Care, Focus Frame, Youth Sphere, and Fridge Buddy, each one built from a blank requirements doc with its own auth, APIs, database, and role-based logic rather than extending one shared codebase.",
-        "Owned each engagement end to end as the hands-on engineer, technical owner, and project lead at once, managing scope, deadlines, and outsourced development teams, reviewing their implementations, and resolving engineering issues they couldn't.",
+        "Engineered third party API integrations, including library and sports data providers and Firebase Cloud Messaging, to degrade gracefully under real world failure, applying timeouts, circuit breakers, and exponential backoff retries so a single unreliable upstream provider couldn't cascade into an app wide outage.",
+        "Structured client applications around MVVM to keep business logic, state, and UI concerns independently testable and resilient to configuration changes, while delivering integration heavy production features such as Fridge Buddy's scan to recipe flow, combining barcode scanning with Gemini based AI content generation.",
+        "Owned the full technical lifecycle of independent client products end to end, from data modeling and access control design through native client delivery, architecting Firestore and Realtime Database schemas alongside the Firestore security rules and RBAC model that enforced authorization at the data layer rather than trusting the client.",
       ],
     },
   ]
