@@ -19,6 +19,7 @@ export default function Achievements() {
             image: '/achievements/Calico.png',
             link: 'https://github.com/M-Talha-Atif/Coding-Contests',
             learning: [
+                'Finished in the top 200 out of many competing teams, personally solving 3 of the 9 contest problems as a participant',
                 'Sharpened algorithmic thinking by solving complex coding challenges under timed conditions',
                 'Strengthened data structure mastery and decision-making speed through competitive coding rounds',
             ],
@@ -28,8 +29,18 @@ export default function Achievements() {
             image: '/achievements/ICPC.png',
             link: 'https://github.com/M-Talha-Atif/Coding-Contests',
             learning: [
+                'Ranked in the top 110 out of all participating teams',
                 'Enhanced problem-solving depth through large-scale algorithmic contests with optimized runtime solutions',
                 'Gained experience in debugging and implementing efficient algorithms in real-time competition settings',
+            ],
+        },
+        {
+            title: 'Meta Hacker Cup 2024',
+            image: '/achievements/meta.png',
+            link: 'https://www.facebook.com/codingcompetitions/hacker-cup/2024/certificate/8082396075153762',
+            learning: [
+                'Competed in Meta’s global algorithmic programming competition against participants worldwide',
+                'Applied optimized algorithmic and data structure techniques under strict time and correctness constraints',
             ],
         },
 

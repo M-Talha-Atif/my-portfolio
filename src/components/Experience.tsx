@@ -65,33 +65,42 @@ export default function Experience() {
         </p>
       </div>
 
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         {/* vertical timeline line */}
         <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[var(--color-accent-solid)]/60 to-transparent" />
 
         {timeline.map((item, i) => (
           <motion.div
             key={`${item.company}-${item.period}`}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
             className="relative pl-12 mb-10"
           >
             {/* glowing timeline dot */}
             <span className="absolute left-[6px] top-2 w-3 h-3 bg-[var(--color-accent-solid)] rounded-full shadow-[0_0_10px_var(--color-accent-solid)]" />
 
-            <div className="glass p-6 rounded-2xl backdrop-blur-md border border-[var(--color-border)] shadow-soft">
-              <h3 className="text-lg font-semibold text-heading">{item.role}</h3>
-              <p className="text-sm text-subtext mb-2">
-                {item.company} · {item.location} · {item.period}
-              </p>
+            <div className="glass p-6 md:p-7 rounded-2xl backdrop-blur-md border border-[var(--color-border)] shadow-soft">
+              {/* header row: role/company on the left, period as a badge on the right */}
+              <div className="flex flex-wrap items-start justify-between gap-3 mb-4 pb-4 border-b border-[var(--color-border)]">
+                <div>
+                  <h3 className="text-lg font-semibold text-heading">{item.role}</h3>
+                  <p className="text-sm text-[var(--color-accent-solid)] font-medium">
+                    {item.company} <span className="text-subtext font-normal">· {item.location}</span>
+                  </p>
+                </div>
+                <span className="text-xs font-medium text-subtext bg-[var(--color-surface)] border border-[var(--color-border)] rounded-full px-3 py-1 whitespace-nowrap">
+                  {item.period}
+                </span>
+              </div>
+
               <div className="text-sm text-subtext leading-relaxed">
                 {Array.isArray(item.desc) ? (
-                  <ul className="space-y-2">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
                     {item.desc.map((point) => (
                       <li key={point} className="flex items-start">
-                        <span className="text-[var(--color-accent-solid)] mr-2">•</span>
+                        <span className="text-[var(--color-accent-solid)] mr-2 mt-0.5 flex-shrink-0">•</span>
                         <span>{point}</span>
                       </li>
                     ))}
