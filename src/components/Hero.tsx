@@ -178,6 +178,23 @@ export default function Hero() {
           <p className="mt-4 text-center text-xs text-subtext">
             Continuous delivery, not a one-time release.
           </p>
+
+          {/* === Impact stats === */}
+          <div className="mt-4 pt-4 border-t border-[var(--color-border)]">
+            <p className="text-center text-[10px] font-semibold tracking-wider uppercase text-subtext mb-3">
+              Impact
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="text-center">
+                <p className="text-lg font-bold text-[var(--color-accent-solid)]">15,000+</p>
+                <p className="text-[11px] text-subtext leading-tight">Users reached across shipped platforms</p>
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-bold text-[var(--color-accent-solid)]">Zero-Downtime</p>
+                <p className="text-[11px] text-subtext leading-tight">Cloud cost optimized via AWS to Fly.io migration</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </section>
