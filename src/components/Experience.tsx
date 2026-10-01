@@ -1,11 +1,13 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Experience() {
   const timeline = [
     {
       role: "Full Stack Engineer",
       company: "MicroTechX",
+      logo: "/companyLogos/microtechx.png",
       location: "Malaysia",
       period: "December 2025 - June 2026",
       desc: [
@@ -20,6 +22,7 @@ export default function Experience() {
     {
       role: "Full Stack Engineer",
       company: "Digital Upgraders LLC",
+      logo: "/companyLogos/digitalupgraders.png",
       location: "Dubai",
       period: "May 2025 - December 2025",
       desc: [
@@ -34,6 +37,7 @@ export default function Experience() {
     {
       role: "Full Stack Engineer",
       company: "HannSoft",
+      logo: "/companyLogos/hannsoft.png",
       location: "Remote",
       period: "February 2024 - April 2025",
       desc: [
@@ -82,9 +86,15 @@ export default function Experience() {
                   <div className="flex items-center gap-4 md:gap-0 md:flex-col md:items-start">
                     <span
                       aria-hidden
-                      className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30 text-[var(--color-accent-solid)] font-bold text-lg flex items-center justify-center"
+                      className="flex-shrink-0 w-12 h-12 rounded-xl bg-white border border-[var(--color-border)] p-2 flex items-center justify-center overflow-hidden"
                     >
-                      {item.company.charAt(0)}
+                      <Image
+                        src={item.logo}
+                        alt={`${item.company} logo`}
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-contain"
+                      />
                     </span>
                     <span className="hidden md:block mt-4 text-xs font-mono tracking-widest text-subtext/70">
                       {String(i + 1).padStart(2, '0')} / {String(timeline.length).padStart(2, '0')}
