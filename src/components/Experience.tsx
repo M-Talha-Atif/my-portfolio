@@ -65,10 +65,7 @@ export default function Experience() {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
-        {/* vertical timeline line */}
-        <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[var(--color-accent-solid)]/60 to-transparent" />
-
+      <div className="relative max-w-6xl mx-auto space-y-8 md:space-y-10">
         {timeline.map((item, i) => (
           <motion.div
             key={`${item.company}-${item.period}`}
@@ -76,38 +73,53 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="relative pl-12 mb-10"
+            className="relative"
           >
-            {/* glowing timeline dot */}
-            <span className="absolute left-[6px] top-2 w-3 h-3 bg-[var(--color-accent-solid)] rounded-full shadow-[0_0_10px_var(--color-accent-solid)]" />
+            <div className="glass rounded-2xl backdrop-blur-md border border-[var(--color-border)] shadow-soft overflow-hidden transition-colors hover:border-[var(--color-border-strong)]">
+              <div className="grid md:grid-cols-[260px_1px_1fr]">
+                {/* meta column: index, company badge, role, period */}
+                <div className="p-6 md:p-7 flex md:flex-col gap-4 md:gap-5">
+                  <div className="flex items-center gap-4 md:gap-0 md:flex-col md:items-start">
+                    <span
+                      aria-hidden
+                      className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--color-accent-solid)]/10 border border-[var(--color-accent-solid)]/30 text-[var(--color-accent-solid)] font-bold text-lg flex items-center justify-center"
+                    >
+                      {item.company.charAt(0)}
+                    </span>
+                    <span className="hidden md:block mt-4 text-xs font-mono tracking-widest text-subtext/70">
+                      {String(i + 1).padStart(2, '0')} / {String(timeline.length).padStart(2, '0')}
+                    </span>
+                  </div>
 
-            <div className="glass p-6 md:p-7 rounded-2xl backdrop-blur-md border border-[var(--color-border)] shadow-soft">
-              {/* header row: role/company on the left, period as a badge on the right */}
-              <div className="flex flex-wrap items-start justify-between gap-3 mb-4 pb-4 border-b border-[var(--color-border)]">
-                <div>
-                  <h3 className="text-lg font-semibold text-heading">{item.role}</h3>
-                  <p className="text-sm text-[var(--color-accent-solid)] font-medium">
-                    {item.company} <span className="text-subtext font-normal">· {item.location}</span>
-                  </p>
+                  <div>
+                    <h3 className="text-xl font-bold text-heading leading-snug">{item.role}</h3>
+                    <p className="text-[var(--color-accent-solid)] font-medium mt-1">{item.company}</p>
+                    <p className="text-sm text-subtext mt-0.5">{item.location}</p>
+                    <span className="inline-block mt-3 text-xs font-medium text-subtext bg-[var(--color-surface)] border border-[var(--color-border)] rounded-full px-3 py-1 whitespace-nowrap">
+                      {item.period}
+                    </span>
+                  </div>
                 </div>
-                <span className="text-xs font-medium text-subtext bg-[var(--color-surface)] border border-[var(--color-border)] rounded-full px-3 py-1 whitespace-nowrap">
-                  {item.period}
-                </span>
-              </div>
 
-              <div className="text-sm text-subtext leading-relaxed">
-                {Array.isArray(item.desc) ? (
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
-                    {item.desc.map((point) => (
-                      <li key={point} className="flex items-start">
-                        <span className="text-[var(--color-accent-solid)] mr-2 mt-0.5 flex-shrink-0">•</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{item.desc}</p>
-                )}
+                {/* divider */}
+                <div className="hidden md:block bg-[var(--color-border)]" />
+                <div className="md:hidden h-px bg-[var(--color-border)] mx-6" />
+
+                {/* achievements column */}
+                <div className="p-6 md:p-7">
+                  {Array.isArray(item.desc) ? (
+                    <ul className="space-y-4">
+                      {item.desc.map((point) => (
+                        <li key={point} className="flex items-start gap-3">
+                          <span className="mt-[7px] flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--color-accent-solid)]" />
+                          <span className="text-[15px] text-subtext leading-[1.7]">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-[15px] text-subtext leading-[1.7]">{item.desc}</p>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>
