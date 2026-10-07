@@ -118,6 +118,36 @@ export const outreachPagesMetadata = [
     company: 'CityGem',
     role: 'Backend and Mobile Engineer (informational)',
   },
+  {
+    slug: 'pozolazo',
+    company: 'Pozolazo',
+    role: 'Backend and E-commerce Engineer (informational)',
+  },
+  {
+    slug: 'neo-communication',
+    company: 'neo communication ag',
+    role: 'Backend and Automation Engineer (informational)',
+  },
+  {
+    slug: 'govit',
+    company: 'govIT GmbH',
+    role: 'Backend Engineer (informational)',
+  },
+  {
+    slug: 'bomesi',
+    company: 'BOMESI Collective',
+    role: 'Data and Platform Engineer (informational)',
+  },
+  {
+    slug: 'mybestseller',
+    company: 'Mybestseller',
+    role: 'Backend and Integrations Engineer (informational)',
+  },
+  {
+    slug: 'nordisk-robotparkering',
+    company: 'Nordisk Robotparkering AB',
+    role: 'Full Stack Engineer (informational)',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -214,6 +244,30 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'citygem') {
       const { citygemOutreach } = await import('./citygem')
       return citygemOutreach
+    }
+    if (slug === 'pozolazo') {
+      const { pozolazoOutreach } = await import('./pozolazo')
+      return pozolazoOutreach
+    }
+    if (slug === 'neo-communication') {
+      const { neoCommunicationOutreach } = await import('./neo-communication')
+      return neoCommunicationOutreach
+    }
+    if (slug === 'govit') {
+      const { govitOutreach } = await import('./govit')
+      return govitOutreach
+    }
+    if (slug === 'bomesi') {
+      const { bomesiOutreach } = await import('./bomesi')
+      return bomesiOutreach
+    }
+    if (slug === 'mybestseller') {
+      const { mybestsellerOutreach } = await import('./mybestseller')
+      return mybestsellerOutreach
+    }
+    if (slug === 'nordisk-robotparkering') {
+      const { nordiskRobotparkeringOutreach } = await import('./nordisk-robotparkering')
+      return nordiskRobotparkeringOutreach
     }
     return null
   } catch (error) {
