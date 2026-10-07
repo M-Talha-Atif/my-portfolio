@@ -113,6 +113,11 @@ export const outreachPagesMetadata = [
     company: 'iFindTech (Oslo AI Fintech Client)',
     role: 'Full Stack Engineer, AI',
   },
+  {
+    slug: 'citygem',
+    company: 'CityGem',
+    role: 'Backend and Mobile Engineer (informational)',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -205,6 +210,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'ifindtech-oslo') {
       const { ifindtechOsloOutreach } = await import('./ifindtech-oslo')
       return ifindtechOsloOutreach
+    }
+    if (slug === 'citygem') {
+      const { citygemOutreach } = await import('./citygem')
+      return citygemOutreach
     }
     return null
   } catch (error) {
