@@ -7,6 +7,7 @@ import Achievements from '@/components/Achievements'
 import OpenSource from '@/components/OpenSource'
 import ContactClientOnly from '@/components/ContactClientOnly'
 import Skills from "@/components/Skills"
+import FeaturedWriting from '@/components/articles/FeaturedWriting'
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
         <Experience />
       </section>
       
+      <FeaturedWriting />
+
       <section id="journey">
         <Journey />
       </section>
