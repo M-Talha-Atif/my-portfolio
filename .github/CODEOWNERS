@@ -1,0 +1,14 @@
+# Everything that can execute code on a developer machine, in CI, or at build time
+# is owned explicitly. With branch protection (GitHub Pro / public repo) require code-owner review.
+*                          @M-Talha-Atif
+/.github/                  @M-Talha-Atif
+/.husky/                   @M-Talha-Atif
+/.vscode/                  @M-Talha-Atif
+/.claude/                  @M-Talha-Atif
+/scripts/                  @M-Talha-Atif
+/package.json              @M-Talha-Atif
+/pnpm-lock.yaml            @M-Talha-Atif
+/.npmrc                    @M-Talha-Atif
+/*.config.js               @M-Talha-Atif
+/*.config.mjs              @M-Talha-Atif
+/instrumentation-client.ts @M-Talha-Atif

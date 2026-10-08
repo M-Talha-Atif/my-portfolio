@@ -2,5 +2,6 @@
   "security.workspace.trust.enabled": true,
   "security.workspace.trust.startupPrompt": "always",
   "security.workspace.trust.untrustedFiles": "prompt",
+  "security.workspace.trust.banner": "always",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/security/check-repo.mjs && next dev",
+    "build": "node scripts/security/check-repo.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "security:check": "node scripts/security/check-repo.mjs",
     "audit:precommit": "pnpm audit || (echo \"Commit blocked: dependency vulnerabilities found. Fix them (pnpm update / check advisories) before committing.\" && exit 1)",
     "prepare": "husky"
   },

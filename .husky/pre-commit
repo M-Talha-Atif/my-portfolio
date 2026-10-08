@@ -1,1 +1,1 @@
-pnpm run audit:precommit
+node scripts/security/check-repo.mjs && pnpm run audit:precommit
