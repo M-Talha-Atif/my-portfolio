@@ -33,11 +33,11 @@ export default function Navbar() {
     { name: 'Open Source', href: '#opensource' },
     { name: 'Journey', href: '#journey' },
     { name: 'Skills', href: '#skills' },
-    // { name: 'Articles', href: '#articles' },
+    { name: 'Writing', href: '/writing' },
     { name: 'Contact', href: '#contact' },
   ]
 
-  const resolveHref = (href: string) => (isHome ? href : `/${href}`)
+  const resolveHref = (href: string) => (href.startsWith('#') && !isHome ? `/${href}` : href)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--color-nav-bg)] border-b border-[var(--color-nav-border)]">
