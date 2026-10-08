@@ -1,0 +1,197 @@
+name: security
+
+# Runs on EVERY branch push, every PR, daily, and on demand.
+# All third-party actions are pinned to full commit SHAs (a mutable tag is itself a supply-chain risk).
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # 0. Who pushed? Only the owner and known bots may push, and a force-push is never expected.
+  #    This repo was re-infected by force-pushes from a second collaborator account; this job turns that into an alert email.
+  #    (Real protection is: nobody else has write access. See SECURITY.md.)
+  actor-guard:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fail on unexpected pusher or force-push
+        env:
+          ACTOR: ${{ github.actor }}
+          FORCED: ${{ github.event.forced }}
+        run: |
+          case "$ACTOR" in
+            M-Talha-Atif|"dependabot[bot]"|"vercel[bot]"|"posthog[bot]") ;;
+            *) echo "::error::Push by unexpected account: $ACTOR"; exit 1 ;;
+          esac
+          if [ "$FORCED" = "true" ]; then echo "::error::Force-push detected on this ref"; exit 1; fi
+
+  # 1. Custom tripwire: obfuscated loaders, disguised files, auto-run editor tasks, install scripts,
+  #    unpinned actions, exfil hosts. No install step, so nothing from the repo is executed.
+  tripwire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: node scripts/security/check-repo.mjs
+
+  # 2. The same tripwire against EVERY remote branch tip, so an infected side branch is flagged too.
+  all-branches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Scan every remote branch tip with the scanner from this checkout
+        run: |
+          set -uo pipefail
+          fail=0
+          for ref in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin | grep -v -e '^origin$' -e '^origin/HEAD$'); do
+            echo "::group::$ref"
+            rm -rf "$RUNNER_TEMP/wt"; git worktree prune
+            git worktree add -q --detach "$RUNNER_TEMP/wt" "$ref"
+            if ! node scripts/security/check-repo.mjs --root "$RUNNER_TEMP/wt"; then
+              echo "::error::Suspicious or infected branch: $ref"
+              fail=1
+            fi
+            git worktree remove --force "$RUNNER_TEMP/wt"
+            echo "::endgroup::"
+          done
+          exit $fail
+
+  # 3. ClamAV antivirus signatures over the whole tree (free, runs on private repos).
+  malware-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Install ClamAV and update signatures
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq clamav
+          sudo systemctl stop clamav-freshclam 2>/dev/null || true
+          sudo freshclam || echo "::warning::freshclam failed; scanning with packaged signatures"
+      - name: Scan working tree
+        run: clamscan --recursive --infected --max-filesize=50M --max-scansize=500M --exclude-dir='^\.git$' .
+
+  # 4. Secrets in code and in full git history (free for personal accounts).
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 5. Dependencies: OSV-Scanner (includes the OpenSSF malicious-packages database) + pnpm audit.
+  deps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: google/osv-scanner-action/osv-scanner-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        with:
+          scan-args: |-
+            --lockfile=pnpm-lock.yaml
+      - uses: pnpm/action-setup@a15d269cd4658e1107c09f1fabf4cbd7bd1f308a # v4.4.0
+      - run: pnpm audit --audit-level=high
+
+  # 6. Static analysis (free for private repos): JS/TS/Next/React rules + hardcoded secrets.
+  sast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: pipx install semgrep
+      - run: >
+          semgrep scan --metrics=off --error --severity ERROR
+          --config p/javascript --config p/typescript --config p/nextjs --config p/react
+          --config p/secrets --config p/owasp-top-ten
+          --exclude node_modules --exclude .next .
+
+  # 7. The app must still lint and build. Install scripts are disabled, so no dependency can run code on install.
+  build:
+    runs-on: ubuntu-latest
+    needs: [tripwire]
+    timeout-minutes: 15
+    steps:
+      - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@a15d269cd4658e1107c09f1fabf4cbd7bd1f308a # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm lint
+      - run: pnpm build
+
+  # Single required check for branch protection (see scripts/security/enable-branch-protection.sh).
+  security-gate:
+    if: always()
+    needs: [tripwire, all-branches, malware-scan, secrets, deps, sast, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any security job failed
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "job results: $RESULTS"
+          for r in $RESULTS; do
+            if [ "$r" != "success" ]; then echo "::error::a security job did not succeed ($r)"; exit 1; fi
+          done
