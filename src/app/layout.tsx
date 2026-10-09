@@ -8,7 +8,8 @@ import { SITE_URL, SITE_NAME, SOCIAL_LINKS, DEFAULT_OG_IMAGE } from '@/lib/seo'
 
 const TITLE = 'M. Talha Atif Full Stack Engineer | Backend Engineer | Distributed Systems | IGA'
 const DESCRIPTION = `I own product outcomes end to end, translating customer and business problems into reliable systems that deliver measurable value.
-  I design for failure, continuously challenging assumptions through resilience testing, observability, and chaos engineering.`
+  I design for failure, continuously challenging assumptions through resilience testing, observability, and chaos engineering.
+  3+ years building distributed systems that scale and handle failure.`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
