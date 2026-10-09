@@ -5,6 +5,18 @@ import Image from 'next/image'
 export default function Experience() {
   const timeline = [
     {
+      role: "Founding Engineer (Contract)",
+      company: "myStaffhub",
+      logo: "/companyLogos/mystaffhub.png",
+      location: "South Africa (Remote)",
+      period: "June 2026 - Present",
+      desc: [
+        "Developed a comprehensive API for HR and payroll management as the founding engineer.",
+        "Designed a sophisticated permission-based access-control system to strengthen security across numerous endpoints.",
+        "Managed the infrastructure, ensuring seamless deployment and monitoring of sensitive data in compliance with South Africa’s POPIA.",
+      ],
+    },
+    {
       role: "Full Stack Engineer",
       company: "MicroTechX",
       logo: "/companyLogos/microtechx.png",
