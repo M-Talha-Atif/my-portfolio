@@ -39,7 +39,7 @@ export default function Experience() {
       company: "HannSoft",
       logo: "/companyLogos/hannsoft.png",
       location: "Remote",
-      period: "February 2024 - April 2025",
+      period: "September 2023 - April 2025",
       desc: [
         "Engineered third party API integrations, including library and sports data providers and Firebase Cloud Messaging, to degrade gracefully under real world failure, applying timeouts, circuit breakers, and exponential backoff retries so a single unreliable upstream provider couldn't cascade into an app wide outage.",
         "Structured client applications around MVVM to keep business logic, state, and UI concerns independently testable and resilient to configuration changes, while delivering integration heavy production features such as Fridge Buddy's scan to recipe flow, combining barcode scanning with Gemini based AI content generation.",

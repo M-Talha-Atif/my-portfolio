@@ -42,7 +42,7 @@ export const itmscOutreach: OutreachPage = {
     myExperience:
       'At Intimec I own an Identity Governance backend in **Java and Spring Boot on PostgreSQL**, with a **React and Next.js frontend**, gRPC between services, and a GitHub Actions pipeline gating every merge. On GovHub, a municipal HR platform for 15,000 employees, I designed **12 NestJS backend modules with zero circular dependencies**, a **Next.js 14 admin panel**, and a **Flutter mobile app**, all on **PostgreSQL through Prisma**, Dockerized, deployed through CI/CD. On Memingo I integrated the **Gemini API** for AI generated learning content and a **TensorFlow Lite** object detection model into a **Flask backend**, a **React frontend**, and a **native Kotlin and Jetpack Compose Android app**, one project touching AI, backend, frontend, and mobile at once. On Moodly I built a standalone **FastAPI inference service** wrapping Hugging Face models for image and voice emotion detection.',
     overlap:
-      '**Direct overlap on JavaScript and TypeScript, React and Next.js, Node and Python backends, PostgreSQL, Docker, CI/CD, REST API integration, AI API integration, and mobile**, essentially the full requirements list plus every preferred qualification. **Honest note, my professional experience is around 2.5 years against the 3 plus years listed.** What I can show instead of a longer résumé is a project like Memingo that alone spans every domain this posting asks for.',
+      '**Direct overlap on JavaScript and TypeScript, React and Next.js, Node and Python backends, PostgreSQL, Docker, CI/CD, REST API integration, AI API integration, and mobile**, essentially the full requirements list plus every preferred qualification. **My professional experience is 3 plus years, which meets the 3 plus years listed.** On top of that, a project like Memingo alone spans every domain this posting asks for.',
     projectImage: '/jbmarksProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/jb-marks-govhub',
@@ -91,7 +91,7 @@ export const itmscOutreach: OutreachPage = {
       {
         trait: 'Direct communication',
         description:
-          'Comfortable naming an honest gap, like years of experience, directly instead of hoping it goes unnoticed.',
+          'Names real strengths and real gaps directly instead of hoping a gap goes unnoticed.',
       },
     ],
   },
@@ -130,7 +130,7 @@ export const itmscOutreach: OutreachPage = {
 
   closing: {
     note:
-      "I want to name one thing honestly. **My professional experience is around 2.5 years, against the 3 plus years listed in this posting.** What I can offer instead is unusually wide production coverage for that experience level, AI integration, backend services in three languages, frontend, and native mobile, all shipped, not just studied.",
+      "**My professional experience is 3 plus years, which meets the 3 plus years listed in this posting.** On top of that, I bring unusually wide production coverage, AI integration, backend services in three languages, frontend, and native mobile, all shipped, not just studied.",
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',
