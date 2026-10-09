@@ -12,8 +12,7 @@ export default function FeaturedWriting() {
       <div className="mx-auto mb-10 max-w-3xl text-center">
         <h2 className="mb-4 text-4xl font-bold text-heading">Writing</h2>
         <p className="text-lg text-subtext">
-          Engineering notes from systems I have built and operated. Each one follows the same order: the problem, the
-          constraints, the options, the trade-off, the decision, and what I would change today.
+          Backend and systems engineering explained in plain English, using problems I hit in production.
         </p>
       </div>
 

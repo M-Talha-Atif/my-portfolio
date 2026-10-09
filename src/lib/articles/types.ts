@@ -23,6 +23,7 @@ export type Block =
   | { type: 'ol'; items: string[] }
   | { type: 'code'; lang: string; title?: string; code: string }
   | { type: 'callout'; tone: CalloutTone; title: string; text: string }
+  | { type: 'jargon'; term: string; text: string }
   | { type: 'diagram'; title: string; caption?: string; rows: DiagramRow[] }
   | { type: 'table'; head: string[]; rows: string[][] }
   | { type: 'metrics'; items: { label: string; before: string; after: string; note?: string }[] }

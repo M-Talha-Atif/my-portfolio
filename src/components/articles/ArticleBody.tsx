@@ -82,6 +82,17 @@ function renderBlock(block: Block, i: number) {
       )
     case 'callout':
       return <Callout key={i} tone={block.tone} title={block.title} text={block.text} />
+    case 'jargon':
+      return (
+        <aside key={i} className="glass my-6 border-l-4 border-l-[var(--color-accent-solid)] p-4 md:p-5">
+          <div className="mb-1 text-[0.75rem] font-semibold uppercase tracking-widest text-[var(--color-accent-solid)]">
+            <span aria-hidden="true">🚨 </span>Jaggy jaggy alert: {block.term}
+          </div>
+          <p className="leading-7 text-text">
+            <Inline text={block.text} />
+          </p>
+        </aside>
+      )
     case 'diagram':
       return <FlowDiagram key={i} title={block.title} caption={block.caption} rows={block.rows} />
     case 'table':
