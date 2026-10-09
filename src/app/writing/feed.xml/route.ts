@@ -27,7 +27,7 @@ ${a.tags.map((t) => `      <category>${escapeXml(t)}</category>`).join('\n')}
     <title>${escapeXml(`Writing | ${SITE_NAME}`)}</title>
     <link>${SITE_URL}/writing</link>
     <atom:link href="${SITE_URL}/writing/feed.xml" rel="self" type="application/rss+xml" />
-    <description>Engineering notes on distributed systems, event-driven architecture, concurrency and reliability.</description>
+    <description>Articles on backend engineering, authentication, performance and system internals.</description>
     <language>en</language>
 ${items}
   </channel>

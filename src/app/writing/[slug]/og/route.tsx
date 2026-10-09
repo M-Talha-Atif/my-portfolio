@@ -77,10 +77,10 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
               <div style={{ display: 'flex', width: 10, height: 10, borderRadius: 999, backgroundColor: GREEN, marginRight: 12 }} />
               {article.category}
             </div>
-            <div style={{ display: 'flex', fontSize: 68, fontWeight: 700, lineHeight: 1.12, color: WHITE, letterSpacing: -1 }}>
+            <div style={{ display: 'flex', fontSize: 60, fontWeight: 700, lineHeight: 1.12, color: WHITE, letterSpacing: -1 }}>
               {line1}
             </div>
-            <div style={{ display: 'flex', fontSize: 68, fontWeight: 700, lineHeight: 1.12, color: GREEN, letterSpacing: -1 }}>
+            <div style={{ display: 'flex', fontSize: 60, fontWeight: 700, lineHeight: 1.12, color: GREEN, letterSpacing: -1 }}>
               {line2}
             </div>
           </div>
