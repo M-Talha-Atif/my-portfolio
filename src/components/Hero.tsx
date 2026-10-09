@@ -48,6 +48,18 @@ export default function Hero() {
           <p>
             I take responsibility beyond deployment, ensuring the product remains correct, available, and adaptable under real-world conditions.
           </p>
+
+          <div className="space-y-2 pt-1 text-left md:border-l-2 md:border-[var(--color-accent-solid)] md:pl-4">
+            <p className="text-heading font-medium">
+              3+ years as a software engineer building distributed systems that scale, handle failure, and hold up in production through resilience engineering.
+            </p>
+            <p className="text-base">
+              <span className="text-heading font-medium">Scale:</span> 8+ microservices on Kafka and gRPC with 50% lower inter-service latency, and bulk operations of 5,000+ users that resume from the last completed chunk after a crash.
+            </p>
+            <p className="text-base">
+              <span className="text-heading font-medium">Failure handling:</span> two zero-downtime production migrations (AWS to Fly.io, and 5M+ OpenSearch documents), plus fixes under load: feed 3s to 700ms, leaderboard 30s to 90ms, duplicate notifications to zero.
+            </p>
+          </div>
         </div>
 
         {/* === Buttons === */}
