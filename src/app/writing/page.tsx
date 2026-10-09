@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
-import { articlesMetadata, externalPosts } from '@/lib/articles'
-import ArticleCard from '@/components/articles/ArticleCard'
+import { articlesForBrowser, externalPosts } from '@/lib/articles'
+import WritingBrowser from '@/components/articles/WritingBrowser'
 import Footer from '@/components/Footer'
 import { SITE_URL, SITE_NAME } from '@/lib/seo'
 
@@ -40,11 +40,7 @@ export default function WritingIndex() {
         </p>
       </header>
 
-      <section aria-label="Articles" className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {articlesMetadata.map((article) => (
-          <ArticleCard key={article.slug} article={article} />
-        ))}
-      </section>
+      <WritingBrowser items={articlesForBrowser} />
 
       {externalPosts.length > 0 && (
         <section className="mt-16" aria-label="Also published elsewhere">
