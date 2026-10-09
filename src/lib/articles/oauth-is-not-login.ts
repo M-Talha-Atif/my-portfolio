@@ -10,6 +10,7 @@ export const oauthIsNotLogin: Article = {
   date: '2026-10-01',
   source: 'Originally published on Medium. Based on a production authentication bug I traced and fixed.',
   ogLines: ['OAuth is not “login”', 'It is a permission system'],
+  ogDescription: 'OAuth is a permission system, not a login system. What it costs you, and the production bug that taught me the difference.',
   featured: true,
   blocks: [
     {

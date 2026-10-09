@@ -41,8 +41,13 @@ export type Article = {
   source: string
   /** Optional cover in /public (1200x630 or larger, 1.91:1). Falls back to a generated share image. */
   cover?: string
+  /** Real pixel size of the cover file. Defaults to 1200x630 when omitted. */
+  coverWidth?: number
+  coverHeight?: number
   /** Two short lines for the generated share image: line 1 white, line 2 accent green. */
   ogLines: [string, string]
+  /** Optional one or two sentences shown under the title on the generated header image. */
+  ogDescription?: string
   featured?: boolean
   blocks: Block[]
 }
