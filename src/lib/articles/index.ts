@@ -82,3 +82,16 @@ export function adjacentArticles(slug: string): { newer?: ArticleMeta; older?: A
 
 // Pieces published on other platforms. Listed on /writing, not rendered locally.
 export const externalPosts: ExternalPost[] = []
+
+export type ArticleBrowserItem = ArticleMeta & { searchText: string }
+
+function searchText(article: Article): string {
+  const headings = article.blocks.flatMap((b) => (b.type === 'h2' || b.type === 'h3' ? [b.text] : b.type === 'jargon' ? [b.term] : []))
+  return [article.title, article.description, article.category, ...article.tags, ...headings].join(' ')
+}
+
+// Used by the search and filter UI on /writing.
+export const articlesForBrowser: ArticleBrowserItem[] = articles.map((article) => ({
+  ...(articlesMetadata.find((m) => m.slug === article.slug) as ArticleMeta),
+  searchText: searchText(article),
+}))

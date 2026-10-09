@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import type { ArticleMeta } from '@/lib/articles'
 import { formatDate } from '@/lib/articles/format'
+import Highlight from './Highlight'
 
-export default function ArticleCard({ article }: { article: ArticleMeta }) {
+export default function ArticleCard({ article, highlight }: { article: ArticleMeta; highlight?: string[] }) {
   return (
     <Link
       href={`/writing/${article.slug}`}
@@ -31,9 +32,11 @@ export default function ArticleCard({ article }: { article: ArticleMeta }) {
         </div>
 
         <h3 className="text-lg font-semibold leading-snug text-heading transition-colors group-hover:text-[var(--color-accent-solid)]">
-          {article.title}
+          <Highlight text={article.title} tokens={highlight} />
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-subtext">{article.description}</p>
+        <p className="mt-3 flex-1 text-sm leading-6 text-subtext">
+          <Highlight text={article.description} tokens={highlight} />
+        </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-subtext">
           <time dateTime={article.date}>{formatDate(article.date)}</time>
