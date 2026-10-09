@@ -9,11 +9,13 @@ export const silentDesignDecisionsMobileUx: Article = {
   tags: ['Design Thinking', 'UI UX Design', 'User Experience', 'UX Design', 'Product Design'],
   date: '2025-11-29',
   source: 'Originally published on Medium. Based on building Moodly, an AI-powered mood-based experience platform.',
-  cover: '/articles/moodly-ux-cover.png',
-  coverWidth: 675,
-  coverHeight: 675,
   ogLines: ['The Silent Design Decisions', 'That Make Users Feel Understood'],
   ogDescription: 'The color, spacing and feedback decisions that made Moodly feel like it understands people.',
+  ogPhones: [
+    '/moodlyProject/mobileImages/IMG-20251123-WA0029.jpg',
+    '/moodlyProject/mobileImages/IMG-20251123-WA0032.jpg',
+    '/moodlyProject/mobileImages/IMG-20251123-WA0019.jpg',
+  ],
   blocks: [
     {
       type: 'p',
