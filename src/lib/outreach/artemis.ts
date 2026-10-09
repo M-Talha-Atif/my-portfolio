@@ -36,7 +36,7 @@ export const artemisOutreach: OutreachPage = {
 
   relevantEvidence: {
     intro:
-      "I want to be upfront about something most outreach like this pretends isn't true: the open Product Engineer role asks for **4+ years of experience** and a founder background, and the team appears to require US work authorization with on-site relocation to NYC. **I'm at about 2 years, based in Pakistan.** That's a real gap, not a technicality.",
+      "I want to be upfront about something most outreach like this pretends isn't true: the open Product Engineer role asks for **4+ years of experience** and a founder background, and the team appears to require US work authorization with on-site relocation to NYC. **I'm at about 3 years, based in Pakistan.** That's a real gap, not a technicality.",
     companyProblem:
       'Artemis runs detection at a scale (**15,000+ TB/day**, **69x faster** ClickHouse queries) and an AI-native engineering culture (a Slack-native coding agent shipping PRs directly) that most companies at this stage never reach.',
     myExperience:
@@ -107,7 +107,7 @@ export const artemisOutreach: OutreachPage = {
     {
       tier: 'Silver',
       title: 'Stay in Touch',
-      message: 'If a role opens up that fits a ~2-year backend engineer, I would welcome being considered.',
+      message: 'If a role opens up that fits a ~3-year backend engineer, I would welcome being considered.',
       ctaLabel: 'Email me directly',
       ctaTarget: CONTACT_MAILTO,
     },

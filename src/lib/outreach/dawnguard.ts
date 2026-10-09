@@ -21,8 +21,8 @@ export const dawnguardOutreach: OutreachPage = {
   heroHighlights: ['Security-by-design experience, real', 'TypeScript + NestJS/Express match', '4 honest gaps named directly'],
 
   keyStats: [
-    { value: '2+', label: 'Years experience vs 3-5 asked' },
-    { value: '4', label: 'Honest gaps named directly' },
+    { value: '3+', label: 'Years experience vs 3-5 asked' },
+    { value: '3', label: 'Honest gaps named directly' },
     { value: '0', label: 'PII exposure after audit refactor' },
   ],
 
@@ -42,7 +42,7 @@ export const dawnguardOutreach: OutreachPage = {
     myExperience:
       'At Intimec I owned an enterprise Identity Governance and Access Management platform end to end, including the **Next.js and TypeScript** operational UI, a **Kafka based event driven approval pipeline** with dead letter queues, and an **audit log schema I refactored to remove personal data** while preserving forensic traceability. Separately, I built Moodly\'s backend in **NestJS** with an async RabbitMQ pipeline. Claude and GitHub Copilot are daily tools for me, not occasional ones.',
     overlap:
-      '**Direct overlap on TypeScript, NestJS and Express style backend services**, event driven design, and daily AI assisted engineering. **Four honest gaps named directly.** My frontend production experience is in React and Next.js, not Angular. My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five this posting asks for. And I do not currently hold independent EU work authorization, which this posting requires.',
+      '**Direct overlap on TypeScript, NestJS and Express style backend services**, event driven design, and daily AI assisted engineering. **Three honest gaps named directly.** My frontend production experience is in React and Next.js, not Angular. My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. And I do not currently hold independent EU work authorization, which this posting requires. On seniority, I am at three plus years of experience, the lower end of the three to five this posting asks for.',
     projectImage: '/intimecProject/hero/hero.png',
     caseStudyLabel: 'Case study →',
     caseStudyUrl: '/projects/intimec',
@@ -91,7 +91,7 @@ export const dawnguardOutreach: OutreachPage = {
       {
         trait: 'Honest about real gaps',
         description:
-          'Named the Angular, Pulumi, seniority, and work authorization gaps directly on this page rather than glossing over them, the same honesty Dawnguard says it values even when it is hard.',
+          'Named the Angular, Pulumi, and work authorization gaps, and sitting at the lower end of the experience range, directly on this page rather than glossing over them, the same honesty Dawnguard says it values even when it is hard.',
       },
     ],
   },
@@ -130,7 +130,7 @@ export const dawnguardOutreach: OutreachPage = {
 
   closing: {
     note:
-      'I want to name four things plainly rather than gloss over them. **My frontend production experience is in React and Next.js, not Angular.** My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. I am at two plus years of experience against the three to five you are looking for. **And I do not currently hold independent EU work authorization**, which this posting requires. What I can say honestly is that the underlying problem, security built into a system before code exists, is one I have already lived on a compliance heavy platform, and I pick up new frameworks quickly.',
+      'I want to name three things plainly rather than gloss over them. **My frontend production experience is in React and Next.js, not Angular.** My infrastructure as code exposure has been lighter touch than owning a Pulumi codebase directly. **And I do not currently hold independent EU work authorization**, which this posting requires. On seniority, I am at three plus years of experience, the lower end of the three to five you are looking for. What I can say honestly is that the underlying problem, security built into a system before code exists, is one I have already lived on a compliance heavy platform, and I pick up new frameworks quickly.',
     scheduleCtaLabel: 'Book a call directly',
     scheduleCtaTarget: '#schedule',
     emailCtaLabel: 'Email me directly',
