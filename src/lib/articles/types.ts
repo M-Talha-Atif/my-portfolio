@@ -48,6 +48,8 @@ export type Article = {
   ogLines: [string, string]
   /** Optional one or two sentences shown under the title on the generated header image. */
   ogDescription?: string
+  /** Up to three screenshots (paths under /public) shown in phone mockups on the generated header: left, center, right. */
+  ogPhones?: string[]
   featured?: boolean
   blocks: Block[]
 }
