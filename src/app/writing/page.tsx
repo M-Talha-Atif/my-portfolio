@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Rss } from 'lucide-react'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { articlesMetadata, externalPosts } from '@/lib/articles'
 import ArticleCard from '@/components/articles/ArticleCard'
 import Footer from '@/components/Footer'
@@ -38,12 +38,6 @@ export default function WritingIndex() {
         <p className="text-lg leading-8 text-subtext">
           Backend and systems engineering explained in plain English, using problems I hit in production.
         </p>
-        <Link
-          href="/writing/feed.xml"
-          className="mt-5 inline-flex items-center gap-2 text-sm text-subtext transition hover:text-[var(--color-accent-solid)]"
-        >
-          <Rss className="h-4 w-4" aria-hidden="true" /> RSS feed
-        </Link>
       </header>
 
       <section aria-label="Articles" className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

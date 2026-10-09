@@ -83,6 +83,11 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
             <div style={{ display: 'flex', fontSize: 60, fontWeight: 700, lineHeight: 1.12, color: GREEN, letterSpacing: -1 }}>
               {line2}
             </div>
+            {article.ogDescription && (
+              <div style={{ display: 'flex', marginTop: 20, maxWidth: 820, fontSize: 24, lineHeight: 1.4, color: BODY }}>
+                {article.ogDescription}
+              </div>
+            )}
           </div>
 
           {/* bottom bar */}

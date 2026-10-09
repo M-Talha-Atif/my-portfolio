@@ -10,6 +10,7 @@ export const redisSingleThreaded: Article = {
   date: '2026-03-07',
   source: 'Originally published on Medium.',
   ogLines: ['Redis is single-threaded', 'So why is it so fast?'],
+  ogDescription: 'How one main thread serves thousands of clients: I/O multiplexing, the event loop, and I/O threading from Redis 6.',
   featured: true,
   blocks: [
     {
