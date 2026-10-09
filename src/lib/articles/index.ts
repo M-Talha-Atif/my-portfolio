@@ -1,10 +1,7 @@
 import type { Article, ArticleMeta, Block, ExternalPost } from './types'
-import { raceConditionsCheckThenWrite } from './race-conditions-check-then-write'
-import { eventualConsistencyIdentityLifecycle } from './eventual-consistency-identity-lifecycle'
-import { kafkaForApprovalWorkflows } from './kafka-for-approval-workflows'
-import { opensearchAliasMigration } from './opensearch-alias-migration'
-import { chunkedBulkRoleAssignment } from './chunked-bulk-role-assignment'
-import { springAopSelfInvocation } from './spring-aop-self-invocation'
+import { oauthIsNotLogin } from './oauth-is-not-login'
+import { why100PercentCpu } from './why-100-percent-cpu'
+import { redisSingleThreaded } from './redis-single-threaded'
 
 export type { Article, ArticleMeta, Block, ExternalPost } from './types'
 
@@ -21,6 +18,8 @@ function blockText(block: Block): string {
       return block.items.join(' ')
     case 'callout':
       return `${block.title} ${block.text}`
+    case 'jargon':
+      return `${block.term} ${block.text}`
     case 'table':
       return [...block.head, ...block.rows.flat()].join(' ')
     case 'metrics':
@@ -39,12 +38,9 @@ export function readingMinutes(article: Article): number {
 
 // Newest first. Add new articles to this list.
 export const articles: Article[] = [
-  raceConditionsCheckThenWrite,
-  eventualConsistencyIdentityLifecycle,
-  kafkaForApprovalWorkflows,
-  opensearchAliasMigration,
-  chunkedBulkRoleAssignment,
-  springAopSelfInvocation,
+  oauthIsNotLogin,
+  why100PercentCpu,
+  redisSingleThreaded,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export const articlesMetadata: ArticleMeta[] = articles.map((article) => {

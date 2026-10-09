@@ -8,7 +8,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/seo'
 
 const TITLE = 'Writing | M. Talha Atif'
 const DESCRIPTION =
-  'Engineering notes on distributed systems, event-driven architecture, concurrency and reliability, written from systems I have built and operated.'
+  'Articles on backend engineering, authentication, performance and system internals, explained in plain English using problems I hit in production.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -34,11 +34,9 @@ export default function WritingIndex() {
       </Link>
 
       <header className="mb-12 max-w-3xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-accent-solid)]">Writing</p>
-        <h1 className="mb-4 text-4xl font-bold leading-tight text-heading md:text-5xl">Engineering notes from production</h1>
+        <h1 className="mb-4 text-4xl font-bold leading-tight text-heading md:text-5xl">Writing</h1>
         <p className="text-lg leading-8 text-subtext">
-          Decisions I made on real systems, with the constraints, the trade-offs I accepted, and what I would change today.
-          Every figure comes from a before and after measurement.
+          Backend and systems engineering explained in plain English, using problems I hit in production.
         </p>
         <Link
           href="/writing/feed.xml"
