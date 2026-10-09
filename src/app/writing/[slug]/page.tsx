@@ -7,6 +7,7 @@ import { articles, getArticle, getArticleMeta, relatedArticles, adjacentArticles
 import { formatDate } from '@/lib/articles/format'
 import ArticleBody, { slugify } from '@/components/articles/ArticleBody'
 import ArticleCard from '@/components/articles/ArticleCard'
+import ReadingProgress from '@/components/articles/ReadingProgress'
 import Footer from '@/components/Footer'
 import { SITE_URL, SITE_NAME, SOCIAL_LINKS } from '@/lib/seo'
 
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `${SITE_URL}/writing/${article.slug}`
   const image = article.cover
-    ? { url: article.cover, width: 2400, height: 1260, alt: article.title }
+    ? { url: article.cover, width: article.coverWidth ?? 2400, height: article.coverHeight ?? 1260, alt: article.title }
     : { url: `/writing/${article.slug}/og`, width: 1200, height: 630, alt: article.title }
 
   return {
@@ -100,24 +101,26 @@ export default async function ArticlePage({ params }: Props) {
               <span>{meta.readingMinutes} min read</span>
             </div>
 
-            {article.cover && (
-              <Image
-                src={article.cover}
-                alt={article.title}
-                width={1200}
-                height={630}
-                priority
-                sizes="(min-width: 1024px) 768px, 100vw"
-                className="mt-8 w-full rounded-2xl border border-[var(--color-border)]"
-              />
-            )}
+            <Image
+              src={article.cover ?? `/writing/${article.slug}/og`}
+              alt={article.title}
+              width={article.cover ? (article.coverWidth ?? 1200) : 1200}
+              height={article.cover ? (article.coverHeight ?? 630) : 630}
+              priority
+              unoptimized={!article.cover}
+              sizes="(min-width: 1024px) 768px, 100vw"
+              className={`mt-8 h-auto w-full rounded-2xl border border-[var(--color-border)] ${
+                article.cover && (article.coverWidth ?? 1200) / (article.coverHeight ?? 630) < 1.3 ? 'mx-auto max-w-md' : ''
+              }`}
+            />
 
             <p className="glass mt-8 border-l-4 border-l-[var(--color-accent-solid)] p-4 text-sm leading-6 text-subtext">{article.source}</p>
           </header>
 
-          <div className="mt-6">
+          <div id="article-body" className="mt-6">
             <ArticleBody blocks={article.blocks} />
           </div>
+          <ReadingProgress targetId="article-body" />
 
           <footer className="mt-16 border-t border-[var(--color-border)] pt-8">
             <div className="flex flex-wrap gap-2">

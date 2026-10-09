@@ -2,6 +2,8 @@ import type { Article, ArticleMeta, Block, ExternalPost } from './types'
 import { oauthIsNotLogin } from './oauth-is-not-login'
 import { why100PercentCpu } from './why-100-percent-cpu'
 import { redisSingleThreaded } from './redis-single-threaded'
+import { silentDesignDecisionsMobileUx } from './silent-design-decisions-mobile-ux'
+import { localhostTalkingToYourself } from './localhost-talking-to-yourself'
 
 export type { Article, ArticleMeta, Block, ExternalPost } from './types'
 
@@ -41,6 +43,8 @@ export const articles: Article[] = [
   oauthIsNotLogin,
   why100PercentCpu,
   redisSingleThreaded,
+  silentDesignDecisionsMobileUx,
+  localhostTalkingToYourself,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export const articlesMetadata: ArticleMeta[] = articles.map((article) => {
@@ -77,11 +81,4 @@ export function adjacentArticles(slug: string): { newer?: ArticleMeta; older?: A
 }
 
 // Pieces published on other platforms. Listed on /writing, not rendered locally.
-export const externalPosts: ExternalPost[] = [
-  {
-    title: 'Localhost: Talking to Yourself in the Digital World',
-    link: 'https://medium.com/@talhaatif573/localhost-talking-to-yourself-in-the-digital-world-bd84682df4f9',
-    date: 'Feb 2025',
-    platform: 'Medium',
-  },
-]
+export const externalPosts: ExternalPost[] = []

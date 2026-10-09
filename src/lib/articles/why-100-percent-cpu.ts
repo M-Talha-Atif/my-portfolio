@@ -10,6 +10,7 @@ export const why100PercentCpu: Article = {
   date: '2026-07-14',
   source: 'Originally published on Medium. Based on a production performance investigation.',
   ogLines: ['Why 100% CPU Doesn’t', 'Mean What You Think It Means'],
+  ogDescription: 'What the number is actually measuring, why it lies to you under load, and how to read it like an engineer instead of panicking like a beginner.',
   featured: true,
   blocks: [
     { type: 'h2', text: 'The Database Wasn’t the Problem. It Was Just Loud About It.' },
