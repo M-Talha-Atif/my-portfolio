@@ -148,6 +148,11 @@ export const outreachPagesMetadata = [
     company: 'Nordisk Robotparkering AB',
     role: 'Full Stack Engineer (informational)',
   },
+  {
+    slug: 'pogo',
+    company: 'Pogo',
+    role: 'Full Stack Engineer',
+  },
 ]
 
 // Dynamic import function, mirrors src/lib/projects/index.ts
@@ -268,6 +273,10 @@ export async function getOutreachPage(slug: string): Promise<OutreachPage | null
     if (slug === 'nordisk-robotparkering') {
       const { nordiskRobotparkeringOutreach } = await import('./nordisk-robotparkering')
       return nordiskRobotparkeringOutreach
+    }
+    if (slug === 'pogo') {
+      const { pogoOutreach } = await import('./pogo')
+      return pogoOutreach
     }
     return null
   } catch (error) {
