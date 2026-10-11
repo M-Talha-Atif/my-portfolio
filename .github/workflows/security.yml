@@ -105,11 +105,23 @@ jobs:
           sudo freshclam || echo "::warning::freshclam failed; scanning with packaged signatures"
       - name: Scan working tree
         run: clamscan --recursive --infected --max-filesize=50M --max-scansize=500M --exclude-dir='^\.git$' .
+      # A malicious package is the other way malware reaches this repo, so scan what actually gets installed.
+      - uses: pnpm/action-setup@a15d269cd4658e1107c09f1fabf4cbd7bd1f308a # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Install dependencies without running any install script
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Scan installed dependencies
+        run: clamscan --recursive --infected --max-filesize=50M --max-scansize=1000M node_modules
 
   # 4. Secrets in code and in full git history (free for personal accounts).
   secrets:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read   # gitleaks-action lists a PR's commits through the API (403 without this)
     steps:
       - uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
         with:

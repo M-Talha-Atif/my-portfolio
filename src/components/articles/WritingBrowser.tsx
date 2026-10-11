@@ -39,23 +39,38 @@ export default function WritingBrowser({ items }: { items: ArticleBrowserItem[] 
   const [ready, setReady] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
+  const categories = useMemo(() => {
+    const counts = new Map<string, number>()
+    items.forEach((i) => counts.set(i.category, (counts.get(i.category) ?? 0) + 1))
+    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  }, [items])
+
+  const topTags = useMemo(() => {
+    const counts = new Map<string, number>()
+    items.forEach((i) => i.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)))
+    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t]) => t)
+  }, [items])
+
   // Restore state from the URL once, so a filtered view can be shared or reloaded.
+  // Deferred by a tick so it runs after hydration (the server HTML has no filters applied).
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const q = params.get('q')
-    const c = params.get('category')
-    const t = params.get('tag')
-    const s = params.get('sort') as Sort | null
-    if (q) setQuery(q)
-    if (c && items.some((i) => i.category === c)) setCategory(c)
-    if (t && items.some((i) => i.tags.includes(t))) {
-      setTag(t)
-      if (!topTags.slice(0, TAGS_SHOWN).includes(t)) setShowAllTags(true)
-    }
-    if (s && SORTS.some((x) => x.value === s)) setSort(s)
-    setReady(true)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    const id = window.setTimeout(() => {
+      const params = new URLSearchParams(window.location.search)
+      const q = params.get('q')
+      const c = params.get('category')
+      const t = params.get('tag')
+      const s = params.get('sort') as Sort | null
+      if (q) setQuery(q)
+      if (c && items.some((i) => i.category === c)) setCategory(c)
+      if (t && items.some((i) => i.tags.includes(t))) {
+        setTag(t)
+        if (!topTags.slice(0, TAGS_SHOWN).includes(t)) setShowAllTags(true)
+      }
+      if (s && SORTS.some((x) => x.value === s)) setSort(s)
+      setReady(true)
+    }, 0)
+    return () => window.clearTimeout(id)
+  }, [items, topTags])
 
   // Keep the URL in sync (replace, so Back still leaves the page).
   useEffect(() => {
@@ -84,18 +99,6 @@ export default function WritingBrowser({ items }: { items: ArticleBrowserItem[] 
   }, [])
 
   const indexed = useMemo(() => items.map((i) => ({ item: i, haystack: normalize(i.searchText) })), [items])
-
-  const categories = useMemo(() => {
-    const counts = new Map<string, number>()
-    items.forEach((i) => counts.set(i.category, (counts.get(i.category) ?? 0) + 1))
-    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  }, [items])
-
-  const topTags = useMemo(() => {
-    const counts = new Map<string, number>()
-    items.forEach((i) => i.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)))
-    return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t]) => t)
-  }, [items])
 
   const words = useMemo(() => normalize(query).split(/\s+/).filter(Boolean), [query])
   const rawWords = useMemo(() => query.trim().split(/\s+/).filter(Boolean), [query])

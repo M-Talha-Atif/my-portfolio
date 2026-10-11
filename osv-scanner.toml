@@ -1,0 +1,7 @@
+# OSV-Scanner configuration. Read automatically from the directory of the scanned lockfile.
+# Every ignore needs a reason and an expiry so it gets looked at again.
+
+[[IgnoredVulns]]
+id = "GHSA-vfj7-8cjw-p6xm"
+ignoreUntil = 2027-01-11
+reason = "braces <= 3.0.3 stack exhaustion on deeply nested patterns. No fixed release exists yet. It is only reached through tailwindcss and eslint-config-next (build and dev tooling matching local file globs), never with user input, and nothing in the deployed site ships it."
