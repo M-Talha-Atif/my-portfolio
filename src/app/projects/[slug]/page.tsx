@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import Link from "next/link"
 import posthog from 'posthog-js'
+import FeedLatencyDemo from '@/components/FeedLatencyDemo'
 
 // Lazy load EVERYTHING heavy
 const VisualCarousel = lazy(() => import('@/components/VisualCarousel'))
@@ -231,6 +232,9 @@ export default function ProjectPage({ params }: Props) {
                     <p className="text-subtext relative z-10 leading-relaxed">{project.solution}</p>
                 </div>
             </section>
+
+            {/* Interactive demo (Cunocovo only) */}
+            {project.slug === 'cunocovo' && <FeedLatencyDemo />}
 
             {/* Project Goals */}
             {project.projectGoals && project.projectGoals.length > 0 && (
