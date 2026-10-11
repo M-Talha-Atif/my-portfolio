@@ -1,1 +1,2 @@
 node scripts/security/check-repo.mjs
+node scripts/security/scan-staged.mjs --all

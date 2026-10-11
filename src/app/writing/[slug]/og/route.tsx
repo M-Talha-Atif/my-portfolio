@@ -67,6 +67,7 @@ function Phone({ src, left, top, rotate }: { src: string; left: number; top: num
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
+          alt=""
           src={src}
           width={PHONE_W - 2 * BEZEL - 4}
           height={PHONE_H - 2 * BEZEL - 4}
