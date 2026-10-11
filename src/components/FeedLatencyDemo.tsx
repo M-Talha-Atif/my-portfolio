@@ -57,14 +57,7 @@ export default function FeedLatencyDemo() {
 
   const rows = useMemo(() => buildRows(fixes), [fixes])
   const total = useMemo(() => rows.reduce((s, r) => s + r.ms, 0), [rows])
-  const starts = useMemo(() => {
-    let acc = 0
-    return rows.map((r) => {
-      const s = acc
-      acc += r.ms
-      return s
-    })
-  }, [rows])
+  const starts = useMemo(() => rows.map((_, i) => rows.slice(0, i).reduce((sum, r) => sum + r.ms, 0)), [rows])
 
   const stop = useCallback(() => {
     if (timer.current !== null) clearInterval(timer.current)
