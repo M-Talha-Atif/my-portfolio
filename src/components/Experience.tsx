@@ -13,7 +13,6 @@ export default function Experience() {
       desc: [
         "Developed a comprehensive API for HR and payroll management as the founding engineer.",
         "Designed a sophisticated permission-based access-control system to strengthen security across numerous endpoints.",
-        "Managed the infrastructure, ensuring seamless deployment and monitoring of sensitive data in compliance with South Africa’s POPIA.",
       ],
     },
     {
